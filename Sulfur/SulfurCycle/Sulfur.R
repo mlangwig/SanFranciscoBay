@@ -60,8 +60,8 @@ SR_4_1_July<-SR_4_1[grepl("July", SR_4_1$Bin),]
 colSums(SR_4_1_July[, c("KO:K11180", "KO:K11181")])
 #map taxonomy to the data frame
 SR_4_1_July_tax <- tax %>%
-  dplyr::select(user_genome, classification) %>%
-  right_join(SR_4_1_July, by = c('user_genome' = 'MAG'))
+  dplyr::select(Bin_name, GTDBtk) %>%
+  right_join(SR_4_1_July, by = c("Bin_name" = "Bin"))
 
 SR_4_1_Oct<-SR_4_1[grepl("Oct", SR_4_1$Bin),]
 colSums(SR_4_1_Oct[, c("KO:K11180", "KO:K11181")])
@@ -70,3 +70,40 @@ colSums(SR_4_1_Oct[, c("KO:K11180", "KO:K11181")])
 #set row names as Sample Location
 sulf_red_sum_wide_names <- sulf_red_sum_wide %>% remove_rownames %>% column_to_rownames(var = "Bin")
 
+
+#Subset the data for just sulfur oxidation genes
+sulfur_ox <- data%>%filter(str_detect(KO_Term,"KO:K17222|KO:K17223|KO:K17224|KO:K17225|KO:K17226|KO:K17227|KO:K17218"))
+#supplement above output with dsrC and dsrD because those are not included in IMG output
+
+#generate column of 1s for value mapping
+newcol<-rep(1,1434) #generate 65 1s
+sulfur_ox$presence<-newcol
+#sum the presence of marker genes by Bin name
+sulfur_ox_sum <- sulfur_ox %>%
+  group_by(Bin, KO_Term) %>% 
+  summarise(presence=sum(presence))
+
+#go from long to wide
+sulfur_ox_sum_wide <- sulfur_ox_sum %>%
+  dplyr::select(KO_Term, presence, Bin) %>%
+  pivot_wider(names_from = KO_Term, values_from = presence, values_fill = 0)
+
+#grab only 4_1
+SO_4_1<-sulfur_ox_sum_wide[grepl("4_1", sulfur_ox_sum_wide$Bin),]
+
+#summarize by month
+SO_4_1_Jan<-SO_4_1[grepl("Jan", SO_4_1$Bin),]
+colSums(SO_4_1_Jan[, c("KO:K17222", "KO:K17224", "KO:K17225")])
+
+SO_4_1_May<-SO_4_1[grepl("May", SO_4_1$Bin),]
+colSums(SO_4_1_May[, c("KO:K17222", "KO:K17224", "KO:K17225")])
+
+SO_4_1_July<-SO_4_1[grepl("July", SO_4_1$Bin),]
+colSums(SO_4_1_July[, c("KO:K17222", "KO:K17224", "KO:K17225")])
+#map taxonomy to the data frame
+SO_4_1_July_tax <- tax %>%
+  dplyr::select(Bin_name, GTDBtk) %>%
+  right_join(SO_4_1_July, by = c("Bin_name" = "Bin"))
+
+SO_4_1_Oct<-SO_4_1[grepl("Oct", SO_4_1$Bin),]
+colSums(SO_4_1_Oct[, c("KO:K17222", "KO:K17224", "KO:K17225")])
