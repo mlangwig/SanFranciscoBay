@@ -53,7 +53,7 @@ data_long_5p <- data_long %>%
   group_by(site) %>% #now group by site
   arrange(desc(value)) %>%
   mutate(rank=row_number()) %>% #make a new variable called rank where rank values
-  filter(rank <= 5) #grab the ones ranked top number inserted
+  filter(rank <= 10) #grab the ones ranked top number inserted
   
 
 # plot <- ggplot(data_long, aes(x = site, y = as.numeric(value), fill = Taxa)) + 
@@ -67,20 +67,25 @@ data_long_5p <- data_long %>%
 # 
 # ggsave("Abundance_StackedBarPlot.pdf", plot, dpi = 500)
 
+n <- 19
+qual_col_pals = brewer.pal.info[brewer.pal.info$category == 'qual',]
+col_vector = unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+pie(rep(1,n), col=sample(col_vector, n))
+
 plot2 <- data_long_5p %>%
   ggplot(aes(x = site, y = as.numeric(value), fill = Taxa)) + 
   geom_bar(stat = "identity") +
-  scale_fill_manual(values = as.vector(rev(kelly(n = 13)))) +
+  scale_fill_manual(values = col_vector) +
   labs(x = "Site", y = "Abundance") +
   guides(fill=guide_legend(override.aes = list(size=3))) +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5),
         panel.background = element_blank()) +
   scale_y_continuous(expand = c(0, 0)) +
-  ggtitle("Five most abundant SFB taxa per site")
+  ggtitle("Ten most abundant SFB taxa per site")
 plot2
 
 
 ggsave("Abundance_StackedBarPlotTop5perSite.pdf", plot2, width = 8, dpi = 500)
-ggsave("Abundance_StackedBarPlotTop5perSite.png", plot2, width = 8, height = 5, dpi = 500)
+ggsave("Abundance_StackedBarPlotTop10perSite.png", plot2, width = 8, height = 5, dpi = 500)
 

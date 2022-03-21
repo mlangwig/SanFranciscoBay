@@ -157,9 +157,6 @@ complete_SRs_long_neg$Site <- factor(complete_SRs_long_neg$Site, levels=rev(c("4
 
 my_colors <- pals::kelly(n=12)[2:13]
 
-complete_SRs_long_neg %>%
-  mutate("type" = class %in% c("reductive", "oxidative"))
-
 plot<-complete_SRs_long_neg %>%
   ggplot(aes(x = Site, y = as.numeric(sum_col), fill = Class, color = type)) + 
   #geom_line(aes(linetype = type, group = 2)) +
@@ -228,7 +225,7 @@ sulf_red_KOhmm_wide_renamed_ordered<-select(sulf_red_KOhmm_wide_renamed,1,4,2,3,
 
 #################################  Sulfur oxidation  ######################################
 #Subset the data for just sulfur oxidation genes
-sulfur_ox <- data%>%filter(str_detect(KO_Term,"KO:K17222|KO:K17223|KO:K17224|KO:K17225|KO:K17226|KO:K17227|KO:K17218"))
+sulfur_ox <- data%>%filter(str_detect(KO_Term,"KO:K17222|KO:K17223|KO:K17224|KO:K17225|KO:K17226|KO:K17227|KO:K17218|KO:K22622"))
 #supplement above output with dsrC and dsrD because those are not included in IMG output
 
 #generate column of 1s for value mapping
@@ -244,25 +241,91 @@ sulfur_ox_sum_wide <- sulfur_ox_sum %>%
   dplyr::select(KO_Term, presence, Bin) %>%
   pivot_wider(names_from = KO_Term, values_from = presence, values_fill = 0)
 
-#grab only 4_1
-SO_4_1<-sulfur_ox_sum_wide[grepl("4_1", sulfur_ox_sum_wide$Bin),]
+#rename KOs
+sulfur_ox_sum_wide_renamed<-sulfur_ox_sum_wide %>%
+  rename( "soxA_K17222"="KO:K17222",
+          "soxX_K17223"="KO:K17223",
+          "soxB_K17224"="KO:K17224",
+          "soxC_K17225"="KO:K17225",
+          "soxY_K17226"="KO:K17226",
+          "soxZ_K17227"="KO:K17227",
+          "sqr_K17218"="KO:K17218"
+  )
 
-#summarize by month
-SO_4_1_Jan<-SO_4_1[grepl("Jan", SO_4_1$Bin),]
-colSums(SO_4_1_Jan[, c("KO:K17222", "KO:K17224", "KO:K17225")])
-
-SO_4_1_May<-SO_4_1[grepl("May", SO_4_1$Bin),]
-colSums(SO_4_1_May[, c("KO:K17222", "KO:K17224", "KO:K17225")])
-
-SO_4_1_July<-SO_4_1[grepl("July", SO_4_1$Bin),]
-colSums(SO_4_1_July[, c("KO:K17222", "KO:K17224", "KO:K17225")])
-#map taxonomy to the data frame
-SO_4_1_July_tax <- tax %>%
+sulfur_ox_sum_wide_renamed <- tax %>%
   dplyr::select(Bin_name, GTDBtk) %>%
-  right_join(SO_4_1_July, by = c("Bin_name" = "Bin"))
+  right_join(sulfur_ox_sum_wide_renamed, by = c("Bin_name" = "Bin"))
 
-SO_4_1_Oct<-SO_4_1[grepl("Oct", SO_4_1$Bin),]
-colSums(SO_4_1_Oct[, c("KO:K17222", "KO:K17224", "KO:K17225")])
+#grab complete sulfate reducers/oxidizers from all sites
+complete_SOs<-sulfur_ox_sum_wide_renamed%>%filter(soxA_K17222>=1 & soxX_K17223>=1 & soxB_K17224>=1 & soxC_K17225>=1 & soxY_K17226>=1 & soxZ_K17227>=1)
+
+#map site
+complete_SOs <- tax %>%
+  dplyr::select(Bin_name, Site) %>%
+  right_join(complete_SOs, by = c("Bin_name" = "Bin_name"))
+
+#drop detailed taxonomy to only keep class
+complete_SOs<-separate(complete_SOs,GTDBtk,into = c("Class", "tax_detailed"), sep = "(?=;o)")
+
+#group by taxa and type and pivot long for plot 
+#to show distribution of sulfate reducers vs sulfur oxidizers
+complete_SOs_long <- complete_SOs %>%
+  mutate(sum_col = 1) %>%
+  group_by(Class, Site) %>%
+  summarise(sum_col = sum(sum_col))
+
+
+##make a stacked bar plot?
+complete_SOs_long$Site <- factor(complete_SOs_long$Site, levels=c("4_1_July", "4_1_Oct", "4_1_Jan", "4_1_May", 
+                                                                              "8_1_July", "8_1_Oct", "8_1_Jan", "8_1_May",
+                                                                              "13_July", "13_Oct", "13_Jan", "13_May",
+                                                                              "21_July", "21_Oct", "21_Jan", "21_May",
+                                                                              "24_July", "24_Oct", "24_Jan", "24_May"))
+
+#harry potter color palette
+install.packages("harrypotter")
+library(harrypotter)
+#my_colors <- pals::kelly(n=3)[11:13]
+
+#plot
+plot<-complete_SOs_long %>%
+  ggplot(aes(x = Site, y = as.numeric(sum_col), fill = Class)) + 
+  #geom_line(aes(linetype = type, group = 2)) +
+  ggtitle("SOX System in SFB MAGs") +
+  geom_bar(stat = "identity", alpha = .8) +
+  scale_fill_hp(house = "Mischief", discrete = TRUE) +
+  labs(x = "Site", y = "Number of MAGs") +
+  #coord_cartesian(ylim = c(-14, 4), expand = FALSE) +
+  #scale_y_continuous(breaks = seq(-14, 4, by = 2)) +
+  #geom_hline(yintercept=0) +
+  #guides(fill=guide_legend(override.aes = list(size=3))) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5),
+        panel.background = element_blank())
+  #guides(color = guide_legend(override.aes = list(fill = NA))) +
+  #coord_flip() 
+#scale_y_continuous(expand = c(0, 0))
+plot
+
+ggsave("SOX_MAGs.png", plot, width = 9, dpi = 500)
+
+############### which MAGs that are complete SRs/SOs using dsr also have complete SOX system? #######################
+
+test <- complete_SRs %>%
+  filter(Bin %in% complete_SOs$Bin_name)
+
+test <- complete_SRs[complete_SRs$Bin %in% complete_SOs$Bin_name, ]
+
+test2 <- dsr_types %>%
+  mutate(ID = 1) %>%
+  group_by(Bin) %>%
+  summarise(ID = sum(ID)) %>%
+  filter(ID == 2)
+
+
+
+
+
 
 
 ################### old
@@ -286,3 +349,24 @@ colSums(SO_4_1_Oct[, c("KO:K17222", "KO:K17224", "KO:K17225")])
 # 
 # SR_4_1_Oct<-SR_4_1[grepl("Oct", SR_4_1$Bin),]
 # colSums(SR_4_1_Oct[, c("KO:K11180", "KO:K11181")])
+
+# grab only 4_1
+# SO_4_1<-sulfur_ox_sum_wide[grepl("4_1", sulfur_ox_sum_wide$Bin),]
+# 
+# #summarize by month
+# SO_4_1_Jan<-SO_4_1[grepl("Jan", SO_4_1$Bin),]
+# colSums(SO_4_1_Jan[, c("KO:K17222", "KO:K17224", "KO:K17225")])
+# 
+# SO_4_1_May<-SO_4_1[grepl("May", SO_4_1$Bin),]
+# colSums(SO_4_1_May[, c("KO:K17222", "KO:K17224", "KO:K17225")])
+# 
+# SO_4_1_July<-SO_4_1[grepl("July", SO_4_1$Bin),]
+# colSums(SO_4_1_July[, c("KO:K17222", "KO:K17224", "KO:K17225")])
+# #map taxonomy to the data frame
+# SO_4_1_July_tax <- tax %>%
+#   dplyr::select(Bin_name, GTDBtk) %>%
+#   right_join(SO_4_1_July, by = c("Bin_name" = "Bin"))
+# 
+# SO_4_1_Oct<-SO_4_1[grepl("Oct", SO_4_1$Bin),]
+# colSums(SO_4_1_Oct[, c("KO:K17222", "KO:K17224", "KO:K17225")])
+# 

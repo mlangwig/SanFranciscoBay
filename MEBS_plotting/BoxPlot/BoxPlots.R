@@ -10,10 +10,10 @@ library(ggplot2)
 library(RColorBrewer)
 
 #read in data
-data <- read.delim(file = "Input/SFB_mebs_normScore_test.txt", header = TRUE)
+data <- read.delim(file = "Input/sfbArcBac_mebs_Norm_mod.txt", header = TRUE)
 #unique(data$site) 
-data$site2 <- factor(data$site2, levels = c("4_1","8_1", "13", "21", "24"))
-data$month <- factor(data$month, levels = c("July","Oct", "Jan", "May"))
+data$Site <- factor(data$Site, levels = c("4_1","8_1", "13", "21", "24"))
+data$Month <- factor(data$Month, levels = c("7","10", "1", "5"))
 
 
 
@@ -21,22 +21,24 @@ data$month <- factor(data$month, levels = c("July","Oct", "Jan", "May"))
 
 
 dev.off()
-bp_n <- ggplot(data, aes(x = site2, y = nitrogen, 
-                       color=month)) + geom_boxplot(alpha = 1/2) + 
+bp_n <- ggplot(data, aes(x = Site, y = N, 
+                       color=Month)) + geom_boxplot(alpha = 1/2) + 
   labs(title = "MEBS Normalized Nitrogen Scores", y = "MEBS Normalized Nitrogen Score", 
        x = "Site") +
-  theme_bw()
+  #coord_cartesian(ylim = c(-14, 4), expand = FALSE) +
+  theme_bw() +
   #theme(legend.position = "none")
-  #scale_y_continuous(expand=c(0,0), limits=c(0,1))
+  scale_y_continuous(expand=c(0,0), limits=c(0,.8))
 
 bp_n
 
-bp_n_pretty <- bp_n + scale_color_manual(breaks = c("July", "Oct", "Jan",
-                                                "May"),
+bp_n_pretty <- bp_n + scale_color_manual(breaks = c("7", "10", "1",
+                                                "5"),
                                      values=c("#88CCEE", "#44AA99", "#3F578F",
                                               "#BAB8B9"), #"#882255"), #, "#CAB2D6" #, "#6A3D9A"
                                      name = "Month",
-                                    labels=c("July", "Oct", "Jan", "May")
+                                    labels=c("7" = "July", "10" = "Oct", "1" = "Jan", 
+                                            "5" = "May")
                                     )
 bp_n_pretty
 
@@ -45,22 +47,23 @@ bp_n_pretty
 ###################################### sulfur ###############################################################
 
 dev.off()
-bp_s <- ggplot(data, aes(x = site2, y = sulfur, 
-                       color=month)) + geom_boxplot(alpha = 1/2) + 
+bp_s <- ggplot(data, aes(x = Site, y = S, 
+                       color=Month)) + geom_boxplot(alpha = 1/2) + 
   labs(title = "MEBS Normalized Sulfur Scores", y = "MEBS Normalized Sulfur Score", 
        x = "Site") +
-  theme_bw()
+  theme_bw() +
 #theme(legend.position = "none")
-#scale_y_continuous(expand=c(0,0), limits=c(0,1))
+scale_y_continuous(expand=c(0,0), limits=c(0,.8))
 
 bp_s
 
-bp_s_pretty <- bp_s + scale_color_manual(breaks = c("July", "Oct", "Jan",
-                                                    "May"),
-                                     values=c("#88CCEE", "#44AA99", "#3F578F",
-                                              "#BAB8B9"), #"#882255"), #, "#CAB2D6" #, "#6A3D9A"
-                                     name = "Month",
-                                     labels=c("July", "Oct", "Jan", "May")
+bp_s_pretty <- bp_s + scale_color_manual(breaks = c("7", "10", "1",
+                                                    "5"),
+                                         values=c("#88CCEE", "#44AA99", "#3F578F",
+                                                  "#BAB8B9"), #"#882255"), #, "#CAB2D6" #, "#6A3D9A"
+                                         name = "Month",
+                                         labels=c("7" = "July", "10" = "Oct", "1" = "Jan", 
+                                                  "5" = "May")
 )
 bp_s_pretty
 
@@ -149,7 +152,7 @@ combo_plot <- plot_grid(bp_n_pretty, bp_s_pretty, labels = c('A', 'B'),
 combo_plot
 
 
-ggsave("Output/combo_plot_NS.png", combo_plot, width = 10, height = 5, dpi = 500)
+ggsave("Output/combo_plot_NS_norm.png", combo_plot, width = 10, height = 4, dpi = 500)
 
 
 ###################################
