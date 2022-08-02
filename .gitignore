@@ -1,6 +1,9 @@
 ## this project
 side-docs/*
 data/*
+microbiomeSeq/*
+MapFigure/data/*
+MapFigure/data.zip
 
 # Compiled source #
 ###################
