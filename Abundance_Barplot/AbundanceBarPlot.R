@@ -176,3 +176,100 @@ abline(v = .764, col = "black", lwd=3, lty=2)
 write_tsv(data_long, file = "data_long_allAbundance.tsv")
 
 
+
+
+
+############################ CoverM Input Abundance Stacked Bar Plot ##########################################
+
+#read in coverm input
+coverm<-read.delim(file = "Input/SFBMAGS-vs-Reads-CoverM.tsv")
+
+colnames(coverm) = gsub("_filter.METAGENOME.fastq.gz.Relative.Abundance....", "", colnames(coverm))
+
+#transform from wide to long
+coverm_long <- melt(coverm, id = c("Genome")) 
+
+#rename variable column to Site
+coverm_long<-rename(coverm_long, "Site" = "variable")
+
+#clean up Site names
+coverm_long <- coverm_long %>% separate(Site, c("Month", "Site"), 
+                                      sep= "_USGS_")
+coverm_long$Month<-gsub("SF_*", "", coverm_long$Month)
+coverm_long$Month<-gsub("12|11", "", coverm_long$Month)
+coverm_long$Month<-gsub("Jul", "July", coverm_long$Month)
+coverm_long$Month<-gsub("_sed", "", coverm_long$Month)
+
+#make a site column with full site name
+coverm_long$SiteFull <- paste0(coverm_long$Site, "_", coverm_long$Month)
+
+#drop unmapped
+coverm_long<-coverm_long[!grepl("unmapped", coverm_long$Genome),]
+
+#set order of x axis 
+coverm_long$SiteFull <- factor(coverm_long$SiteFull, levels=c("4_1_July", "4_1_Oct", "4_1_Jan", "4_1_May",
+                                                    "8_1_July", "8_1_Oct", "8_1_Jan", "8_1_May",
+                                                    "13_July", "13_Oct", "13_Jan", "13_May",
+                                                    "21_July", "21_Oct", "21_Jan", "21_May",
+                                                    "24_July", "24_Oct", "24_Jan", "24_May")) 
+
+#vlookup to add taxonomy
+coverm_long <- data_gtdbv2.1 %>%
+  dplyr::select("Bin", "Taxa") %>%
+  right_join(coverm_long, by = c("Bin" = "Genome"))
+
+#set order of x axis 
+coverm_long$Site <- factor(coverm_long$Site, levels=c("4_1", "8_1", "13", "21", "24"))
+
+############################# sum abundance by site and taxonomy
+coverm_long_5p <- coverm_long %>%
+  group_by(Taxa, SiteFull, Site) %>% #grouping taxa together for the same site
+  #filter(value >= quantile(value, .95)) #take values top 95th percentile of each group (in group_by)
+  #.95 to .90 for top 10%
+  summarise(value=sum(value)) %>% #summing the group
+  ungroup() %>% #don't group by Taxa anymore
+  group_by(SiteFull) %>% #now group by site
+  arrange(desc(value)) %>%
+  mutate(rank=row_number()) %>% #make a new variable called rank where rank values
+  filter(rank <= 5) #CHANGE THIS NUMBER TO GET TOP X OF COMMUNITY
+
+coverm_long_10p <- coverm_long %>%
+  group_by(Taxa, SiteFull, Site) %>% #grouping taxa together for the same site
+  #filter(value >= quantile(value, .95)) #take values top 95th percentile of each group (in group_by)
+  #.95 to .90 for top 10%
+  summarise(value=sum(value)) %>% #summing the group
+  ungroup() %>% #don't group by Taxa anymore
+  group_by(SiteFull) %>% #now group by site
+  arrange(desc(value)) %>%
+  mutate(rank=row_number()) %>% #make a new variable called rank where rank values
+  filter(rank <= 10) #CHANGE THIS NUMBER TO GET TOP X OF COMMUNITY
+
+############################# plot
+
+n <- 30
+qual_col_pals = brewer.pal.info[brewer.pal.info$category == 'qual',]
+col_vector = unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+pie(rep(1,n), col=sample(col_vector, n))
+
+plot <- coverm_long_5p %>%
+  ggplot(aes(x = SiteFull, y = as.numeric(value), fill = Taxa)) + 
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = col_vector) +
+  labs(x = "Site", y = "CoverM Percent Relative Abundance") +
+  guides(fill=guide_legend(override.aes = list(size=3))) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5),
+        panel.background = element_blank()) +
+  scale_y_continuous(expand = c(0, 0)) +
+  ggtitle("CoverM five most abundant SFB taxa per site") + #Change for top X grabbed
+  facet_grid(.~Site, scales = "free")
+plot
+
+
+ggsave("Output/CoverM_Abundance_Top5perSite_GTDBv2.1_facet.pdf", plot, width = 8, dpi = 500)
+ggsave("Output/CoverM_Abundance_Top5perSite_GTDBv2.1_facet.png", plot, width = 10, height = 5, dpi = 500)
+
+ggsave("Output/CoverM_Abundance_Top10perSite_GTDBv2.1_facet.pdf", plot, width = 8, dpi = 500)
+ggsave("Output/CoverM_Abundance_Top10perSite_GTDBv2.1_facet.png", plot, width = 10, height = 5, dpi = 500)
+
+
