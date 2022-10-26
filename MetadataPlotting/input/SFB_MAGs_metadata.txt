@@ -1,0 +1,640 @@
+MAG	GTDB	37mark	CheckM_Comp	CheckM_Cont	GenomeSize_MB	Abundance_CoverM
+8_1_May_SF_Bin13	d__Archaea;p__Asgardarchaeota;c__Heimdallarchaeia;o__UBA460;f__Kariarchaeaceae;g__;s__	Heimdallarchaeota	72.74	9	3.732	0.035
+8_1_Jan_SF_Bin58	d__Archaea;p__Asgardarchaeota;c__Heimdallarchaeia;o__UBA460;f__Kariarchaeaceae;g__LC-2;s__	Heimdallarchaeota	92.52	4.52	4.386	0.022
+4_1_July_SF_Bin37	d__Archaea;p__Asgardarchaeota;c__Thorarchaeia;o__Thorarchaeales;f__Thorarchaeaceae;g__MP8T-1;s__	Thorarchaeota	91.88	4.21	3.043	0.040
+8_1_Jan_SF_Bin79	d__Archaea;p__Hadarchaeota;c__Hadarchaeia;o__Hadarchaeales;f__Hadarchaeaceae;g__DG-33;s__	Hadesarchaea	80.8	4	1.061	0.024
+8_1_Oct_SF_Bin37	d__Archaea;p__Hadarchaeota;c__Hadarchaeia;o__Hadarchaeales;f__Hadarchaeaceae;g__DG-33;s__	Hadesarchaea	84.8	4.04	1.163	0.026
+13_Jan_SF_Bin36	d__Archaea;p__Nanoarchaeota;c__Nanoarchaeia;o__Pacearchaeales;f__GW2011-AR1;g__JAGVXH01;s__	Pacearchaeota	58.8	3.74	0.588	0.027
+4_1_July_SF_Bin26	d__Archaea;p__Thermoplasmatota;c__Thermoplasmata;o__UBA10834;f__DTMW01;g__DTMW01;s__	Thermoplasmata	83.9	1.6	1.452	0.031
+13_Jan_SF_Bin61	d__Archaea;p__Thermoplasmatota;c__Thermoplasmata;o__UBA10834;f__UBA10834;g__UBA10834;s__	Thermoplasmata	98.4	2.8	1.932	0.040
+8_1_Oct_SF_Bin93	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__;g__;s__	Bathyarchaeota	89.32	9.21	1.697	0.042
+8_1_Jan_SF_Bin81	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__B26-1;g__;s__	Bathyarchaeota	74.8	8.55	2.672	0.023
+8_1_Oct_SF_Bin36	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__B26-1;g__;s__	Bathyarchaeota	82.87	7.14	3.298	0.027
+8_1_Oct_SF_Bin87	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__B26-1;g__PIYB01;s__	Bathyarchaeota	60.6	3.16	1.252	0.025
+8_1_Jan_SF_Bin48	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__;s__	Bathyarchaeota	91.28	3.97	2.225	0.028
+8_1_Jan_SF_Bin52	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__;s__	Bathyarchaeota	85.21	9.35	1.759	0.031
+8_1_Jan_SF_Bin74	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__;s__	Bathyarchaeota	89.72	7.01	1.554	0.078
+8_1_July_SF_Bin33	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__;s__	Bathyarchaeota	70.39	2.91	0.841	0.060
+8_1_Oct_SF_Bin29	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__;s__	Bathyarchaeota	88.79	8.41	2.121	0.028
+8_1_Oct_SF_Bin35	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__;s__	Bathyarchaeota	78.04	4.67	1.477	0.073
+8_1_Oct_SF_Bin81	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__;s__	Bathyarchaeota	65.73	8.41	1.788	0.028
+8_1_Oct_SF_Bin41	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__BIN-L-1;s__	Bathyarchaeota	57.48	6.65	1.362	0.063
+4_1_July_SF_Bin41	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__Kmv02;s__	Bathyarchaeota	52.69	1.25	0.637	0.100
+8_1_Jan_SF_Bin55	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__Kmv02;s__	Bathyarchaeota	70.25	6.53	1.701	0.107
+8_1_Jan_SF_Bin71	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__Kmv02;s__	Bathyarchaeota	76.64	5.61	1.267	0.120
+8_1_July_SF_Bin73	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__Kmv02;s__	Bathyarchaeota	80.96	6.85	1.372	0.125
+8_1_May_SF_Bin8	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__Kmv02;s__	Bathyarchaeota	87.47	7.79	1.556	0.137
+8_1_Oct_SF_Bin52	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__Kmv02;s__	Bathyarchaeota	79.29	4.85	1.279	0.122
+8_1_Oct_SF_Bin53	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__Kmv02;s__	Bathyarchaeota	68.22	7.55	1.57	0.106
+8_1_Jan_SF_Bin101	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__SOJZ01;s__	Bathyarchaeota	77.67	5.49	2.032	0.058
+8_1_Oct_SF_Bin103	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__BA1;g__SOJZ01;s__	Bathyarchaeota	72.59	5.99	1.284	0.053
+8_1_Jan_SF_Bin46	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__SOJC01;g__;s__	Bathyarchaeota	94.39	5.14	1.729	0.032
+8_1_July_SF_Bin42	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__SOJC01;g__;s__	Bathyarchaeota	91.12	4.67	1.585	0.029
+8_1_Oct_SF_Bin100	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__SOJC01;g__;s__	Bathyarchaeota	52.46	6.37	0.661	0.030
+8_1_Jan_SF_Bin32	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__UBA233;g__;s__	Bathyarchaeota	91.59	8.41	2.293	0.081
+8_1_Jan_SF_Bin50	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__UBA233;g__;s__	Bathyarchaeota	58.1	1.87	0.915	0.034
+8_1_Jan_SF_Bin96	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__UBA233;g__;s__	Bathyarchaeota	100	3.74	2.203	0.021
+8_1_Oct_SF_Bin62	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__UBA233;g__;s__	Bathyarchaeota	92.92	5.92	2.143	0.067
+8_1_Oct_SF_Bin71	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__UBA233;g__;s__	Bathyarchaeota	75.23	5.14	1.232	0.041
+8_1_Oct_SF_Bin85	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__UBA233;g__;s__	Bathyarchaeota	62.22	9.18	1.217	0.124
+8_1_Oct_SF_Bin96	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__B26-1;f__UBA233;g__;s__	Bathyarchaeota	95.9	2.88	1.976	0.018
+8_1_Oct_SF_Bin80	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__RBG-16-48-13;f__;g__;s__	Bathyarchaeota	70.87	6.54	1.629	0.030
+8_1_Jan_SF_Bin12	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__TCS64;f__TCS64;g__;s__	Bathyarchaeota	67.4	8.25	2.049	0.069
+8_1_Oct_SF_Bin84	d__Archaea;p__Thermoproteota;c__Bathyarchaeia;o__TCS64;f__TCS64;g__;s__	Bathyarchaeota	76.1	7.48	2.066	0.078
+8_1_Jan_SF_Bin36	d__Archaea;p__Thermoproteota;c__Nitrososphaeria_A;o__Caldarchaeales;f__;g__;s__	Aigarchaeota	81.72	5.41	1.592	0.026
+8_1_Oct_SF_Bin33	d__Archaea;p__Thermoproteota;c__Nitrososphaeria_A;o__Caldarchaeales;f__;g__;s__	Aigarchaeota	82.69	6.8	1.59	0.028
+13_July_SF_Bin39	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__JACEMX01;s__	Thaumarchaeota; Nitrosopumilus	94.17	2.91	1.582	0.048
+13_May_SF_Bin54	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__JACEMX01;s__	Thaumarchaeota; Nitrosopumilus	95.15	1.46	1.763	0.054
+21_Jan_SF_Bin36	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__JACEMX01;s__	Thaumarchaeota; Nitrosopumilus	90.78	8.74	1.736	0.075
+21_May_SF_Bin40	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__JACEMX01;s__	Thaumarchaeota; Nitrosopumilus	66.59	1.94	1.238	0.059
+21_Jan_SF_Bin31	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__JACEMX01;s__	Thaumarchaeota; Nitrosopumilus	76.7	0.97	1.298	0.063
+21_Jan_SF_Bin51	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__JACEMX01;s__	Thaumarchaeota; Nitrosopumilus	71.84	0.97	1.39	0.056
+13_July_SF_Bin33	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosarchaeum_A;s__	Thaumarchaeota; Nitrosopumilus	95.63	1.94	1.68	0.072
+13_May_SF_Bin47	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosarchaeum_A;s__	Thaumarchaeota; Nitrosopumilus	85.31	2.91	1.273	0.057
+13_Jan_SF_Bin40	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	89.81	7.12	1.986	0.107
+13_Jan_SF_Bin52	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	75.73	0	1.152	0.127
+13_Jan_SF_Bin63	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	73.3	9.71	1.368	0.248
+13_May_SF_Bin26	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	80.58	5.9	1.513	0.103
+13_May_SF_Bin67	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	95.15	5.83	2.128	0.087
+13_May_SF_Bin89	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	100	0.97	1.812	0.130
+13_Oct_SF_Bin27	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	79.61	0.97	1.508	0.111
+21_Jan_SF_Bin27	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	87.06	5.83	1.561	0.218
+21_Jan_SF_Bin57	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	66.67	1.46	1.087	0.334
+21_July_SF_Bin24	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	89.73	9.95	2.051	0.139
+21_July_SF_Bin26	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	85.44	4.69	1.419	0.415
+21_May_SF_Bin28	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	68.5	2.91	1.497	0.439
+21_May_SF_Bin41	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	91.3	2.91	1.641	0.198
+21_Oct_SF_Bin16	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	94.59	4.85	2.147	0.203
+21_Oct_SF_Bin25	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	55.08	1.29	1.283	0.385
+21_Oct_SF_Bin27	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	93.2	2.91	1.478	0.413
+8_1_Jan_SF_Bin59	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	56.8	0	0.596	0.181
+8_1_Jan_SF_Bin66	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	100	7.77	1.655	0.108
+8_1_Jan_SF_Bin67	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	85.76	4.37	1.885	0.113
+8_1_July_SF_Bin35	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	100	0.97	1.807	0.125
+8_1_July_SF_Bin59	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	98.06	2.83	1.587	0.250
+8_1_May_SF_Bin10	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	71.2	4.85	1.319	0.082
+8_1_May_SF_Bin9	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	80.26	1.05	1.318	0.056
+13_July_SF_Bin28	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	87.38	1.94	1.947	0.076
+13_July_SF_Bin30	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	66.5	0	1.334	0.107
+13_May_SF_Bin55	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	57.28	1.94	0.78	0.073
+21_July_SF_Bin12	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	94.17	0.32	1.745	0.201
+8_1_Jan_SF_Bin45	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	60.19	0	1.109	0.047
+8_1_Oct_SF_Bin45	d__Archaea;p__Thermoproteota;c__Nitrososphaeria;o__Nitrososphaerales;f__Nitrosopumilaceae;g__Nitrosopumilus;s__	Thaumarchaeota; Nitrosopumilus	78.73	0.8	1.066	0.090
+4_1_July_SF_Bin33	d__Bacteria;p__Acidobacteriota;c__Aminicenantia;o__Aminicenantales;f__Aminicenantaceae;g__;s__	Aminicenantes	94.51	9.33	4.298	0.022
+8_1_Jan_SF_Bin35	d__Bacteria;p__Acidobacteriota;c__Aminicenantia;o__Aminicenantales;f__Aminicenantaceae;g__;s__	Aminicenantes	82.24	7.26	3.929	0.020
+8_1_Oct_SF_Bin67	d__Bacteria;p__Acidobacteriota;c__Aminicenantia;o__Aminicenantales;f__Aminicenantaceae;g__;s__	Aminicenantes	72.42	8.76	3.558	0.020
+4_1_July_SF_Bin54	d__Bacteria;p__Acidobacteriota;c__Aminicenantia;o__Aminicenantales;f__Aminicenantaceae;g__SOIA01;s__	Aminicenantes	53.99	0.85	1.483	0.025
+8_1_Jan_SF_Bin49	d__Bacteria;p__Acidobacteriota;c__Aminicenantia;o__Aminicenantales;f__Aminicenantaceae;g__SOIA01;s__	Aminicenantes	92.14	5.13	3.511	0.032
+8_1_Oct_SF_Bin32	d__Bacteria;p__Acidobacteriota;c__Aminicenantia;o__Aminicenantales;f__Aminicenantaceae;g__SOIA01;s__	Aminicenantes	90.37	6.05	3.495	0.032
+4_1_July_SF_Bin30	d__Bacteria;p__Acidobacteriota;c__Aminicenantia;o__Aminicenantales;f__RBG-16-66-30;g__;s__	Aminicenantes	80.43	6.15	3.18	0.036
+4_1_July_SF_Bin61	d__Bacteria;p__Acidobacteriota;c__Aminicenantia;o__Aminicenantales;f__UBA8522;g__UBA8522;s__	Aminicenantes	54.02	3.09	3.079	0.035
+8_1_Jan_SF_Bin62	d__Bacteria;p__Acidobacteriota;c__B3-B38;o__B3-B38;f__B3-B38;g__Guanabacterium;s__	Aminicenantes	75.64	3.89	2.125	0.034
+8_1_Oct_SF_Bin20	d__Bacteria;p__Acidobacteriota;c__B3-B38;o__B3-B38;f__B3-B38;g__Guanabacterium;s__	Aminicenantes	77.78	1.28	2.231	0.034
+13_July_SF_Bin26	d__Bacteria;p__Acidobacteriota;c__Blastocatellia;o__Pyrinomonadales;f__Pyrinomonadaceae;g__QQUY01;s__	Acidobacteria	70.01	1.12	3.349	0.022
+13_May_SF_Bin9	d__Bacteria;p__Acidobacteriota;c__Blastocatellia;o__Pyrinomonadales;f__Pyrinomonadaceae;g__QQUY01;s__	Acidobacteria	83.28	1.76	3.537	0.023
+13_May_SF_Bin61	d__Bacteria;p__Acidobacteriota;c__Mor1;o__J045;f__J045;g__;s__	Acidobacteria	70.75	6.27	3.171	0.066
+21_Jan_SF_Bin44	d__Bacteria;p__Acidobacteriota;c__Mor1;o__Mor1;f__Mor1;g__;s__	Acidobacteria	98.12	2.99	4.185	0.039
+21_May_SF_Bin2	d__Bacteria;p__Acidobacteriota;c__Mor1;o__Mor1;f__Mor1;g__;s__	Acidobacteria	82.66	0.9	3.445	0.033
+21_May_SF_Bin25	d__Bacteria;p__Acidobacteriota;c__Thermoanaerobaculia;o__Thermoanaerobaculales;f__FEB-10;g__JACXWA01;s__	Acidobacteria	89.74	8.44	4.531	0.117
+13_July_SF_Bin37	d__Bacteria;p__Acidobacteriota;c__Thermoanaerobaculia;o__UBA5704;f__UBA5704;g__;s__	Acidobacteria	78.99	2.14	3.672	0.063
+13_May_SF_Bin12	d__Bacteria;p__Acidobacteriota;c__Thermoanaerobaculia;o__UBA5704;f__UBA5704;g__;s__	Acidobacteria	69.82	0.85	2.692	0.055
+13_May_SF_Bin86	d__Bacteria;p__Acidobacteriota;c__Thermoanaerobaculia;o__UBA5704;f__UBA5704;g__;s__	Acidobacteria	94.82	1.28	4.492	0.074
+21_Jan_SF_Bin62	d__Bacteria;p__Acidobacteriota;c__Thermoanaerobaculia;o__UBA5704;f__UBA5704;g__;s__	Acidobacteria	88.49	4.34	3.386	0.045
+4_1_Jan_SF_Bin21	d__Bacteria;p__Acidobacteriota;c__Vicinamibacteria;o__Vicinamibacterales;f__UBA2999;g__VFZN01;s__	Acidobacteria	54.39	8.33	4.346	0.065
+21_Jan_SF_Bin67	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__;g__;s__	Actinobacteria	94.18	6.41	3.969	0.055
+4_1_Jan_SF_Bin58	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__CAIXPF01;g__WHTX01;s__	Actinobacteria	90.3	8.4	5.417	0.075
+21_Jan_SF_Bin53	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__SHLQ01;g__;s__	Actinobacteria	70.26	6.22	3.563	0.055
+4_1_May_SF_Bin69	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__SHLQ01;g__;s__	Actinobacteria	66.12	1.87	2.852	0.045
+4_1_Jan_SF_Bin55	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__SHLQ01;g__JABDJW01;s__	Actinobacteria	94.87	1.38	4.062	0.057
+13_May_SF_Bin57	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__SZUA-35;g__CADEDH01;s__	Actinobacteria	94.02	4.7	5.042	0.061
+13_May_SF_Bin62	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__SZUA-35;g__CADEDH01;s__	Actinobacteria	72.03	2.56	3.926	0.051
+21_Jan_SF_Bin50	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__SZUA-35;g__CADEDH01;s__	Actinobacteria	89.74	5.56	6.353	0.050
+4_1_Jan_SF_Bin24	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__SZUA-35;g__CADEDH01;s__	Actinobacteria	65.8	6.84	3.66	0.035
+4_1_May_SF_Bin1	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__SZUA-35;g__CADEDH01;s__	Actinobacteria	76.54	3.85	4.391	0.046
+4_1_May_SF_Bin50	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__SZUA-35;g__CADEDH01;s__	Actinobacteria	80.44	3.21	3.907	0.037
+4_1_Oct_SF_Bin2	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__SZUA-35;g__CADEDH01;s__	Actinobacteria	70.62	3.85	3.482	0.035
+8_1_July_SF_Bin52	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__Acidimicrobiales;f__SZUA-35;g__CADEDH01;s__	Actinobacteria	60.45	5.9	3.137	0.038
+13_July_SF_Bin48	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__;g__;s__	Actinobacteria	53.7	2.71	1.475	0.043
+13_May_SF_Bin73	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__;g__;s__	Actinobacteria	85.64	4.04	2.24	0.051
+21_Jan_SF_Bin8	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__;g__;s__	Actinobacteria	79.06	5.98	2.214	0.050
+4_1_Jan_SF_Bin7	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__;g__;s__	Actinobacteria	85.16	2.71	4.087	0.037
+4_1_May_SF_Bin47	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__;g__;s__	Actinobacteria	83.76	2.71	3.982	0.037
+4_1_Oct_SF_Bin17	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__;g__;s__	Actinobacteria	70.23	3.16	3.125	0.033
+13_May_SF_Bin59	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__JAENVV01;g__;s__	Actinobacteria	75.69	6.41	3.049	0.047
+8_1_Jan_SF_Bin34	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__JAENVV01;g__;s__	Actinobacteria	72.19	3.94	2.533	0.054
+13_May_SF_Bin24	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__JAENVV01;g__JAENVV01;s__	Actinobacteria	53.41	3.73	1.706	0.025
+8_1_Jan_SF_Bin73	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__JAENVV01;g__JAENVV01;s__	Actinobacteria	88.03	4.27	2.923	0.030
+8_1_July_SF_Bin47	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__JAENVV01;g__JAENVV01;s__	Actinobacteria	96.58	4.7	3.083	0.028
+13_May_SF_Bin87	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__S012-128;g__;s__	Actinobacteria	51.76	1.28	1.292	0.065
+21_Jan_SF_Bin35	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__SHLN01;g__;s__	Actinobacteria	79.06	3.42	2.143	0.046
+13_May_SF_Bin97	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__SHLN01;g__SHLN01;s__	Actinobacteria	75.93	9.4	2.529	0.065
+13_May_SF_Bin8	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__SZUA-232;g__;s__	Actinobacteria	55.56	2.99	2.303	0.037
+13_July_SF_Bin43	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__UBA4744;g__UBA4744;s__	Actinobacteria	94.02	6.51	2.936	0.050
+13_May_SF_Bin27	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__UBA4744;g__UBA4744;s__	Actinobacteria	92.74	2.14	3.081	0.055
+8_1_July_SF_Bin7	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__UBA4744;g__UBA4744;s__	Actinobacteria	51.72	7.53	1.811	0.045
+13_May_SF_Bin46	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__ZC4RG35;g__;s__	Actinobacteria	85	9.4	3.591	0.051
+13_July_SF_Bin34	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__ZC4RG35;g__MA-ANB-1;s__	Actinobacteria	65.22	2.74	1.957	0.031
+13_May_SF_Bin37	d__Bacteria;p__Actinobacteriota;c__Acidimicrobiia;o__UBA5794;f__ZC4RG35;g__MA-ANB-1;s__	Actinobacteria	60.4	1.36	1.706	0.029
+24_May_SF_Bin5	d__Bacteria;p__Actinobacteriota;c__Actinomycetia;o__Nanopelagicales;f__;g__;s__	Actinobacteria	54.36	0.99	1.693	0.076
+4_1_Jan_SF_Bin59	d__Bacteria;p__Actinobacteriota;c__Actinomycetia;o__Nanopelagicales;f__;g__;s__	Actinobacteria	72.47	3.19	2.19	0.049
+4_1_May_SF_Bin62	d__Bacteria;p__Actinobacteriota;c__Actinomycetia;o__Nanopelagicales;f__;g__;s__	Actinobacteria	64.48	1.02	1.807	0.044
+4_1_Oct_SF_Bin19	d__Bacteria;p__Actinobacteriota;c__Actinomycetia;o__Nanopelagicales;f__;g__;s__	Actinobacteria	71.52	0.24	1.862	0.047
+24_Oct_SF_Bin4	d__Bacteria;p__Actinobacteriota;c__Actinomycetia;o__Nanopelagicales;f__GCA-2699445;g__;s__	Actinobacteria	52.83	5.84	2.123	0.075
+4_1_July_SF_Bin14	d__Bacteria;p__Actinobacteriota;c__Coriobacteriia;o__OPB41;f__JAENZW01;g__JAENZW01;s__	Actinobacteria; Coriobacteriaceae	88.33	3.61	1.949	0.029
+4_1_Jan_SF_Bin61	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Gaiellales;f__Gaiellaceae;g__;s__	Actinobacteria; Thermoleophilia	80.32	1.95	2.699	0.059
+4_1_May_SF_Bin52	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Gaiellales;f__Gaiellaceae;g__Gaiella;s__	Actinobacteria; Thermoleophilia	68.36	1.72	2.203	0.055
+4_1_Oct_SF_Bin32	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Gaiellales;f__Gaiellaceae;g__Gaiella;s__	Actinobacteria; Thermoleophilia	61.01	2.82	2.151	0.053
+4_1_Jan_SF_Bin18	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Gaiellales;f__Gaiellaceae;g__GMQP-bins7;s__	Actinobacteria; Thermoleophilia	93.03	3.02	2.551	0.035
+4_1_May_SF_Bin55	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Gaiellales;f__Gaiellaceae;g__GMQP-bins7;s__	Actinobacteria; Thermoleophilia	93.1	2.16	2.591	0.036
+4_1_Oct_SF_Bin14	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Gaiellales;f__Gaiellaceae;g__GMQP-bins7;s__	Actinobacteria; Thermoleophilia	88.22	1.87	2.46	0.034
+21_Jan_SF_Bin72	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Miltoncostaeales;f__;g__;s__	Actinobacteria	62.21	0.43	1.66	0.036
+13_May_SF_Bin35	d__Bacteria;p__Actinobacteriota;c__Thermoleophilia;o__Miltoncostaeales;f__Miltoncostaeaceae;g__;s__	Actinobacteria	87.13	7.18	2.506	0.047
+4_1_Jan_SF_Bin49	d__Bacteria;p__Actinobacteriota;c__UBA4738;o__UBA4738;f__HRBIN12;g__AC-51;s__	Actinobacteria	85.14	0.85	2.632	0.035
+4_1_May_SF_Bin66	d__Bacteria;p__Actinobacteriota;c__UBA4738;o__UBA4738;f__HRBIN12;g__AC-51;s__	Actinobacteria	80.48	1.88	2.451	0.033
+4_1_Oct_SF_Bin20	d__Bacteria;p__Actinobacteriota;c__UBA4738;o__UBA4738;f__HRBIN12;g__AC-51;s__	Actinobacteria	79.2	2.14	2.461	0.034
+4_1_July_SF_Bin29	d__Bacteria;p__Armatimonadota;c__CAIYQO01;o__WVXJ01;f__;g__;s__	Armatimonadota	54.2	8.62	1.387	0.041
+13_May_SF_Bin4	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__Saprospiraceae;g__;s__	Bacteroidetes	76.51	2.52	4.667	0.026
+21_Jan_SF_Bin4	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Chitinophagales;f__Saprospiraceae;g__;s__	Bacteroidetes	80.62	7.5	4.936	0.018
+21_Jan_SF_Bin48	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Cytophagales;f__Cyclobacteriaceae;g__;s__	Bacteroidetes	88.39	3.46	4.177	0.019
+8_1_Jan_SF_Bin4	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Cytophagales;f__Cyclobacteriaceae;g__;s__	Bacteroidetes	81.64	6.29	4.055	0.028
+8_1_Jan_SF_Bin40	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Cytophagales;f__Cyclobacteriaceae;g__;s__	Bacteroidetes	89.19	4.29	3.428	0.038
+8_1_Jan_SF_Bin42	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Cytophagales;f__Cyclobacteriaceae;g__;s__	Bacteroidetes	92.54	6.89	4.751	0.031
+8_1_Jan_SF_Bin89	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Cytophagales;f__Cyclobacteriaceae;g__;s__	Bacteroidetes	84.73	4.96	2.853	0.028
+8_1_Oct_SF_Bin109	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Cytophagales;f__Cyclobacteriaceae;g__;s__	Bacteroidetes	63.38	9.9	3.036	0.036
+8_1_Oct_SF_Bin11	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Cytophagales;f__Cyclobacteriaceae;g__;s__	Bacteroidetes	53.91	2.81	2.066	0.026
+8_1_Oct_SF_Bin14	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Cytophagales;f__Cyclobacteriaceae;g__;s__	Bacteroidetes	81.47	4.02	3.032	0.024
+4_1_Jan_SF_Bin44	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Cytophagales;f__Cyclobacteriaceae;g__Chryseolinea;s__	Bacteroidetes	99.7	1.88	5.097	0.033
+4_1_May_SF_Bin10	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Cytophagales;f__Cyclobacteriaceae;g__Chryseolinea;s__	Bacteroidetes	97.62	4.61	4.965	0.032
+4_1_Oct_SF_Bin41	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Cytophagales;f__Cyclobacteriaceae;g__Chryseolinea;s__	Bacteroidetes	98.79	2.33	5.09	0.033
+4_1_Jan_SF_Bin36	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Cytophagales;f__Cyclobacteriaceae;g__UBA2336;s__	Bacteroidetes	55.27	8.96	1.896	0.039
+8_1_Jan_SF_Bin6	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Flavobacteriales;f__Flavobacteriaceae;g__Aureibaculum;s__	Bacteroidetes	81.06	5.87	2.918	0.043
+21_Jan_SF_Bin56	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Flavobacteriales;f__Flavobacteriaceae;g__HDS-28;s__	Bacteroidetes	90.29	3.6	2.706	0.036
+21_May_SF_Bin10	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Flavobacteriales;f__Flavobacteriaceae;g__HDS-28;s__	Bacteroidetes	52.33	0.4	1.591	0.026
+13_Jan_SF_Bin5	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Flavobacteriales;f__Flavobacteriaceae;g__JAGXRT01;s__	Bacteroidetes	58.14	6.8	1.235	0.037
+13_Jan_SF_Bin2	d__Bacteria;p__Bacteroidota;c__Bacteroidia;o__Flavobacteriales;f__Flavobacteriaceae;g__QNYL01;s__	Bacteroidetes	76.28	9.14	2.636	0.066
+13_May_SF_Bin21	d__Bacteria;p__Bacteroidota;c__Ignavibacteria;o__Ignavibacteriales;f__Ignavibacteriaceae;g__IGN2;s__	Ignavibacteriae	73.52	3.63	2.486	0.052
+4_1_Jan_SF_Bin14	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__;g__;s__	Ignavibacteriae	90.11	4.12	2.762	0.038
+13_May_SF_Bin23	d__Bacteria;p__Bacteroidota;c__UBA10030;o__UBA10030;f__UBA6906;g__;s__	Ignavibacteriae	53.41	1.37	2.155	0.028
+8_1_Oct_SF_Bin17	d__Bacteria;p__Bdellovibrionota;c__Bacteriovoracia;o__Bacteriovoracales;f__Bacteriovoracaceae;g__;s__	Proteobacteria; Oligoflexia	62.24	0	1.736	0.026
+8_1_Jan_SF_Bin51	d__Bacteria;p__Campylobacterota;c__Campylobacteria;o__Campylobacterales;f__Sulfurimonadaceae;g__;s__	Proteobacteria; Epsilonproteobacteria	65.11	3.05	1.512	0.038
+21_Jan_SF_Bin5	d__Bacteria;p__Chloroflexota;c__Anaerolineae;o__4572-78;f__J111;g__J095;s__	Chloroflexi; Ardenticatenia	50.07	2.73	2.923	0.051
+24_May_SF_Bin27	d__Bacteria;p__Chloroflexota;c__Anaerolineae;o__Anaerolineales;f__UBA11579;g__;s__	Chloroflexi	69.09	5.1	2.433	0.044
+8_1_July_SF_Bin50	d__Bacteria;p__Chloroflexota;c__Anaerolineae;o__Anaerolineales;f__UBA11579;g__;s__	Chloroflexi	71.62	5.18	3.133	0.029
+8_1_Oct_SF_Bin13	d__Bacteria;p__Chloroflexota;c__Anaerolineae;o__Anaerolineales;f__UBA11579;g__JABJGH01;s__	Chloroflexi	65.7	0.99	2.435	0.051
+4_1_July_SF_Bin1	d__Bacteria;p__Chloroflexota;c__Anaerolineae;o__E26-bin7;f__E26-bin7;g__E26-bin7;s__	Chloroflexi	60.27	8.73	3.738	0.096
+4_1_July_SF_Bin35	d__Bacteria;p__Chloroflexota;c__Anaerolineae;o__UBA7937;f__B3-Chlor;g__B3-Chlor;s__	Chloroflexi	62.48	8.97	2.482	0.041
+8_1_Oct_SF_Bin42	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__Dehalococcoidales;f__E44-bin88;g__;s__	Chloroflexi	76.9	6.44	1.73	0.066
+8_1_Jan_SF_Bin41	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__GIF9;f__AB-539-J10;g__20-14-all-45-10;s__	Chloroflexi	77.93	7.89	1.501	0.035
+8_1_Oct_SF_Bin82	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__GIF9;f__AB-539-J10;g__20-14-all-45-10;s__	Chloroflexi	50.77	5.94	0.913	0.032
+4_1_Jan_SF_Bin38	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__GIF9;f__AB-539-J10;g__RBG-13-51-36;s__	Chloroflexi	73.1	2.57	1.399	0.074
+4_1_July_SF_Bin57	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__GIF9;f__AB-539-J10;g__RBG-13-51-36;s__	Chloroflexi	86.11	1.49	1.61	0.072
+4_1_July_SF_Bin62	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__GIF9;f__AB-539-J10;g__RBG-13-51-36;s__	Chloroflexi	82.84	5.06	1.652	0.079
+4_1_May_SF_Bin14	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__GIF9;f__AB-539-J10;g__RBG-13-51-36;s__	Chloroflexi	56.07	2.64	1.297	0.065
+4_1_May_SF_Bin29	d__Bacteria;p__Chloroflexota;c__Dehalococcoidia;o__GIF9;f__AB-539-J10;g__RBG-13-51-36;s__	Chloroflexi	71.31	1.77	1.283	0.070
+4_1_Jan_SF_Bin57	d__Bacteria;p__Chloroflexota;c__Limnocylindria;o__Limnocylindrales;f__CSP1-4;g__SPCO01;s__	Chloroflexi	69.65	2.78	2.503	0.065
+4_1_Oct_SF_Bin45	d__Bacteria;p__Chloroflexota;c__Limnocylindria;o__Limnocylindrales;f__CSP1-4;g__SPCO01;s__	Chloroflexi	64.32	3.24	2.444	0.064
+4_1_May_SF_Bin54	d__Bacteria;p__Chloroflexota;c__Limnocylindria;o__QHBO01;f__QHBO01;g__;s__	Chloroflexi	90.11	3.06	1.879	0.065
+13_July_SF_Bin2	d__Bacteria;p__Desulfobacterota_B;c__Binatia;o__UBA9968;f__UBA9968;g__;s__	Proteobacteria; Deltaproteobacteria	61.54	3.55	4.061	0.026
+13_May_SF_Bin19	d__Bacteria;p__Desulfobacterota_E;c__MBNT15;o__J040;f__J040;g__WVXK01;s__	Proteobacteria; Deltaproteobacteria	58.21	5.46	1.357	0.028
+13_July_SF_Bin10	d__Bacteria;p__Desulfobacterota_E;c__MBNT15;o__MBNT15;f__MBNT15;g__CSP1-8;s__	Proteobacteria; Deltaproteobacteria	55.7	3.5	1.767	0.109
+13_May_SF_Bin101	d__Bacteria;p__Desulfobacterota_E;c__MBNT15;o__MBNT15;f__MBNT15;g__CSP1-8;s__	Proteobacteria; Deltaproteobacteria	74.73	7.4	2.044	0.135
+21_May_SF_Bin32	d__Bacteria;p__Desulfobacterota;c__Desulfobacteria;o__Desulfobacterales;f__;g__;s__	Proteobacteria; Deltaproteobacteria	55.03	6.58	3.459	0.152
+24_Jan_SF_Bin12	d__Bacteria;p__Desulfobacterota;c__Desulfobacteria;o__Desulfobacterales;f__;g__;s__	Proteobacteria; Deltaproteobacteria	62.07	7.9	4.191	0.160
+24_Jan_SF_Bin10	d__Bacteria;p__Desulfobacterota;c__Desulfobacteria;o__Desulfobacterales;f__SG8-13;g__;s__	Proteobacteria; Deltaproteobacteria	51.07	2.53	3.621	0.126
+24_Oct_SF_Bin38	d__Bacteria;p__Desulfobacterota;c__Desulfobacteria;o__Desulfobacterales;f__SURF-15;g__;s__	Proteobacteria; Deltaproteobacteria	50.85	8.84	3.155	0.124
+13_Jan_SF_Bin31	d__Bacteria;p__Desulfobacterota;c__Desulfobacteria;o__Desulfobacterales;f__UBA11574;g__JAAXQD01;s__	Proteobacteria; Deltaproteobacteria	53.82	3.87	1.858	0.071
+13_Oct_SF_Bin29	d__Bacteria;p__Desulfobacterota;c__Desulfobacteria;o__Desulfobacterales;f__UBA11574;g__JAAXQD01;s__	Proteobacteria; Deltaproteobacteria	76.74	6.62	2.672	0.087
+4_1_July_SF_Bin60	d__Bacteria;p__Desulfobacterota;c__Desulfobacteria;o__Desulfobacterales;f__UBA11574;g__UBA11574;s__	Proteobacteria; Deltaproteobacteria	89.21	5.53	3.459	0.098
+13_Jan_SF_Bin38	d__Bacteria;p__Desulfobacterota;c__Desulfobacteria;o__Desulfobacterales;f__UBA11574;g__UBA11574;s__UBA11574 sp002868985	Proteobacteria; Deltaproteobacteria	81.62	4.68	3.469	0.046
+13_Oct_SF_Bin32	d__Bacteria;p__Desulfobacterota;c__Desulfobacteria;o__Desulfobacterales;f__UBA11574;g__UBA11574;s__UBA11574 sp002868985	Proteobacteria; Deltaproteobacteria	96.13	3.87	4.655	0.055
+21_July_SF_Bin1	d__Bacteria;p__Desulfobacterota;c__Desulfobacteria;o__Desulfobacterales;f__UBA11574;g__UBA11574;s__UBA11574 sp002868985	Proteobacteria; Deltaproteobacteria	94.84	2.58	4.553	0.085
+21_May_SF_Bin9	d__Bacteria;p__Desulfobacterota;c__Desulfobacteria;o__Desulfobacterales;f__UBA11574;g__UBA11574;s__UBA11574 sp002868985	Proteobacteria; Deltaproteobacteria	92.58	4.84	4.536	0.060
+21_Oct_SF_Bin17	d__Bacteria;p__Desulfobacterota;c__Desulfobacteria;o__Desulfobacterales;f__UBA11574;g__UBA11574;s__UBA11574 sp002868985	Proteobacteria; Deltaproteobacteria	97.74	4.84	4.095	0.053
+24_Jan_SF_Bin13	d__Bacteria;p__Desulfobacterota;c__Desulfobacteria;o__Desulfobacterales;f__UBA11574;g__UBA11574;s__UBA11574 sp002868985	Proteobacteria; Deltaproteobacteria	64.16	3.35	2.566	0.051
+24_May_SF_Bin33	d__Bacteria;p__Desulfobacterota;c__Desulfobacteria;o__Desulfobacterales;f__UBA11574;g__UBA11574;s__UBA11574 sp002868985	Proteobacteria; Deltaproteobacteria	67.03	2.69	2.682	0.052
+21_Oct_SF_Bin14	d__Bacteria;p__Desulfobacterota;c__Desulfobacteria;o__Desulfobacterales;f__UBA2174_A;g__;s__	Proteobacteria; Deltaproteobacteria	52.11	6.8	4.203	0.189
+13_Jan_SF_Bin30	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__BM004;g__BM004;s__BM004 sp002868955	Proteobacteria; Deltaproteobacteria	82.26	1.41	2.04	0.065
+13_Oct_SF_Bin33	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__BM004;g__BM004;s__BM004 sp002868955	Proteobacteria; Deltaproteobacteria	91.37	2.86	2.588	0.072
+21_July_SF_Bin2	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__BM004;g__BM004;s__BM004 sp002868955	Proteobacteria; Deltaproteobacteria	62.1	2.03	1.691	0.064
+21_May_SF_Bin30	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__BM004;g__BM004;s__BM004 sp002868955	Proteobacteria; Deltaproteobacteria	93.06	1.34	2.713	0.074
+21_Oct_SF_Bin18	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__BM004;g__BM004;s__BM004 sp002868955	Proteobacteria; Deltaproteobacteria	83.31	3.17	2.274	0.066
+24_Jan_SF_Bin20	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__BM004;g__BM004;s__BM004 sp002868955	Proteobacteria; Deltaproteobacteria	71.26	2.41	1.712	0.064
+24_Oct_SF_Bin27	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__BM004;g__BM004;s__BM004 sp002868955	Proteobacteria; Deltaproteobacteria	80.92	0.51	1.822	0.064
+13_Jan_SF_Bin8	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__BM004;g__BM004;s__BM004 sp012974315	Proteobacteria; Deltaproteobacteria	78.22	4.34	2.175	0.146
+13_Jan_SF_Bin12	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__Desulfobulbaceae;g__;s__	Proteobacteria; Deltaproteobacteria	89.85	8.53	3.225	0.037
+13_Jan_SF_Bin14	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__Desulfobulbaceae;g__;s__	Proteobacteria; Deltaproteobacteria	89.1	2.68	4.009	0.024
+4_1_May_SF_Bin4	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__Desulfobulbaceae;g__;s__	Proteobacteria; Deltaproteobacteria	75.55	1.19	3.098	0.027
+8_1_July_SF_Bin20	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__Desulfurivibrionaceae;g__DUZU01;s__DUZU01 sp013349285	Proteobacteria; Deltaproteobacteria	98.4	0.36	3.629	0.070
+4_1_May_SF_Bin58	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__Desulfurivibrionaceae;g__UBA2262;s__UBA2262 sp013349295	Proteobacteria; Deltaproteobacteria	96.96	1.19	3.112	0.042
+13_Jan_SF_Bin49	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__Desulfurivibrionaceae;g__UBA5123;s__	Proteobacteria; Deltaproteobacteria	55.9	8.77	1.999	0.044
+13_Jan_SF_Bin54	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__Desulfurivibrionaceae;g__UBA5123;s__	Proteobacteria; Deltaproteobacteria	54.72	3.79	1.387	0.026
+4_1_May_SF_Bin57	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__Desulfurivibrionaceae;g__UBA5123;s__	Proteobacteria; Deltaproteobacteria	90.48	2.81	2.738	0.071
+4_1_May_SF_Bin9	d__Bacteria;p__Desulfobacterota;c__Desulfobulbia;o__Desulfobulbales;f__Desulfurivibrionaceae;g__UBA5123;s__	Proteobacteria; Deltaproteobacteria	73.15	2.08	2.376	0.039
+24_Oct_SF_Bin20	d__Bacteria;p__Desulfobacterota;c__Desulfuromonadia;o__Desulfuromonadales;f__BM103;g__;s__	Proteobacteria; Deltaproteobacteria	67.41	1.94	2.367	0.026
+24_Oct_SF_Bin31	d__Bacteria;p__Desulfobacterota;c__Desulfuromonadia;o__Desulfuromonadales;f__BM103;g__;s__	Proteobacteria; Deltaproteobacteria	70.01	2.65	2.537	0.074
+13_Jan_SF_Bin1	d__Bacteria;p__Desulfobacterota;c__Desulfuromonadia;o__Desulfuromonadales;f__BM103;g__M0040;s__	Proteobacteria; Deltaproteobacteria	60	3.77	1.591	0.081
+13_Oct_SF_Bin5	d__Bacteria;p__Desulfobacterota;c__Desulfuromonadia;o__Desulfuromonadales;f__BM103;g__M0040;s__	Proteobacteria; Deltaproteobacteria	57.86	1.31	1.843	0.129
+21_May_SF_Bin22	d__Bacteria;p__Desulfobacterota;c__Desulfuromonadia;o__Desulfuromonadales;f__BM103;g__M0040;s__	Proteobacteria; Deltaproteobacteria	79.83	3.39	3.1	0.136
+24_July_SF_Bin1	d__Bacteria;p__Desulfobacterota;c__Desulfuromonadia;o__Desulfuromonadales;f__BM103;g__M0040;s__	Proteobacteria; Deltaproteobacteria	62.26	1	2.802	0.120
+24_May_SF_Bin4	d__Bacteria;p__Desulfobacterota;c__Desulfuromonadia;o__Desulfuromonadales;f__BM103;g__M0040;s__	Proteobacteria; Deltaproteobacteria	55.16	1	2.037	0.123
+24_Oct_SF_Bin9	d__Bacteria;p__Desulfobacterota;c__Desulfuromonadia;o__Desulfuromonadales;f__BM103;g__M0040;s__	Proteobacteria; Deltaproteobacteria	88.51	4.22	3.449	0.152
+4_1_July_SF_Bin43	d__Bacteria;p__Desulfobacterota;c__GWC2-55-46;o__GWC2-55-46;f__DRQE01;g__;s__	Proteobacteria; Deltaproteobacteria	94.19	0.65	2.143	0.027
+24_May_SF_Bin10	d__Bacteria;p__Desulfobacterota;c__JADFVX01;o__JADFVX01;f__;g__;s__	Proteobacteria; Deltaproteobacteria	97.42	0.65	4.816	0.041
+4_1_July_SF_Bin55	d__Bacteria;p__Desulfobacterota;c__SM23-61;o__SM23-61;f__SM23-61;g__JAHJQK01;s__	Proteobacteria; Deltaproteobacteria	80	2.12	4.567	0.056
+13_Oct_SF_Bin15	d__Bacteria;p__Desulfobacterota;c__Syntrophobacteria;o__BM002;f__BM002;g__BM002;s__BM002 sp002899795	Proteobacteria; Deltaproteobacteria	96	7.33	5.147	0.089
+21_July_SF_Bin16	d__Bacteria;p__Desulfobacterota;c__Syntrophobacteria;o__BM002;f__BM002;g__BM002;s__BM002 sp002899795	Proteobacteria; Deltaproteobacteria	68.96	4.25	2.716	0.071
+21_May_SF_Bin20	d__Bacteria;p__Desulfobacterota;c__Syntrophobacteria;o__BM002;f__BM002;g__BM002;s__BM002 sp002899795	Proteobacteria; Deltaproteobacteria	87.74	4.28	3.395	0.076
+21_Oct_SF_Bin24	d__Bacteria;p__Desulfobacterota;c__Syntrophobacteria;o__BM002;f__BM002;g__BM002;s__BM002 sp002899795	Proteobacteria; Deltaproteobacteria	76.45	6.16	3.5	0.078
+24_Jan_SF_Bin17	d__Bacteria;p__Desulfobacterota;c__Syntrophobacteria;o__BM002;f__BM002;g__BM002;s__BM002 sp002899795	Proteobacteria; Deltaproteobacteria	92.85	5.18	4.358	0.087
+24_July_SF_Bin12	d__Bacteria;p__Desulfobacterota;c__Syntrophobacteria;o__BM002;f__BM002;g__BM002;s__BM002 sp002899795	Proteobacteria; Deltaproteobacteria	93.66	1.31	3.691	0.077
+24_May_SF_Bin32	d__Bacteria;p__Desulfobacterota;c__Syntrophobacteria;o__BM002;f__BM002;g__BM002;s__BM002 sp002899795	Proteobacteria; Deltaproteobacteria	85.33	7.78	3.197	0.073
+24_Oct_SF_Bin1	d__Bacteria;p__Desulfobacterota;c__Syntrophobacteria;o__BM002;f__BM002;g__BM002;s__BM002 sp002899795	Proteobacteria; Deltaproteobacteria	82.53	5.52	3.681	0.076
+4_1_May_SF_Bin68	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__Gemmatimonadaceae;g__PNKF01;s__	Gemmatimonadetes	79.23	1.65	2.737	0.082
+13_May_SF_Bin78	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__GWC2-71-9;g__;s__	Gemmatimonadetes	87.42	3.3	3.491	0.074
+4_1_Jan_SF_Bin35	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__GWC2-71-9;g__;s__	Gemmatimonadetes	73.43	2.9	3.749	0.036
+4_1_Jan_SF_Bin65	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__GWC2-71-9;g__;s__	Gemmatimonadetes	82.5	4.46	2.845	0.046
+4_1_May_SF_Bin31	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__GWC2-71-9;g__;s__	Gemmatimonadetes	58.62	3.95	2.175	0.039
+4_1_May_SF_Bin51	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__GWC2-71-9;g__;s__	Gemmatimonadetes	52.77	1.2	2.783	0.032
+4_1_Oct_SF_Bin18	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__GWC2-71-9;g__;s__	Gemmatimonadetes	76.12	2.7	2.658	0.041
+4_1_Oct_SF_Bin44	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__GWC2-71-9;g__;s__	Gemmatimonadetes	73.63	5.59	3.707	0.037
+8_1_May_SF_Bin5	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__GWC2-71-9;g__;s__	Gemmatimonadetes	57.47	5	1.747	0.034
+8_1_Oct_SF_Bin91	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__GWC2-71-9;g__;s__	Gemmatimonadetes	76.56	5.59	2.533	0.024
+4_1_Oct_SF_Bin21	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__GWC2-71-9;g__SZUA-320;s__	Gemmatimonadetes	59.35	4.9	1.702	0.071
+13_Jan_SF_Bin53	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__GWC2-71-9;g__WVYX01;s__	Gemmatimonadetes	92.21	2.2	3.588	0.038
+13_July_SF_Bin32	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__GWC2-71-9;g__WVYX01;s__	Gemmatimonadetes	97.8	2.2	3.784	0.039
+13_May_SF_Bin58	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__GWC2-71-9;g__WVYX01;s__	Gemmatimonadetes	98.9	2.2	3.684	0.038
+13_May_SF_Bin79	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__GWC2-71-9;g__WVYX01;s__	Gemmatimonadetes	87.36	6.04	4.249	0.055
+13_Oct_SF_Bin3	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__GWC2-71-9;g__WVYX01;s__	Gemmatimonadetes	88.51	1.46	3.461	0.037
+8_1_July_SF_Bin36	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Gemmatimonadales;f__GWC2-71-9;g__WVYX01;s__	Gemmatimonadetes	93.41	3.95	3.627	0.038
+21_Jan_SF_Bin74	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__KS3-K002;f__JABDQB01;g__;s__	Gemmatimonadetes	74.14	0	3.851	0.038
+13_July_SF_Bin57	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__KS3-K002;f__JABDQB01;g__JAENXO01;s__	Gemmatimonadetes	54.96	1.75	1.432	0.035
+13_May_SF_Bin66	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__KS3-K002;f__JABDQB01;g__JAENXO01;s__	Gemmatimonadetes	80.7	5.07	2.1	0.045
+13_May_SF_Bin3	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Longimicrobiales;f__UBA6960;g__;s__	Gemmatimonadetes	59.9	1.65	3.4	0.035
+8_1_Oct_SF_Bin61	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Longimicrobiales;f__UBA6960;g__;s__	Gemmatimonadetes	96.64	3.3	3.943	0.045
+8_1_July_SF_Bin64	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Longimicrobiales;f__UBA6960;g__SZUA-318;s__	Gemmatimonadetes	62.39	2.2	2.844	0.035
+13_May_SF_Bin45	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Longimicrobiales;f__UBA6960;g__UBA2589;s__	Gemmatimonadetes	85.81	6.17	3.621	0.059
+13_July_SF_Bin5	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Longimicrobiales;f__UBA6960;g__UBA2982;s__	Gemmatimonadetes	78.79	9.41	3.457	0.046
+13_May_SF_Bin31	d__Bacteria;p__Gemmatimonadota;c__Gemmatimonadetes;o__Longimicrobiales;f__UBA6960;g__UBA2982;s__	Gemmatimonadetes	92.18	2.2	3.903	0.060
+13_May_SF_Bin18	d__Bacteria;p__Krumholzibacteriota;c__Krumholzibacteria;o__WVZY01;f__;g__;s__	Delphibacteria	83.45	2.45	3.677	0.034
+13_May_SF_Bin48	d__Bacteria;p__Krumholzibacteriota;c__Krumholzibacteria;o__WVZY01;f__;g__;s__	Delphibacteria	83.12	6.61	2.833	0.056
+4_1_Jan_SF_Bin19	d__Bacteria;p__Krumholzibacteriota;c__Krumholzibacteria;o__WVZY01;f__;g__;s__	Delphibacteria	97.2	3.3	3.765	0.053
+4_1_May_SF_Bin56	d__Bacteria;p__Krumholzibacteriota;c__Krumholzibacteria;o__WVZY01;f__;g__;s__	Delphibacteria	100	3.3	3.734	0.053
+4_1_Oct_SF_Bin54	d__Bacteria;p__Krumholzibacteriota;c__Krumholzibacteria;o__WVZY01;f__;g__;s__	Delphibacteria	100	3.3	3.798	0.053
+8_1_July_SF_Bin8	d__Bacteria;p__Krumholzibacteriota;c__Krumholzibacteria;o__WVZY01;f__;g__;s__	Delphibacteria	55.49	1.1	1.805	0.043
+13_May_SF_Bin102	d__Bacteria;p__Myxococcota_A;c__UBA9160;o__UBA9160;f__SMWR01;g__;s__	Proteobacteria; Deltaproteobacteria	90.97	4.56	4.144	0.124
+13_May_SF_Bin90	d__Bacteria;p__Myxococcota_A;c__UBA9160;o__UBA9160;f__SMWR01;g__;s__	Proteobacteria; Deltaproteobacteria	85.07	1.61	3.33	0.061
+4_1_Oct_SF_Bin12	d__Bacteria;p__Myxococcota_A;c__UBA9160;o__UBA9160;f__SMWR01;g__;s__	Proteobacteria; Deltaproteobacteria	72.17	1.29	2.95	0.059
+8_1_July_SF_Bin58	d__Bacteria;p__Myxococcota_A;c__UBA9160;o__UBA9160;f__SMWR01;g__;s__	Proteobacteria; Deltaproteobacteria	83.55	3.11	3.428	0.068
+21_Jan_SF_Bin49	d__Bacteria;p__Myxococcota_A;c__UBA9160;o__UBA9160;f__UBA6930;g__;s__	Proteobacteria; Deltaproteobacteria	50.49	1.75	3.22	0.052
+8_1_Oct_SF_Bin19	d__Bacteria;p__Myxococcota;c__Polyangia;o__Polyangiales;f__JAFGIB01;g__;s__	Proteobacteria; Deltaproteobacteria	97.42	6.13	8.162	0.056
+13_July_SF_Bin27	d__Bacteria;p__Myxococcota;c__Polyangia;o__Polyangiales;f__SG8-38;g__;s__	Proteobacteria; Deltaproteobacteria	94.95	3.46	4.167	0.042
+13_May_SF_Bin32	d__Bacteria;p__Myxococcota;c__Polyangia;o__Polyangiales;f__SG8-38;g__;s__	Proteobacteria; Deltaproteobacteria	95.27	1.94	4.195	0.042
+21_Jan_SF_Bin46	d__Bacteria;p__Myxococcota;c__Polyangia;o__Polyangiales;f__SG8-38;g__;s__	Proteobacteria; Deltaproteobacteria	94.41	2.58	4.227	0.039
+21_Jan_SF_Bin73	d__Bacteria;p__Myxococcota;c__Polyangia;o__Polyangiales;f__SG8-38;g__;s__	Proteobacteria; Deltaproteobacteria	66.93	6.4	3.41	0.038
+21_Oct_SF_Bin11	d__Bacteria;p__Myxococcota;c__Polyangia;o__Polyangiales;f__SG8-38;g__;s__	Proteobacteria; Deltaproteobacteria	78.12	3.94	3.7	0.034
+8_1_July_SF_Bin41	d__Bacteria;p__Myxococcota;c__Polyangia;o__Polyangiales;f__SG8-38;g__;s__	Proteobacteria; Deltaproteobacteria	60.37	2.87	4.047	0.037
+21_Jan_SF_Bin28	d__Bacteria;p__Myxococcota;c__Polyangia;o__Polyangiales;f__SG8-38;g__SG8-38;s__	Proteobacteria; Deltaproteobacteria	93.98	4.84	4.286	0.091
+21_May_SF_Bin23	d__Bacteria;p__Myxococcota;c__Polyangia;o__Polyangiales;f__SG8-38;g__SG8-38;s__	Proteobacteria; Deltaproteobacteria	51.6	0.07	2.334	0.141
+4_1_May_SF_Bin28	d__Bacteria;p__Myxococcota;c__Polyangia;o__Polyangiales;f__SG8-38;g__SG8-38;s__	Proteobacteria; Deltaproteobacteria	63.84	3.22	2.424	0.069
+13_May_SF_Bin42	d__Bacteria;p__Nitrospinota;c__Nitrospinia;o__Nitrospinales;f__Nitrospinaceae;g__SZUA-226;s__	Nitrospinae	65.33	6.84	1.677	0.105
+8_1_Jan_SF_Bin86	d__Bacteria;p__Nitrospinota;c__Nitrospinia;o__Nitrospinales;f__Nitrospinaceae;g__SZUA-226;s__	Nitrospinae	78.1	2.9	2.166	0.175
+8_1_Oct_SF_Bin69	d__Bacteria;p__Nitrospinota;c__Nitrospinia;o__Nitrospinales;f__Nitrospinaceae;g__SZUA-226;s__	Nitrospinae	96.34	6.41	3.205	0.074
+8_1_Oct_SF_Bin83	d__Bacteria;p__Nitrospinota;c__Nitrospinia;o__Nitrospinales;f__Nitrospinaceae;g__SZUA-226;s__	Nitrospinae	59.96	0.05	1.484	0.151
+8_1_July_SF_Bin34	d__Bacteria;p__Nitrospinota;c__UBA7883;o__JACRGQ01;f__;g__;s__	Nitrospinae	97.72	7.08	2.822	0.037
+4_1_July_SF_Bin3	d__Bacteria;p__Nitrospinota;c__UBA7883;o__UBA7883;f__UBA7883;g__;s__	Nitrospinae	57.23	5.17	2.84	0.072
+8_1_Jan_SF_Bin9	d__Bacteria;p__Nitrospinota;c__UBA7883;o__UBA7883;f__UBA7883;g__;s__	Nitrospinae	74.78	4.02	2.369	0.030
+8_1_July_SF_Bin48	d__Bacteria;p__Nitrospinota;c__UBA7883;o__UBA7883;f__UBA7883;g__;s__	Nitrospinae	90.95	2.78	3.086	0.030
+8_1_May_SF_Bin11	d__Bacteria;p__Nitrospinota;c__UBA7883;o__UBA7883;f__UBA7883;g__;s__	Nitrospinae	93.59	4.49	3.254	0.190
+8_1_May_SF_Bin17	d__Bacteria;p__Nitrospinota;c__UBA7883;o__UBA7883;f__UBA7883;g__;s__	Nitrospinae	83.46	6.24	2.739	0.027
+8_1_Oct_SF_Bin59	d__Bacteria;p__Nitrospinota;c__UBA7883;o__UBA7883;f__UBA7883;g__;s__	Nitrospinae	91.03	2.74	3.035	0.037
+4_1_Jan_SF_Bin16	d__Bacteria;p__Nitrospirota;c__;o__;f__;g__;s__	Nitrospirae	96.08	8.64	2.776	0.030
+4_1_July_SF_Bin45	d__Bacteria;p__Nitrospirota;c__JACRHL01;o__JACRHL01;f__JACRHL01;g__;s__	Nitrospirae	99.24	0	2.563	0.087
+8_1_July_SF_Bin21	d__Bacteria;p__Nitrospirota;c__JACRHL01;o__JACRHL01;f__JACRHL01;g__;s__	Nitrospirae	98.64	1.36	2.958	0.054
+4_1_Jan_SF_Bin27	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	95.85	2.83	3.885	0.128
+4_1_Jan_SF_Bin42	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	91.99	6.01	3.501	0.061
+4_1_Jan_SF_Bin53	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	86.16	3.94	3.594	0.102
+4_1_July_SF_Bin50	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	92.22	3.74	3.357	0.060
+4_1_May_SF_Bin36	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	85.17	2.73	3.506	0.100
+4_1_May_SF_Bin53	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	89.03	1.92	3.331	0.058
+4_1_Oct_SF_Bin23	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	94.03	3.96	4.201	0.135
+4_1_Oct_SF_Bin30	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	94.03	8.96	3.526	0.060
+4_1_Oct_SF_Bin9	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	77.99	1.94	2.38	0.081
+8_1_July_SF_Bin45	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	95.55	2.83	3.727	0.046
+8_1_Oct_SF_Bin54	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	96.76	6.09	4.145	0.037
+8_1_Oct_SF_Bin63	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	82.22	8.97	3.062	0.067
+4_1_Jan_SF_Bin41	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	94.44	3.03	3.574	0.042
+4_1_Jan_SF_Bin51	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	81.34	2.32	2.177	0.083
+4_1_July_SF_Bin51	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	81.37	4.95	2.22	0.099
+4_1_July_SF_Bin53	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	95.85	2.83	4.206	0.138
+4_1_May_SF_Bin38	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	60.65	5.56	1.938	0.113
+4_1_May_SF_Bin59	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	96.76	2.83	4.123	0.133
+4_1_May_SF_Bin6	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	86.52	5.74	2.877	0.091
+4_1_May_SF_Bin63	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	94.44	2.78	3.657	0.043
+4_1_Oct_SF_Bin26	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	78.2	2.73	2.781	0.039
+4_1_Oct_SF_Bin52	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	86.08	4.12	3.612	0.100
+8_1_July_SF_Bin71	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	72.71	6.65	2.1	0.097
+8_1_May_SF_Bin16	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	61.81	7.78	2.887	0.187
+8_1_Oct_SF_Bin26	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Nitrospira_F;s__	Nitrospirae	84.41	5.56	3.376	0.049
+4_1_July_SF_Bin24	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__Nitrospiraceae;g__Palsa-1315;s__	Nitrospirae	74.18	3.94	3.009	0.035
+13_July_SF_Bin24	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__UBA8639;g__UBA8639;s__	Nitrospirae	59.81	0	2.885	0.070
+21_July_SF_Bin14	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__UBA8639;g__UBA8639;s__	Nitrospirae	55.91	9.86	2.715	0.158
+4_1_Jan_SF_Bin63	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__UBA8639;g__UBA8639;s__	Nitrospirae	90.8	9.18	3.389	0.038
+4_1_May_SF_Bin33	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__UBA8639;g__UBA8639;s__	Nitrospirae	90.8	7.73	3.458	0.037
+4_1_Oct_SF_Bin11	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__UBA8639;g__UBA8639;s__	Nitrospirae	59.43	3.41	1.798	0.029
+8_1_Jan_SF_Bin68	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__UBA8639;g__UBA8639;s__	Nitrospirae	90.93	9.02	3.678	0.076
+8_1_July_SF_Bin60	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__UBA8639;g__UBA8639;s__	Nitrospirae	70.69	0.91	3.07	0.113
+8_1_July_SF_Bin61	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__UBA8639;g__UBA8639;s__	Nitrospirae	71.05	7.27	3.022	0.043
+8_1_July_SF_Bin63	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__UBA8639;g__UBA8639;s__	Nitrospirae	82.44	7.92	3.446	0.068
+8_1_Oct_SF_Bin49	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__UBA8639;g__UBA8639;s__	Nitrospirae	76.84	0.91	2.783	0.065
+8_1_Oct_SF_Bin74	d__Bacteria;p__Nitrospirota;c__Nitrospiria;o__Nitrospirales;f__UBA8639;g__UBA8639;s__	Nitrospirae	80.55	4.6	3.219	0.066
+8_1_Jan_SF_Bin13	d__Bacteria;p__Nitrospirota;c__Thermodesulfovibrionia;o__Thermodesulfovibrionales;f__SM23-35;g__VGWZ01;s__	Nitrospirae	79.56	4.55	2.231	0.024
+8_1_Oct_SF_Bin79	d__Bacteria;p__Nitrospirota;c__Thermodesulfovibrionia;o__Thermodesulfovibrionales;f__SM23-35;g__VGWZ01;s__	Nitrospirae	83.79	4.32	2.16	0.022
+4_1_July_SF_Bin47	d__Bacteria;p__Nitrospirota;c__Thermodesulfovibrionia;o__Thermodesulfovibrionales;f__UBA6898;g__GW-Nitrospira-1;s__	Nitrospirae	89.9	3.64	3.04	0.026
+4_1_Jan_SF_Bin13	d__Bacteria;p__Nitrospirota;c__Thermodesulfovibrionia;o__UBA6902;f__UBA6902;g__;s__	Nitrospirae	63.49	2.73	1.817	0.040
+4_1_July_SF_Bin20	d__Bacteria;p__Nitrospirota;c__UBA9217;o__UBA9217;f__UBA9217;g__;s__	Nitrospirae	98.64	0.3	3.918	0.040
+13_Jan_SF_Bin21	d__Bacteria;p__Patescibacteria;c__Gracilibacteria;o__UBA4473;f__UBA4473;g__;s__	Peregrinibacteria	58.91	2.27	1.028	0.025
+8_1_Oct_SF_Bin107	d__Bacteria;p__Patescibacteria;c__Gracilibacteria;o__UM-FILTER-43-11;f__UM-FILTER-43-11;g__;s__	Peregrinibacteria	60.38	7.65	0.961	0.018
+8_1_July_SF_Bin25	d__Bacteria;p__Patescibacteria;c__Microgenomatia;o__UBA1400;f__PJMF01;g__;s__	Pacebacteria	64.96	2.14	1.083	0.025
+4_1_May_SF_Bin64	d__Bacteria;p__Patescibacteria;c__Paceibacteria;o__Moranbacterales;f__UBA9337;g__;s__	Moranbacteria	72.57	2.57	1.027	0.031
+8_1_Jan_SF_Bin80	d__Bacteria;p__Patescibacteria;c__Paceibacteria;o__UBA9983_A;f__UBA1006;g__;s__	Nomurabacteria	76.15	1.72	0.652	0.027
+4_1_July_SF_Bin64	d__Bacteria;p__Patescibacteria;c__UBA1384;o__UBA1384;f__DTJR01;g__;s__	Berkelbacteria	68.15	0	0.794	0.027
+21_Jan_SF_Bin11	d__Bacteria;p__Planctomycetota;c__Phycisphaerae;o__Phycisphaerales;f__Zrk34;g__;s__	Planctomycetes	65.05	1.24	2.996	0.041
+4_1_July_SF_Bin34	d__Bacteria;p__Planctomycetota;c__Phycisphaerae;o__Sedimentisphaerales;f__Anaerohalosphaeraceae;g__4572-13;s__	Planctomycetes	97.73	0	3.01	0.064
+4_1_July_SF_Bin52	d__Bacteria;p__Planctomycetota;c__Phycisphaerae;o__Sedimentisphaerales;f__SG8-4;g__CS2-K091;s__	Planctomycetes	87.15	3.51	4.834	0.054
+21_Jan_SF_Bin2	d__Bacteria;p__Planctomycetota;c__PLA2;o__PLA2;f__PLA2;g__;s__	Planctomycetes	50.91	7.35	2.836	0.045
+21_Jan_SF_Bin71	d__Bacteria;p__Planctomycetota;c__Planctomycetia;o__Pirellulales;f__UBA7805;g__CS4-C045;s__	Planctomycetes	68.44	0	3.693	0.055
+13_May_SF_Bin40	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Bin65;f__;g__;s__	Proteobacteria; Alphaproteobacteria	88.88	9.45	4.825	0.061
+21_Jan_SF_Bin24	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Geminicoccales;f__Geminicoccaceae;g__CADEGR01;s__	Proteobacteria; Alphaproteobacteria	84.78	7.31	6.904	0.042
+13_May_SF_Bin81	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Kiloniellales;f__J153;g__;s__	Proteobacteria; Alphaproteobacteria	87.02	7.72	4.617	0.086
+21_Jan_SF_Bin10	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Kiloniellales;f__J153;g__;s__	Proteobacteria; Alphaproteobacteria	91.68	4.65	4.792	0.041
+21_May_SF_Bin33	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Kiloniellales;f__J153;g__;s__	Proteobacteria; Alphaproteobacteria	62.64	1.3	3.083	0.038
+24_Jan_SF_Bin23	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Kiloniellales;f__J153;g__;s__	Proteobacteria; Alphaproteobacteria	90.94	5.89	4.895	0.042
+24_July_SF_Bin17	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Kiloniellales;f__J153;g__;s__	Proteobacteria; Alphaproteobacteria	72.77	8.07	4.467	0.040
+24_Oct_SF_Bin19	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Kiloniellales;f__J153;g__;s__	Proteobacteria; Alphaproteobacteria	95.72	4.17	5.358	0.044
+8_1_Oct_SF_Bin23	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Micavibrionales;f__Micavibrionaceae;g__UBA1672;s__	Proteobacteria; Alphaproteobacteria	95.01	1.88	2.15	0.019
+21_Jan_SF_Bin9	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Aestuariivirgaceae;g__JABDJG01;s__	Proteobacteria; Alphaproteobacteria	54.26	1.34	3.225	0.059
+13_July_SF_Bin6	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Afifellaceae;g__;s__	Proteobacteria; Alphaproteobacteria	50.22	3.36	1.67	0.163
+21_Jan_SF_Bin12	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhizobiales;f__Methyloligellaceae;g__;s__	Proteobacteria; Alphaproteobacteria	75.07	9.76	3.315	0.036
+8_1_Jan_SF_Bin88	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodobacterales;f__Rhodobacteraceae;g__Albidovulum;s__	Proteobacteria; Alphaproteobacteria	52.83	1.75	2.227	0.033
+8_1_July_SF_Bin31	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodobacterales;f__Rhodobacteraceae;g__Albidovulum;s__	Proteobacteria; Alphaproteobacteria	80.64	2.64	3.143	0.039
+21_Jan_SF_Bin22	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodobacterales;f__Rhodobacteraceae;g__Limibaculum;s__	Proteobacteria; Alphaproteobacteria	97.5	0.8	4.44	0.061
+8_1_Oct_SF_Bin92	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodobacterales;f__Rhodobacteraceae;g__S012-89;s__	Proteobacteria; Alphaproteobacteria	56.54	2.87	1.893	0.040
+13_May_SF_Bin5	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodobacterales;f__Rhodobacteraceae;g__UBA996;s__	Proteobacteria; Alphaproteobacteria	76	1.42	2.661	0.088
+8_1_Oct_SF_Bin68	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodospirillales;f__2-02-FULL-58-16;g__;s__	Proteobacteria; Alphaproteobacteria	79.53	4.2	2.967	0.032
+13_Jan_SF_Bin10	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodospirillales;f__Magnetovibrionaceae;g__;s__	Proteobacteria; Alphaproteobacteria	55.12	1.27	1.034	0.032
+8_1_Jan_SF_Bin18	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodospirillales;f__Magnetovibrionaceae;g__;s__	Proteobacteria; Alphaproteobacteria	88.06	4.51	2.108	0.042
+8_1_Jan_SF_Bin95	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodospirillales;f__Magnetovibrionaceae;g__;s__	Proteobacteria; Alphaproteobacteria	89.6	6.12	1.865	0.092
+8_1_Oct_SF_Bin8	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rhodospirillales;f__Magnetovibrionaceae;g__;s__	Proteobacteria; Alphaproteobacteria	55.86	7.76	1.612	0.066
+8_1_Oct_SF_Bin90	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__Rickettsiales;f__Anaplasmataceae;g__;s__	Proteobacteria; Alphaproteobacteria	73.11	1.46	0.938	0.034
+13_May_SF_Bin34	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__SMXQ01;f__SMXQ01;g__SMXQ01;s__	Proteobacteria; Alphaproteobacteria	94.35	6.3	4.093	0.066
+21_Jan_SF_Bin60	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__UBA6615;f__UBA6615;g__JABDJY01;s__	Proteobacteria; Alphaproteobacteria	51.09	3.04	2.122	0.047
+13_May_SF_Bin13	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__UBA8366;f__JADFVY01;g__JADFVY01;s__	Proteobacteria; Alphaproteobacteria	87.39	8.3	3.819	0.157
+8_1_Jan_SF_Bin60	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__UBA8366;f__JADFVY01;g__JADFVY01;s__	Proteobacteria; Alphaproteobacteria	69.22	3.82	2.319	0.088
+8_1_July_SF_Bin3	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__UBA8366;f__JADFVY01;g__JADFVY01;s__	Proteobacteria; Alphaproteobacteria	77.88	1.2	3.238	0.100
+21_Jan_SF_Bin55	d__Bacteria;p__Proteobacteria;c__Alphaproteobacteria;o__UBA8366;f__UBA8366;g__WHUA01;s__	Proteobacteria; Alphaproteobacteria	92.9	3.19	4.85	0.057
+21_Jan_SF_Bin47	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Acidiferrobacterales;f__SPGG2;g__SPGG2;s__	Proteobacteria; Gammaproteobacteria	92.38	2.44	4.466	0.030
+13_Jan_SF_Bin62	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Acidiferrobacterales;f__Sulfurifustaceae;g__Sulfuricaulis;s__	Proteobacteria; Gammaproteobacteria	83.18	2.68	1.849	0.033
+13_July_SF_Bin52	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Acidiferrobacterales;f__Sulfurifustaceae;g__Sulfuricaulis;s__	Proteobacteria; Gammaproteobacteria	94.39	2.54	2.37	0.035
+13_May_SF_Bin71	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Acidiferrobacterales;f__Sulfurifustaceae;g__Sulfuricaulis;s__	Proteobacteria; Gammaproteobacteria	95.02	3.56	2.454	0.037
+13_May_SF_Bin88	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Acidiferrobacterales;f__Sulfurifustaceae;g__Sulfuricaulis;s__	Proteobacteria; Gammaproteobacteria	60.92	3.73	1.74	0.052
+13_Oct_SF_Bin7	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Acidiferrobacterales;f__Sulfurifustaceae;g__Sulfuricaulis;s__	Proteobacteria; Gammaproteobacteria	79.71	2.91	1.966	0.040
+8_1_July_SF_Bin13	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Acidiferrobacterales;f__Sulfurifustaceae;g__Sulfuricaulis;s__	Proteobacteria; Gammaproteobacteria	59.06	4.12	1.721	0.053
+8_1_July_SF_Bin39	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Acidiferrobacterales;f__Sulfurifustaceae;g__Sulfuricaulis;s__	Proteobacteria; Gammaproteobacteria	92.44	3.35	2.305	0.035
+8_1_May_SF_Bin19	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Acidiferrobacterales;f__SZUA-150;g__;s__	Proteobacteria; Gammaproteobacteria	68.5	3.3	2.13	0.034
+8_1_Oct_SF_Bin102	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Acidiferrobacterales;f__SZUA-150;g__;s__	Proteobacteria; Gammaproteobacteria	96.95	1.83	2.958	0.068
+4_1_July_SF_Bin12	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Acidiferrobacterales;f__UBA6901;g__UBA6901;s__	Proteobacteria; Gammaproteobacteria	60.24	9.04	1.676	0.049
+8_1_Jan_SF_Bin19	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__AKS1;f__AKS1;g__;s__	Proteobacteria; Gammaproteobacteria	94.82	2.49	2.421	0.082
+8_1_Jan_SF_Bin75	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__AKS1;f__AKS1;g__;s__	Proteobacteria; Gammaproteobacteria	77.43	4.99	1.898	0.034
+8_1_July_SF_Bin70	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__AKS1;f__AKS1;g__;s__	Proteobacteria; Gammaproteobacteria	57.77	1.69	1.294	0.057
+8_1_Oct_SF_Bin104	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__AKS1;f__AKS1;g__;s__	Proteobacteria; Gammaproteobacteria	88.97	5.41	2.206	0.068
+13_July_SF_Bin1	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Arenicellales;f__;g__;s__	Proteobacteria; Gammaproteobacteria	85.79	9.76	5.622	0.030
+13_May_SF_Bin80	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Arenicellales;f__;g__;s__	Proteobacteria; Gammaproteobacteria	96.15	5.89	5.535	0.032
+21_Jan_SF_Bin52	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Arenicellales;f__;g__;s__	Proteobacteria; Gammaproteobacteria	90.82	7.7	5.149	0.028
+13_May_SF_Bin64	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Arenicellales;f__JAANXG01;g__;s__	Proteobacteria; Gammaproteobacteria	64.91	3.69	3.413	0.037
+21_Jan_SF_Bin39	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Arenicellales;f__JAANXG01;g__;s__	Proteobacteria; Gammaproteobacteria	77.69	3.39	3.459	0.027
+21_Jan_SF_Bin54	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Arenicellales;f__RKSH01;g__;s__	Proteobacteria; Gammaproteobacteria	56	1.93	2.61	0.027
+13_Jan_SF_Bin46	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__BM003;f__BM003;g__;s__	Proteobacteria; Gammaproteobacteria	91.91	2.54	2.783	0.066
+21_May_SF_Bin35	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__BM003;f__BM003;g__BM003;s__BM003 sp002868855	Proteobacteria; Gammaproteobacteria	64.13	6.7	2.882	0.053
+24_Jan_SF_Bin9	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__BM003;f__BM003;g__BM003;s__BM003 sp002868855	Proteobacteria; Gammaproteobacteria	69.72	2.83	2.687	0.051
+24_July_SF_Bin15	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__BM003;f__BM003;g__BM003;s__BM003 sp002868855	Proteobacteria; Gammaproteobacteria	69.64	5.6	2.836	0.051
+24_May_SF_Bin28	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__BM003;f__BM003;g__BM003;s__BM003 sp002868855	Proteobacteria; Gammaproteobacteria	54.99	2.98	2.144	0.058
+24_Oct_SF_Bin25	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__BM003;f__BM003;g__BM003;s__BM003 sp002868855	Proteobacteria; Gammaproteobacteria	84.81	6.03	3.311	0.054
+4_1_Jan_SF_Bin64	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__;s__	Proteobacteria; Betaproteobacteria	59.82	2.51	1.732	0.061
+4_1_Oct_SF_Bin51	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__;s__	Proteobacteria; Betaproteobacteria	87.96	3.5	3.027	0.080
+4_1_Jan_SF_Bin33	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__CADEEN01;s__	Proteobacteria; Betaproteobacteria	77.1	2.52	3.304	0.048
+4_1_May_SF_Bin30	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__CADEEN01;s__	Proteobacteria; Betaproteobacteria	91.18	3.31	3.688	0.048
+4_1_Oct_SF_Bin28	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__CADEEN01;s__	Proteobacteria; Betaproteobacteria	88.91	1.99	3.817	0.051
+13_July_SF_Bin36	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__CAIKUF01;s__	Proteobacteria; Betaproteobacteria	81.01	3.25	2.645	0.060
+13_May_SF_Bin38	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__CAIKUF01;s__	Proteobacteria; Betaproteobacteria	68.8	1.28	2.014	0.048
+8_1_Jan_SF_Bin107	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Hylemonella;s__	Proteobacteria; Betaproteobacteria	81.4	6.26	2.623	0.053
+8_1_Oct_SF_Bin56	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Hylemonella;s__	Proteobacteria; Betaproteobacteria	75.96	1.78	2.326	0.050
+8_1_July_SF_Bin24	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__LMDS01;s__	Proteobacteria; Betaproteobacteria	54.2	9.38	3.382	0.087
+4_1_Jan_SF_Bin28	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rubrivivax;s__	Proteobacteria; Betaproteobacteria	72.56	6	3.57	0.076
+4_1_Oct_SF_Bin31	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Burkholderiaceae;g__Rubrivivax;s__	Proteobacteria; Betaproteobacteria	66.34	2.86	2.824	0.070
+4_1_Oct_SF_Bin49	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Casimicrobiaceae;g__CAIWHR01;s__	Proteobacteria; Betaproteobacteria	52.86	7.93	2.358	0.086
+4_1_Jan_SF_Bin8	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Casimicrobiaceae;g__VBCG01;s__	Proteobacteria; Betaproteobacteria	53.27	5.33	2.029	0.066
+4_1_Oct_SF_Bin16	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Casimicrobiaceae;g__VBCG01;s__	Proteobacteria; Betaproteobacteria	91.97	0.43	3.66	0.095
+4_1_July_SF_Bin49	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Gallionellaceae;g__Gallionella;s__	Proteobacteria; Betaproteobacteria	65.86	6.9	1.917	0.079
+4_1_July_SF_Bin6	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Gallionellaceae;g__Gallionella;s__	Proteobacteria; Betaproteobacteria	66.1	2.21	1.734	0.096
+4_1_May_SF_Bin13	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Gallionellaceae;g__Gallionella;s__	Proteobacteria; Betaproteobacteria	50.11	2.91	1.174	0.093
+4_1_May_SF_Bin26	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Gallionellaceae;g__VIKH01;s__	Proteobacteria; Betaproteobacteria	67.89	9.6	1.963	0.057
+8_1_Jan_SF_Bin93	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Nitrosomonadaceae;g__Nitrosomonas;s__	Proteobacteria; Betaproteobacteria	86.95	3.49	2.012	0.039
+8_1_July_SF_Bin37	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Nitrosomonadaceae;g__Nitrosomonas;s__	Proteobacteria; Betaproteobacteria	68.97	1.73	1.748	0.044
+13_May_SF_Bin7	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__SG8-39;g__JAABQT01;s__	Proteobacteria; Betaproteobacteria	90.07	0.78	3.066	0.091
+4_1_Jan_SF_Bin40	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__SG8-39;g__JAABQT01;s__	Proteobacteria; Betaproteobacteria	92.38	1.87	3.265	0.049
+4_1_Jan_SF_Bin54	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__SG8-39;g__JAABQT01;s__	Proteobacteria; Betaproteobacteria	84.33	6.3	3.264	0.069
+4_1_May_SF_Bin49	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__SG8-39;g__JAABQT01;s__	Proteobacteria; Betaproteobacteria	89.91	6.07	3.795	0.072
+4_1_May_SF_Bin65	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__SG8-39;g__JAABQT01;s__	Proteobacteria; Betaproteobacteria	95.98	1.62	3.374	0.050
+4_1_Oct_SF_Bin27	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__SG8-39;g__JAABQT01;s__	Proteobacteria; Betaproteobacteria	95.5	2.05	3.443	0.050
+4_1_Oct_SF_Bin8	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__SG8-39;g__JAABQT01;s__	Proteobacteria; Betaproteobacteria	62.19	2.95	2.117	0.064
+8_1_July_SF_Bin62	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__SG8-39;g__JAABQT01;s__	Proteobacteria; Betaproteobacteria	79.9	8.19	2.876	0.071
+4_1_July_SF_Bin28	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__SG8-39;g__SG8-39;s__	Proteobacteria; Betaproteobacteria	92.73	6.67	3.934	0.082
+8_1_July_SF_Bin32	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__SG8-41;g__;s__	Proteobacteria; Betaproteobacteria	76.58	8.18	3.516	0.065
+4_1_Jan_SF_Bin56	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__SG8-41;g__Ga0077527;s__	Proteobacteria; Betaproteobacteria	94.71	2.39	3.133	0.044
+4_1_May_SF_Bin11	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__SG8-41;g__Ga0077527;s__	Proteobacteria; Betaproteobacteria	62.16	1.18	1.917	0.036
+4_1_Oct_SF_Bin29	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__SG8-41;g__Ga0077527;s__	Proteobacteria; Betaproteobacteria	88.16	1.45	2.756	0.042
+13_July_SF_Bin19	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__SG8-41;g__SG8-41;s__	Proteobacteria; Betaproteobacteria	93.65	2.86	3.929	0.036
+13_May_SF_Bin60	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__SG8-41;g__SG8-41;s__	Proteobacteria; Betaproteobacteria	82.66	2.77	3.553	0.038
+4_1_Oct_SF_Bin40	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Burkholderiales;f__Usitatibacteraceae;g__FEB-7;s__	Proteobacteria; Betaproteobacteria	70.79	4.6	2.666	0.115
+8_1_Jan_SF_Bin77	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Enterobacterales;f__Kangiellaceae;g__;s__	Proteobacteria; Gammaproteobacteria	96.31	4.39	2.864	0.032
+8_1_Oct_SF_Bin101	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Enterobacterales;f__Kangiellaceae;g__;s__	Proteobacteria; Gammaproteobacteria	92.94	2.21	2.931	0.030
+13_July_SF_Bin35	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__GCA-001735895;f__GCA-001735895;g__GCA-001735895;s__	Proteobacteria; Gammaproteobacteria	93.1	5.17	4.35	0.060
+13_July_SF_Bin40	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__GCA-001735895;f__GCA-001735895;g__GCA-001735895;s__	Proteobacteria; Gammaproteobacteria	80.73	5.58	3.687	0.045
+13_May_SF_Bin41	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__GCA-001735895;f__GCA-001735895;g__GCA-001735895;s__	Proteobacteria; Gammaproteobacteria	97.97	7.03	4.425	0.061
+13_May_SF_Bin92	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__GCA-001735895;f__GCA-001735895;g__GCA-001735895;s__	Proteobacteria; Gammaproteobacteria	85.63	7.13	4.112	0.048
+21_Jan_SF_Bin30	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__GCA-001735895;f__GCA-001735895;g__GCA-001735895;s__	Proteobacteria; Gammaproteobacteria	93.02	4.85	3.701	0.085
+21_Jan_SF_Bin37	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__GCA-001735895;f__GCA-001735895;g__GCA-001735895;s__	Proteobacteria; Gammaproteobacteria	95.29	5.43	3.989	0.048
+21_Jan_SF_Bin69	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__GCA-001735895;f__GCA-001735895;g__GCA-001735895;s__	Proteobacteria; Gammaproteobacteria	94.83	8.97	5.122	0.115
+21_Oct_SF_Bin23	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__GCA-001735895;f__GCA-001735895;g__GCA-001735895;s__	Proteobacteria; Gammaproteobacteria	81.68	8.1	3.483	0.042
+8_1_Jan_SF_Bin27	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__GCA-001735895;f__GCA-001735895;g__GCA-001735895;s__	Proteobacteria; Gammaproteobacteria	94.32	6.49	4.151	0.044
+13_May_SF_Bin91	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__GCA-2729495;f__GCA-2729495;g__;s__	Proteobacteria; Gammaproteobacteria	87.03	7.72	4.357	0.060
+24_Oct_SF_Bin10	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__GCA-2729495;f__GCA-2729495;g__GCA-002729875;s__	Proteobacteria; Gammaproteobacteria	71.19	4.36	1.958	0.051
+4_1_Jan_SF_Bin11	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__GCA-2729495;f__GCA-2729495;g__SHZI01;s__	Proteobacteria; Gammaproteobacteria	60.68	3.56	2.165	0.055
+4_1_Oct_SF_Bin38	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__GCA-2729495;f__GCA-2729495;g__SHZI01;s__	Proteobacteria; Gammaproteobacteria	51.69	5.8	1.925	0.071
+4_1_Oct_SF_Bin4	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__GCA-2729495;f__GCA-2729495;g__SHZI01;s__	Proteobacteria; Gammaproteobacteria	61.86	7.79	2.525	0.059
+13_May_SF_Bin75	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Granulosicoccales;f__;g__;s__	Proteobacteria; Gammaproteobacteria	50.74	5.15	2.477	0.035
+21_Jan_SF_Bin59	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Granulosicoccales;f__;g__;s__	Proteobacteria; Gammaproteobacteria	89.41	7.22	4.329	0.036
+13_July_SF_Bin55	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__HK1;f__HK1;g__;s__	Proteobacteria; Gammaproteobacteria	73.98	7.52	3.834	0.041
+13_May_SF_Bin72	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__HK1;f__HK1;g__;s__	Proteobacteria; Gammaproteobacteria	63.79	6.9	4.191	0.042
+8_1_Jan_SF_Bin17	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__JABURT01;f__JABURT01;g__JABURT01;s__	Proteobacteria; Gammaproteobacteria	87.61	4.5	3.032	0.027
+8_1_Jan_SF_Bin3_1	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__JABURT01;f__JABURT01;g__JABURT01;s__	Proteobacteria; Gammaproteobacteria	62.24	6.38	2.645	0.044
+8_1_Jan_SF_Bin31	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Nitrosococcales;f__Methylophagaceae;g__GCA-002733105;s__	Proteobacteria; Gammaproteobacteria	81.03	3.45	1.935	0.023
+8_1_Oct_SF_Bin105	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Nitrosococcales;f__Methylophagaceae;g__GCA-002733105;s__	Proteobacteria; Gammaproteobacteria	73.37	1.37	1.372	0.018
+24_Oct_SF_Bin23	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Pseudomonadales;f__Halieaceae;g__Halioglobus;s__	Proteobacteria; Gammaproteobacteria	54.73	7.52	3.788	0.115
+4_1_Jan_SF_Bin4	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Pseudomonadales;f__Halieaceae;g__Halioglobus;s__	Proteobacteria; Gammaproteobacteria	86.94	5.48	3.772	0.082
+4_1_Oct_SF_Bin34	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Pseudomonadales;f__Halieaceae;g__Halioglobus;s__	Proteobacteria; Gammaproteobacteria	73.17	3.34	2.732	0.070
+21_Jan_SF_Bin40	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Pseudomonadales;f__HTCC2089;g__;s__	Proteobacteria; Gammaproteobacteria	74.11	5.95	4.447	0.056
+8_1_Oct_SF_Bin66	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Pseudomonadales;f__HTCC2089;g__;s__	Proteobacteria; Gammaproteobacteria	50.44	5.4	1.875	0.019
+13_Jan_SF_Bin23	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__S140-43;f__S140-43;g__;s__	Proteobacteria; Gammaproteobacteria	70.69	2.79	2.702	0.026
+4_1_July_SF_Bin9	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__S140-43;f__S140-43;g__;s__	Proteobacteria; Gammaproteobacteria	78.77	2.82	3.035	0.022
+4_1_May_SF_Bin75	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__S140-43;f__S140-43;g__;s__	Proteobacteria; Gammaproteobacteria	96.34	1.46	2.895	0.032
+8_1_Jan_SF_Bin1	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__S140-43;f__S140-43;g__;s__	Proteobacteria; Gammaproteobacteria	59.91	9.32	3.316	0.035
+8_1_Jan_SF_Bin100	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__S140-43;f__S140-43;g__;s__	Proteobacteria; Gammaproteobacteria	70.15	9.19	3.318	0.021
+8_1_Jan_SF_Bin103	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__S140-43;f__S140-43;g__;s__	Proteobacteria; Gammaproteobacteria	97.95	4.98	5.272	0.020
+8_1_Jan_SF_Bin33	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__S140-43;f__S140-43;g__;s__	Proteobacteria; Gammaproteobacteria	63.37	3.14	2.298	0.017
+8_1_July_SF_Bin55	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__S140-43;f__S140-43;g__;s__	Proteobacteria; Gammaproteobacteria	99.18	3.99	4.967	0.039
+8_1_Oct_SF_Bin3	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__S140-43;f__S140-43;g__;s__	Proteobacteria; Gammaproteobacteria	93.57	2.33	4.893	0.019
+8_1_Oct_SF_Bin47	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__S140-43;f__S140-43;g__;s__	Proteobacteria; Gammaproteobacteria	92.88	3.83	3.656	0.021
+4_1_Jan_SF_Bin43	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Steroidobacterales;f__Steroidobacteraceae;g__RPQJ01;s__	Proteobacteria; Gammaproteobacteria	58.77	2.18	2.102	0.066
+4_1_Jan_SF_Bin60	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Steroidobacterales;f__Steroidobacteraceae;g__RPQJ01;s__	Proteobacteria; Gammaproteobacteria	91.44	6.41	3.372	0.066
+4_1_May_SF_Bin43	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Steroidobacterales;f__Steroidobacteraceae;g__RPQJ01;s__	Proteobacteria; Gammaproteobacteria	92.03	3.43	3.359	0.063
+4_1_May_SF_Bin67	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Steroidobacterales;f__Steroidobacteraceae;g__RPQJ01;s__	Proteobacteria; Gammaproteobacteria	70.31	2.61	2.578	0.072
+4_1_Oct_SF_Bin42	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Steroidobacterales;f__Steroidobacteraceae;g__RPQJ01;s__	Proteobacteria; Gammaproteobacteria	91.29	7.49	3.536	0.062
+4_1_Oct_SF_Bin43	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Steroidobacterales;f__Steroidobacteraceae;g__RPQJ01;s__	Proteobacteria; Gammaproteobacteria	75.31	6.35	2.97	0.078
+4_1_May_SF_Bin34	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Steroidobacterales;f__Steroidobacteraceae;g__SCUD01;s__	Proteobacteria; Gammaproteobacteria	82.63	3.9	2.563	0.082
+21_Jan_SF_Bin15	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__SZUA-146;f__SZUA-146;g__JABDJB01;s__	Proteobacteria; Gammaproteobacteria	59.58	1.42	2.497	0.024
+21_Jan_SF_Bin23	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__SZUA-146;f__SZUA-146;g__JABDJB01;s__	Proteobacteria; Gammaproteobacteria	87.65	3.32	3.345	0.041
+21_July_SF_Bin19	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__SZUA-146;f__SZUA-146;g__JABDJB01;s__	Proteobacteria; Gammaproteobacteria	69.74	2.53	2.494	0.030
+8_1_Jan_SF_Bin23	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__SZUA-152;f__SZUA-152;g__;s__	Proteobacteria; Gammaproteobacteria	99.3	3.02	5.184	0.023
+8_1_Oct_SF_Bin98	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__SZUA-152;f__SZUA-152;g__;s__	Proteobacteria; Gammaproteobacteria	99.24	3.54	5.054	0.020
+8_1_Jan_SF_Bin54	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__SZUA-229;f__SZUA-229;g__;s__	Proteobacteria; Gammaproteobacteria	95.42	5.52	3.286	0.052
+8_1_Jan_SF_Bin65	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__SZUA-229;f__SZUA-229;g__;s__	Proteobacteria; Gammaproteobacteria	97.59	3.85	3.426	0.028
+8_1_Jan_SF_Bin98	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__SZUA-229;f__SZUA-229;g__;s__	Proteobacteria; Gammaproteobacteria	94.95	1.23	2.928	0.064
+8_1_July_SF_Bin40	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__SZUA-229;f__SZUA-229;g__;s__	Proteobacteria; Gammaproteobacteria	84.63	4.81	2.269	0.033
+8_1_July_SF_Bin54	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__SZUA-229;f__SZUA-229;g__;s__	Proteobacteria; Gammaproteobacteria	94.67	4.6	2.845	0.045
+8_1_Oct_SF_Bin28	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__SZUA-229;f__SZUA-229;g__;s__	Proteobacteria; Gammaproteobacteria	67.89	2.4	1.937	0.032
+8_1_Oct_SF_Bin73	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__SZUA-229;f__SZUA-229;g__;s__	Proteobacteria; Gammaproteobacteria	77.27	5.09	2.707	0.029
+13_Jan_SF_Bin13	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__SZUA-229;f__SZUA-229;g__SZUA-116;s__	Proteobacteria; Gammaproteobacteria	57.37	6.4	1.367	0.037
+8_1_Jan_SF_Bin56	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__SZUA-229;f__SZUA-229;g__SZUA-116;s__	Proteobacteria; Gammaproteobacteria	96.77	2.44	2.883	0.055
+8_1_July_SF_Bin66	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__SZUA-229;f__SZUA-229;g__SZUA-116;s__	Proteobacteria; Gammaproteobacteria	91.78	2.67	2.692	0.068
+8_1_Oct_SF_Bin34	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__SZUA-229;f__SZUA-229;g__SZUA-116;s__	Proteobacteria; Gammaproteobacteria	87.06	6.58	2.208	0.031
+13_Jan_SF_Bin42	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Thiohalomonadales;f__Thiohalomonadaceae;g__;s__	Proteobacteria; Gammaproteobacteria	77.32	3.06	2.044	0.024
+8_1_Oct_SF_Bin95	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Thiohalomonadales;f__Thiohalomonadaceae;g__;s__	Proteobacteria; Gammaproteobacteria	96.6	2.37	2.696	0.044
+21_Jan_SF_Bin34	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA4575;f__UBA4575;g__JABDMD01;s__JABDMD01 sp013001685	Proteobacteria; Gammaproteobacteria	86.17	6.55	2.231	0.042
+24_May_SF_Bin29	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6429;f__UBA6429;g__;s__	Proteobacteria; Gammaproteobacteria	75.37	5.72	1.881	0.074
+8_1_Jan_SF_Bin105	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6429;f__UBA6429;g__;s__	Proteobacteria; Gammaproteobacteria	97.69	3.21	4.136	0.039
+8_1_Jan_SF_Bin39	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6429;f__UBA6429;g__;s__	Proteobacteria; Gammaproteobacteria	82.46	7.53	2.623	0.100
+8_1_Jan_SF_Bin44	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6429;f__UBA6429;g__;s__	Proteobacteria; Gammaproteobacteria	50.95	3.21	1.556	0.038
+8_1_Jan_SF_Bin63	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6429;f__UBA6429;g__;s__	Proteobacteria; Gammaproteobacteria	80.5	2.8	2.506	0.028
+8_1_Jan_SF_Bin82	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6429;f__UBA6429;g__;s__	Proteobacteria; Gammaproteobacteria	95.36	5.02	3.528	0.039
+8_1_July_SF_Bin57	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6429;f__UBA6429;g__;s__	Proteobacteria; Gammaproteobacteria	71.62	8.98	3.597	0.027
+8_1_May_SF_Bin12	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6429;f__UBA6429;g__;s__	Proteobacteria; Gammaproteobacteria	96.36	1.58	4.299	0.097
+8_1_Oct_SF_Bin111	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6429;f__UBA6429;g__;s__	Proteobacteria; Gammaproteobacteria	82.2	5.61	2.393	0.052
+8_1_Oct_SF_Bin18	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6429;f__UBA6429;g__;s__	Proteobacteria; Gammaproteobacteria	69.43	2.32	1.761	0.089
+8_1_Oct_SF_Bin77	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6429;f__UBA6429;g__;s__	Proteobacteria; Gammaproteobacteria	75.47	2.62	2.148	0.023
+13_July_SF_Bin11	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6522;f__UBA6522;g__;s__	Proteobacteria; Gammaproteobacteria	81.15	2.41	3.523	0.054
+13_May_SF_Bin84	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA6522;f__UBA6522;g__;s__	Proteobacteria; Gammaproteobacteria	87.85	4.17	3.779	0.058
+13_July_SF_Bin31	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA9214;f__UBA9214;g__SZUA-186;s__	Proteobacteria; Gammaproteobacteria	58.93	1.28	2.077	0.098
+13_Oct_SF_Bin20	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA9214;f__UBA9214;g__SZUA-186;s__	Proteobacteria; Gammaproteobacteria	70.13	8.39	2.295	0.103
+21_Oct_SF_Bin2	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA9214;f__UBA9214;g__SZUA-186;s__	Proteobacteria; Gammaproteobacteria	63.91	5.77	1.709	0.131
+24_Jan_SF_Bin14	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA9214;f__UBA9214;g__SZUA-186;s__	Proteobacteria; Gammaproteobacteria	57.62	9.93	1.95	0.085
+21_May_SF_Bin27	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA9214;f__UBA9214;g__UBA9214;s__	Proteobacteria; Gammaproteobacteria	66.25	8.87	2.285	0.068
+24_Jan_SF_Bin6	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA9214;f__UBA9214;g__UBA9214;s__	Proteobacteria; Gammaproteobacteria	77.46	3.4	2.431	0.059
+24_July_SF_Bin20	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA9214;f__UBA9214;g__UBA9214;s__	Proteobacteria; Gammaproteobacteria	64.25	3.11	1.96	0.053
+24_May_SF_Bin18	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA9214;f__UBA9214;g__UBA9214;s__	Proteobacteria; Gammaproteobacteria	94	2.41	2.401	0.093
+24_May_SF_Bin19	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA9214;f__UBA9214;g__UBA9214;s__	Proteobacteria; Gammaproteobacteria	67.15	5.51	1.895	0.052
+24_Oct_SF_Bin33	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA9214;f__UBA9214;g__UBA9214;s__	Proteobacteria; Gammaproteobacteria	87.75	5.7	2.61	0.059
+8_1_Jan_SF_Bin53	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA9214;f__UBA9214;g__UBA9214;s__	Proteobacteria; Gammaproteobacteria	70.38	3.98	1.982	0.078
+8_1_July_SF_Bin11	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__UBA9214;f__UBA9214;g__UBA9214;s__	Proteobacteria; Gammaproteobacteria	81.71	3	2.626	0.094
+4_1_Jan_SF_Bin26	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__;s__	Proteobacteria; Gammaproteobacteria	88.56	5.54	4.849	0.051
+4_1_May_SF_Bin35	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__;s__	Proteobacteria; Gammaproteobacteria	87.87	6.99	4.652	0.049
+4_1_Oct_SF_Bin22	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__;s__	Proteobacteria; Gammaproteobacteria	86.9	3.04	4.284	0.047
+4_1_Jan_SF_Bin32	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__IDS-8;s__	Proteobacteria; Gammaproteobacteria	86.75	5.55	3.74	0.057
+4_1_May_SF_Bin44	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__IDS-8;s__	Proteobacteria; Gammaproteobacteria	89.69	3.85	3.92	0.062
+4_1_Oct_SF_Bin50	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__IDS-8;s__	Proteobacteria; Gammaproteobacteria	86.99	3.84	3.805	0.057
+8_1_July_SF_Bin46	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__IDS-8;s__	Proteobacteria; Gammaproteobacteria	59.99	7.58	2.845	0.048
+13_Jan_SF_Bin29	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	84.8	5.76	3.531	0.061
+13_Jan_SF_Bin44	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	64.96	4.3	2.789	0.039
+13_July_SF_Bin18	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	64.2	6	2.972	0.042
+13_July_SF_Bin38	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	90.17	4.48	3.834	0.064
+13_July_SF_Bin49	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	84.69	8.86	3.2	0.069
+13_May_SF_Bin22	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	93.97	7.68	3.678	0.071
+13_May_SF_Bin44	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	50.31	2.61	1.652	0.053
+13_May_SF_Bin52	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	83.69	4.23	3.186	0.060
+13_May_SF_Bin53	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	88.66	4.91	4.248	0.052
+13_May_SF_Bin93	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	63.35	8.49	2.869	0.070
+13_Oct_SF_Bin18	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	51.56	9.71	2.087	0.110
+13_Oct_SF_Bin22	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	76.7	5.81	3.157	0.059
+21_Jan_SF_Bin38	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	88.72	2.67	3.533	0.044
+21_July_SF_Bin13	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	70.85	0	3.197	0.043
+21_May_SF_Bin21	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	73.28	0	3.095	0.038
+4_1_Jan_SF_Bin67	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	85.97	2.83	3.288	0.041
+4_1_May_SF_Bin74	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	87.12	2.44	3.335	0.042
+4_1_Oct_SF_Bin24	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFB01;s__	Proteobacteria; Gammaproteobacteria	86.4	1.97	3.212	0.041
+21_Jan_SF_Bin14	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFE01;s__JAACFE01 sp009937505	Proteobacteria; Gammaproteobacteria	57.91	2.48	2.084	0.060
+21_July_SF_Bin10	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFE01;s__JAACFE01 sp009937505	Proteobacteria; Gammaproteobacteria	79.74	9.01	2.938	0.063
+21_May_SF_Bin39	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFE01;s__JAACFE01 sp009937505	Proteobacteria; Gammaproteobacteria	88.08	3.74	3.254	0.060
+21_Oct_SF_Bin29	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFE01;s__JAACFE01 sp009937505	Proteobacteria; Gammaproteobacteria	86	4.3	3.153	0.059
+24_Jan_SF_Bin7	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFE01;s__JAACFE01 sp009937505	Proteobacteria; Gammaproteobacteria	89.83	9.25	3.444	0.064
+24_July_SF_Bin19	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFE01;s__JAACFE01 sp009937505	Proteobacteria; Gammaproteobacteria	52.75	9.74	2.021	0.064
+24_May_SF_Bin26	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFE01;s__JAACFE01 sp009937505	Proteobacteria; Gammaproteobacteria	61.08	7.33	2.32	0.059
+24_Oct_SF_Bin22	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__JAACFE01;s__JAACFE01 sp009937505	Proteobacteria; Gammaproteobacteria	88.74	8.85	3.234	0.062
+13_July_SF_Bin51	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__SZUA-117;s__	Proteobacteria; Gammaproteobacteria	55.85	5.04	2.96	0.051
+24_Oct_SF_Bin26	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__SZUA-117;s__	Proteobacteria; Gammaproteobacteria	67.15	5.91	3.587	0.102
+4_1_Jan_SF_Bin31	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__SZUA-117;s__	Proteobacteria; Gammaproteobacteria	58.94	2.77	2.674	0.064
+4_1_Oct_SF_Bin33	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__SZUA-117;s__	Proteobacteria; Gammaproteobacteria	50.56	0.86	2.027	0.056
+21_Jan_SF_Bin68	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1844;s__	Proteobacteria; Gammaproteobacteria	79.37	0.88	2.568	0.037
+13_Jan_SF_Bin32	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	64.28	3.53	2.091	0.114
+13_Jan_SF_Bin58	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	67.87	3.86	2.409	0.045
+13_July_SF_Bin23_1	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	71.93	4.77	2.685	0.045
+13_July_SF_Bin23_2	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	52.73	2.41	1.594	0.080
+13_May_SF_Bin65	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	74.12	2.1	2.487	0.045
+13_May_SF_Bin98	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	73.44	8.19	3.013	0.100
+13_Oct_SF_Bin17	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	74.51	7.28	3.181	0.149
+21_Jan_SF_Bin41	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	73.42	8.15	3.081	0.099
+21_Jan_SF_Bin42	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	59.12	2.46	2.323	0.100
+21_July_SF_Bin22	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	54.88	2.9	1.886	0.106
+21_May_SF_Bin26	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	82.23	8.07	2.746	0.135
+21_Oct_SF_Bin13	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	58.9	4.19	2.442	0.132
+21_Oct_SF_Bin28	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	52.39	9.61	2.049	0.173
+24_Oct_SF_Bin30	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	55.39	4.36	2.123	0.126
+4_1_Jan_SF_Bin34	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	89.41	3.66	3.546	0.043
+4_1_May_SF_Bin72	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	86.94	3.36	3.254	0.041
+4_1_Oct_SF_Bin55	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	88.81	3.5	3.459	0.043
+8_1_Jan_SF_Bin85	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	76.17	6.53	2.565	0.046
+8_1_July_SF_Bin65	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	89.34	3.76	2.811	0.042
+8_1_July_SF_Bin68	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	59.56	4.77	2.381	0.053
+8_1_July_SF_Bin69	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Woeseiales;f__Woeseiaceae;g__UBA1847;s__	Proteobacteria; Gammaproteobacteria	87.73	4.56	3.451	0.053
+21_May_SF_Bin5	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Xanthomonadales;f__SZUA-36;g__JABDPF01;s__	Proteobacteria; Gammaproteobacteria	85.6	5.46	3.156	0.038
+24_July_SF_Bin2	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Xanthomonadales;f__SZUA-36;g__JABDPF01;s__	Proteobacteria; Gammaproteobacteria	84.3	5.72	3.343	0.043
+24_May_SF_Bin1	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Xanthomonadales;f__SZUA-36;g__JABDPF01;s__	Proteobacteria; Gammaproteobacteria	80.33	5.62	3.064	0.036
+24_Oct_SF_Bin28	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Xanthomonadales;f__SZUA-36;g__JABDPF01;s__	Proteobacteria; Gammaproteobacteria	96.01	7.88	3.844	0.047
+24_July_SF_Bin11	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Xanthomonadales;f__SZUA-36;g__SZUA-36;s__	Proteobacteria; Gammaproteobacteria	57.11	3.85	2.304	0.054
+24_Oct_SF_Bin7	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__Xanthomonadales;f__SZUA-36;g__SZUA-36;s__	Proteobacteria; Gammaproteobacteria	88.21	7.64	3.889	0.072
+24_Jan_SF_Bin3	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__XN24;f__XN24;g__;s__	Proteobacteria; Gammaproteobacteria	52.18	2.43	1.862	0.054
+24_Oct_SF_Bin43	d__Bacteria;p__Proteobacteria;c__Gammaproteobacteria;o__XN24;f__XN24;g__;s__	Proteobacteria; Gammaproteobacteria	75.8	3.05	2.852	0.067
+4_1_July_SF_Bin22	d__Bacteria;p__SAR324;c__SAR324;o__SAR324;f__;g__;s__	Proteobacteria; Deltaproteobacteria	94.54	5.04	2.789	0.217
+4_1_July_SF_Bin46	d__Bacteria;p__SAR324;c__SAR324;o__SAR324;f__;g__;s__	Proteobacteria; Deltaproteobacteria	84.77	1.12	2.274	0.030
+4_1_July_SF_Bin48	d__Bacteria;p__SAR324;c__SAR324;o__SAR324;f__;g__;s__	Proteobacteria; Deltaproteobacteria	84.48	8.67	3.596	0.070
+8_1_Oct_SF_Bin72	d__Bacteria;p__SAR324;c__SAR324;o__SAR324;f__;g__;s__	Proteobacteria; Deltaproteobacteria	82.92	2.81	3.167	0.032
+8_1_July_SF_Bin26	d__Bacteria;p__SAR324;c__SAR324;o__XYD2-FULL-50-16;f__XYD2-FULL-50-16;g__;s__	Proteobacteria; Deltaproteobacteria	87.27	1.19	3.035	0.023
+8_1_Oct_SF_Bin1	d__Bacteria;p__Spirochaetota;c__Leptospirae;o__Leptospirales;f__Leptonemataceae;g__;s__	Spirochaetes	86.06	0	3.484	0.022
+4_1_July_SF_Bin31	d__Bacteria;p__Spirochaetota;c__Leptospirae;o__Turneriellales;f__;g__;s__	Spirochaetes	93.75	3.47	2.646	0.027
+4_1_July_SF_Bin56	d__Bacteria;p__Spirochaetota;c__Leptospirae;o__Turneriellales;f__;g__;s__	Spirochaetes	90.95	3.7	2.857	0.041
+8_1_Oct_SF_Bin24	d__Bacteria;p__Spirochaetota;c__Leptospirae;o__Turneriellales;f__J094;g__;s__	Spirochaetes	93.75	2.25	3.316	0.044
+8_1_Oct_SF_Bin25	d__Bacteria;p__Spirochaetota;c__Leptospirae;o__Turneriellales;f__J094;g__;s__	Spirochaetes	93.19	1.12	3.042	0.035
+4_1_July_SF_Bin25	d__Bacteria;p__Spirochaetota;c__UBA6919;o__UBA6919;f__UBA6919;g__;s__	Spirochaetes	80.29	8.8	2.997	0.032
+8_1_Oct_SF_Bin4	d__Bacteria;p__Spirochaetota;c__UBA6919;o__UBA6919;f__UBA6919;g__;s__	Spirochaetes	62.46	6.81	2.864	0.017
+21_Jan_SF_Bin1	d__Bacteria;p__Tectomicrobia;c__Entotheonellia;o__Entotheonellales;f__Entotheonellaceae;g__;s__	Nitrospinae	69.93	3.04	7.125	0.025
+8_1_Jan_SF_Bin108	d__Bacteria;p__UBA6262;c__UBA6262;o__WVXT01;f__WVXT01;g__WVXT01;s__	Elusimicrobia	70.66	6.06	1.313	0.044
+8_1_Oct_SF_Bin55	d__Bacteria;p__UBA6262;c__UBA6262;o__WVXT01;f__WVXT01;g__WVXT01;s__	Elusimicrobia	78.18	9.36	1.501	0.050
+24_Oct_SF_Bin18	d__Bacteria;p__Verrucomicrobiota;c__Kiritimatiellae;o__Kiritimatiellales;f__Pontiellaceae;g__Pontiella;s__	Kiritimatiellaeota	50.08	1.35	1.219	0.032
+13_Jan_SF_Bin43	d__Bacteria;p__Verrucomicrobiota;c__Kiritimatiellae;o__Kiritimatiellales;f__Pontiellaceae;g__UBA5540;s__	Kiritimatiellaeota	52.84	4.51	0.827	0.032
+4_1_July_SF_Bin39	d__Bacteria;p__WOR-3;c__WOR-3;o__SM23-42;f__SM23-42;g__SM23-42;s__	WOR-3	95.6	1.1	2.721	0.044
+8_1_Jan_SF_Bin14	d__Bacteria;p__WOR-3;c__WOR-3;o__UBA2258;f__DTLI01;g__;s__	WOR-3	77.65	0.48	1.998	0.033
+8_1_Oct_SF_Bin39	d__Bacteria;p__WOR-3;c__WOR-3;o__UBA2258;f__DTLI01;g__;s__	WOR-3	78.77	2.35	2.202	0.036
+24_Jan_SF_Bin5	d__Bacteria;p__Zixibacteria;c__MSB-5A5;o__GN15;f__FEB-12;g__;s__	Zixibacteria	99.63	1.1	4.762	0.030
+24_July_SF_Bin5	d__Bacteria;p__Zixibacteria;c__MSB-5A5;o__GN15;f__FEB-12;g__;s__	Zixibacteria	98.53	2.2	4.726	0.029
+24_Oct_SF_Bin8	d__Bacteria;p__Zixibacteria;c__MSB-5A5;o__GN15;f__FEB-12;g__;s__	Zixibacteria	93.07	1.1	4.426	0.028
+4_1_July_SF_Bin17	d__Bacteria;p__Zixibacteria;c__MSB-5A5;o__GN15;f__FEB-12;g__;s__	Zixibacteria	93.34	2.2	3.405	0.030
+4_1_July_SF_Bin42	d__Bacteria;p__Zixibacteria;c__MSB-5A5;o__MSB-5A5;f__RBG-16-43-9;g__;s__	Zixibacteria	87.48	1.65	2.206	0.033
