@@ -1,3 +1,5 @@
+setwd("~/Google Drive/My Drive/SF_Bay/SanFranciscoBay/Abundance_Barplot/")
+
 ############################ Abundance Stacked Bar Plot ##########################################
 library(dplyr)
 library(tidyverse)
@@ -246,12 +248,18 @@ coverm_long_10p <- coverm_long %>%
 
 ############################# plot
 
+#get most colors automatically
 n <- 30
 qual_col_pals = brewer.pal.info[brewer.pal.info$category == 'qual',]
 col_vector = unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
 pie(rep(1,n), col=sample(col_vector, n))
 
-plot <- coverm_long_5p %>%
+#do some customization
+col_vector <- c("#7FC97F","#BEAED4","#d9d9d9","#A6CEE3","#8dd3c7","#fb9a99","#BF5B17",
+                "#FDC086","#1B9E77","#D95F02","#7570B3","#E7298A","#66A61E","#E6AB02","#A6761D",
+                "#666666","#FFFF99","#1F78B4","#B2DF8A")
+
+plot <- coverm_long_10p %>%
   ggplot(aes(x = SiteFull, y = as.numeric(value), fill = Taxa)) + 
   geom_bar(stat = "identity") +
   scale_fill_manual(values = col_vector) +
@@ -259,10 +267,18 @@ plot <- coverm_long_5p %>%
   guides(fill=guide_legend(override.aes = list(size=3))) +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5),
-        panel.background = element_blank()) +
-  scale_y_continuous(expand = c(0, 0)) +
-  ggtitle("CoverM five most abundant SFB taxa per site") + #Change for top X grabbed
-  facet_grid(.~Site, scales = "free")
+        legend.background = element_rect(fill = "transparent"),
+        legend.box.background = element_rect(fill = "transparent"),
+        panel.background = element_rect(fill = "transparent"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        plot.background = element_rect(fill = "transparent", color = NA),
+        panel.border = element_blank()) + #turn this off to get the outline back)
+  #scale_y_continuous(expand = c(0, 0)) + #turn this on to make it look aligned with ticks
+  ggtitle("CoverM ten most abundant SFB taxa per site") + #Change for top X grabbed
+  facet_grid(.~Site, scales = "free") +
+  scale_y_continuous(breaks = seq(0, 45, by=5))
+#coord_flip()
 plot
 
 
@@ -271,5 +287,37 @@ ggsave("Output/CoverM_Abundance_Top5perSite_GTDBv2.1_facet.png", plot, width = 1
 
 ggsave("Output/CoverM_Abundance_Top10perSite_GTDBv2.1_facet.pdf", plot, width = 8, dpi = 500)
 ggsave("Output/CoverM_Abundance_Top10perSite_GTDBv2.1_facet.png", plot, width = 10, height = 5, dpi = 500)
+ggsave("Output/CoverM_Abundance_Top10perSite_GTDBv2.1_facet_wide.png", plot, width = 15, height = 5, dpi = 500)
+
+
+ggsave("Output/CoverM_Abundance_Top10perSite_GTDBv2.1_biorender.png", plot, width = 10, height = 5, dpi = 500,
+       bg = "transparent")
+
+ggsave("Output/CoverM_Abundance_Top10perSite_GTDBv2.1_biorender_trans.png", plot, width = 10, height = 5, dpi = 500,
+       bg = "transparent")
+
+
+############################ CoverM Input Abundance Stacked Area Plot ##########################################
+
+plot <- coverm_long_10p %>%
+  ggplot(aes(x = SiteFull, y = as.numeric(value), fill = Taxa)) + 
+  geom_area() #+
+  # scale_fill_manual(values = col_vector) +
+  # labs(x = "Site", y = "CoverM Percent Relative Abundance") +
+  # guides(fill=guide_legend(override.aes = list(size=3))) +
+  # theme_bw() +
+  # theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5),
+  #       panel.background = element_blank()) +
+  # scale_y_continuous(expand = c(0, 0)) +
+  # ggtitle("CoverM ten most abundant SFB taxa per site") + #Change for top X grabbed
+  # facet_grid(.~Site, scales = "free")
+#coord_flip()
+plot
+
+############################ Write data outputs ##########################################
+
+write.table(coverm_long_10p, file = "Output/CoverM_long_top10_Abund.tsv", quote = FALSE, col.names = TRUE,
+          row.names = FALSE, sep = "\t")
+
 
 

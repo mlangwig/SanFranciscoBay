@@ -55,14 +55,14 @@ p1 <- ggplot(input_gs, aes(x = value, y = Class, fill = Class)) +
   #scale_y_continuous(limits = c(0,101), expand = c(0, 0)) +
   theme_bw() +
   theme(panel.grid = element_blank(),
-        panel.border = element_blank()) +
+        panel.border = element_rect(colour = "grey", fill=NA)) +
   guides(fill="none") +
-  scale_fill_hue(l=50) +
+  scale_fill_viridis_d() +
   scale_y_discrete(limits=rev)
 p1
 
-ggsave("output/GenomeSize_SFB_MAGs.pdf", p1, dpi = 500)
-ggsave("output/GenomeSize_SFB_MAGs.png", p1, dpi = 500)
+ggsave("output/AvgGenomeSize_SFB_MAGs.pdf", p1, dpi = 500, width = 8, height = 8)
+ggsave("output/AvgGenomeSize_SFB_MAGs.png", p1, dpi = 500, width = 8, height = 8)
 
 
 
