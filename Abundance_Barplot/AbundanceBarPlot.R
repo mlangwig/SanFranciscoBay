@@ -246,6 +246,21 @@ coverm_long_10p <- coverm_long %>%
   mutate(rank=row_number()) %>% #make a new variable called rank where rank values
   filter(rank <= 10) #CHANGE THIS NUMBER TO GET TOP X OF COMMUNITY
 
+
+#drop 0s in coverm_long
+coverm_long <- filter(coverm_long, value > 0)
+
+coverm_long_10p_bottom <- coverm_long %>%
+  group_by(Taxa, SiteFull, Site) %>% #grouping taxa together for the same site
+  #filter(value >= quantile(value, .95)) #take values top 95th percentile of each group (in group_by)
+  #.95 to .90 for top 10%
+  summarise(value=sum(value)) %>% #summing the group
+  ungroup() %>% #don't group by Taxa anymore
+  group_by(SiteFull) %>% #now group by site
+  arrange(value) %>%
+  mutate(rank=row_number()) %>% #make a new variable called rank where rank values
+  filter(rank <= 10) #CHANGE THIS NUMBER TO GET TOP X OF COMMUNITY
+
 ############################# plot
 
 #get most colors automatically
@@ -259,7 +274,8 @@ col_vector <- c("#7FC97F","#BEAED4","#d9d9d9","#A6CEE3","#8dd3c7","#fb9a99","#BF
                 "#FDC086","#1B9E77","#D95F02","#7570B3","#E7298A","#66A61E","#E6AB02","#A6761D",
                 "#666666","#FFFF99","#1F78B4","#B2DF8A")
 
-plot <- coverm_long_10p %>%
+dev.off()
+plot <- coverm_long_10p_bottom %>%
   ggplot(aes(x = SiteFull, y = as.numeric(value), fill = Taxa)) + 
   geom_bar(stat = "identity") +
   scale_fill_manual(values = col_vector) +
@@ -267,17 +283,17 @@ plot <- coverm_long_10p %>%
   guides(fill=guide_legend(override.aes = list(size=3))) +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5),
-        legend.background = element_rect(fill = "transparent"),
+        legend.background = element_rect(color = "white"),
         legend.box.background = element_rect(fill = "transparent"),
         panel.background = element_rect(fill = "transparent"),
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         plot.background = element_rect(fill = "transparent", color = NA),
         panel.border = element_blank()) + #turn this off to get the outline back)
-  #scale_y_continuous(expand = c(0, 0)) + #turn this on to make it look aligned with ticks
-  ggtitle("CoverM ten most abundant SFB taxa per site") + #Change for top X grabbed
-  facet_grid(.~Site, scales = "free") +
-  scale_y_continuous(breaks = seq(0, 45, by=5))
+  scale_y_continuous(expand = c(0, 0)) + #turn this on to make it look aligned with ticks
+  ggtitle("CoverM ten least abundant SFB taxa per site") + #Change for top X grabbed
+  facet_grid(.~Site, scales = "free") 
+  #scale_y_continuous(breaks = seq(0, 45, by=5))
 #coord_flip()
 plot
 
@@ -318,6 +334,62 @@ plot
 
 write.table(coverm_long_10p, file = "Output/CoverM_long_top10_Abund.tsv", quote = FALSE, col.names = TRUE,
           row.names = FALSE, sep = "\t")
+
+
+############################ Plotting rare biosphere ##########################################
+
+#############create input
+coverm_long_all <- coverm_long %>%
+  group_by(Taxa, Site) %>% #grouping taxa together for the same site
+  #filter(value >= quantile(value, .95)) #take values top 95th percentile of each group (in group_by)
+  #.95 to .90 for top 10%
+  summarise(value=sum(value)) %>% #summing the group
+  ungroup() %>% #don't group by Taxa anymore
+  group_by(Site) #%>% #now group by site
+  #arrange(desc(value))
+
+#drop orgs that have 0s for abundance
+coverm_long_all <- filter(coverm_long_all, value > 0)
+
+#separate into sites
+coverm_long_all_4_1<-coverm_long_all %>% filter(grepl('4_1', Site))
+#sort
+coverm_long_all_4_1<-arrange(coverm_long_all_4_1, desc(value))
+
+coverm_long_all_4_1$Taxa <- factor(coverm_long_all_4_1$Taxa, levels=coverm_long_all_4_1$Taxa)
+
+#order the input data and factor
+input_gs<-arrange(input_gs, desc(value))
+input_gs$Class <- factor(input_gs$Class, levels=input_gs$Class)
+
+###########plot
+dev.off()
+plot <- coverm_long_all_4_1 %>%
+  ggplot(aes(x = Taxa, y = value, fill = Taxa)) + 
+  geom_bar(stat = "identity") +
+  scale_fill_viridis_d() +
+  #scale_fill_manual(values = col_vector) +
+  labs(x = "Taxa", y = "CoverM % Relative Abundance") +
+  #guides(fill=guide_legend(override.aes = list(size=3))) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5),
+        legend.background = element_rect(fill = "transparent"),
+        legend.box.background = element_rect(fill = "transparent"),
+        panel.background = element_rect(fill = "transparent"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        plot.background = element_rect(fill = "transparent", color = NA),
+        panel.border = element_blank()) +
+  scale_y_continuous(expand = c(0, 0)) + #turn this on to make it look aligned with ticks
+  ggtitle("Site 4.1 CoverM Abundance") + #Change for top X grabbed
+  geom_hline(yintercept=1,linetype=2,color="grey") +
+  guides(fill="none")
+  #facet_grid(.~SiteFull, scales = "free")
+  #scale_y_continuous(breaks = seq(0, 45, by=5))
+#coord_flip()
+plot
+
+
 
 
 
