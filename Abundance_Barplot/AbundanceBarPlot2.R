@@ -113,7 +113,7 @@ plot <- coverm_long_10p %>%
         plot.background = element_rect(fill = "transparent", color = NA),
         panel.border = element_blank()) + #turn this off to get the outline back)
   scale_y_continuous(expand = c(0, 0)) + #turn this on to make it look aligned with ticks
-  ggtitle("Abundant SFB Taxa per Site") + #Change for top X grabbed
+  ggtitle("Abundant SFB Taxa") + #Change for top X grabbed
   facet_grid(.~Site, scales = "free") 
 #scale_y_continuous(breaks = seq(0, 45, by=5))
 #coord_flip()
@@ -144,7 +144,7 @@ coverm_long_10p_bottom <- coverm_long_final %>%
   mutate(rank=row_number()) %>% #make a new variable called rank where rank values
   filter(rank <= 10) #CHANGE THIS NUMBER TO GET TOP X OF COMMUNITY
 
-############################ Plot the top 10 least abundant per site #############################
+############################ Plot the 10 least abundant per site #############################
 
 #see how many colors you'll need
 length(unique(coverm_long_10p_bottom$Taxa))
@@ -160,7 +160,7 @@ col_vector <- c("#7FC97F","#BEAED4","#d9d9d9","#A6CEE3","#8dd3c7","#fb9a99","#BF
                 "#FDC086","#1B9E77","#D95F02","#7570B3","#E7298A","#66A61E","#E6AB02","#A6761D",
                 "#666666","#FFFF99","#1F78B4","#B2DF8A", "#fb8072", "#ffed6f")
 
-####The following produces the bar plot in Figure 1, which was cropped and rotated in Biorender
+####The following produces Supplementary Figure X
 dev.off()
 plot <- coverm_long_10p_bottom %>%
   ggplot(aes(x = SiteFull, y = as.numeric(value), fill = Taxa)) + 
@@ -178,7 +178,7 @@ plot <- coverm_long_10p_bottom %>%
         plot.background = element_rect(fill = "transparent", color = NA)) +
         #panel.border = element_blank()) + #turn this off to get the outline back)
   scale_y_continuous(expand = c(0, 0)) + #turn this on to make it look aligned with ticks
-  ggtitle("Low Abundance SFB Taxa per Site") + #Change for top X grabbed
+  ggtitle("Low Abundance SFB Taxa") + #Change for top X grabbed
   facet_grid(.~Site, scales = "free") 
 #scale_y_continuous(breaks = seq(0, 45, by=5))
 #coord_flip()
