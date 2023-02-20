@@ -11,8 +11,9 @@ library(RColorBrewer)
 
 ############################ Read in Inputs #############################
 
-#read in coverm input
+#coverm input
 coverm<-read.delim2(file = "Input/SFBMAGS-vs-Reads-CoverM.tsv")
+#gtdb input
 gtdbtk<-read.delim2(file = "Input/gtdbtk.r207.bacarc.summary.tsv")
 
 ############################ Clean up the Coverm Input #############################
