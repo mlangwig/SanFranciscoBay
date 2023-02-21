@@ -1,0 +1,67 @@
+############################ Geochem Plotting ##########################################
+
+library(dplyr)
+library(tidyverse)
+library(reshape2)
+library(ggplot2)
+library(viridis)
+library(pals)
+library(RColorBrewer)
+
+############################ read in and process input ##########################################
+
+geochem <- read.delim("Input/GeochemData.tsv")
+
+#drop some data
+geochem <- select(geochem, c(SiteFull, Site, Month, Temp, Sal, 
+                             NO3, NH4, C_N, P, S))
+
+#melt to long format
+geochem_long <- melt(geochem, id = c("SiteFull", "Site", "Month"))
+
+############################ Set order of sites for plotting #############################
+#set order of x axis 
+geochem_long$Site <- factor(geochem_long$Site, levels=c("4_1", "8_1", "13", "21", "24"))
+#set order of x axis 
+geochem_long$SiteFull <- factor(geochem_long$SiteFull, levels=c("4_1_July", "4_1_Oct", "4_1_Jan", "4_1_May",
+                                                                          "8_1_July", "8_1_Oct", "8_1_Jan", "8_1_May",
+                                                                          "13_July", "13_Oct", "13_Jan", "13_May",
+                                                                          "21_July", "21_Oct", "21_Jan", "21_May",
+                                                                          "24_July", "24_Oct", "24_Jan", "24_May"))
+#change Jul to July
+geochem_long$Month <- gsub("Jul", "July", geochem_long$Month)
+geochem_long$Month <- factor(geochem_long$Month, levels = c("July", "Oct", "Jan", "May"))
+####################################### Plotting ##########################################
+
+library(grid)
+text_2011 <- textGrob("2011", gp=gpar(fontsize=6, fontface="bold"))
+text_2012 <- textGrob("2012", gp=gpar(fontsize=6, fontface="bold"))
+
+dev.off()
+plot <- geochem_long %>%
+  ggplot(aes(x = Month, y = as.numeric(value), group = variable)) + #group to make this behave
+  geom_line(aes(color = variable, linetype = variable)) +
+  #scale_fill_manual(values = col_vector) +
+  labs(x = "Site", y = "Value") +
+  guides(fill=guide_legend(override.aes = list(size=3))) +
+  theme_bw() +
+  theme(legend.background = element_rect(color = "white"),
+        legend.box.background = element_rect(fill = "transparent"),
+        panel.background = element_rect(fill = "transparent"),
+        #panel.grid.major = element_blank(),
+        #panel.grid.minor = element_blank(),
+        plot.background = element_rect(fill = "transparent", color = NA)) +
+        #panel.border = element_blank()) + #turn this off to get the outline back)
+  scale_y_continuous(expand = c(0, 0)) + #turn this on to make it look aligned with ticks
+  ggtitle("SFB Geochemistry") + #Change for top X grabbed
+  facet_grid(.~Site, scales = "free") +
+  annotation_custom(text_2011, xmin=2.1,xmax=1,ymin=-33) +
+  annotation_custom(text_2012, xmin=6,xmax=1,ymin=-33) +
+  coord_cartesian(clip="off")
+#scale_y_continuous(breaks = seq(0, 45, by=5))
+#coord_flip()
+plot
+
+ggsave("Output/Geochem.png", plot, width = 10, height = 5, dpi = 500,
+       bg = "transparent")
+

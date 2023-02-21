@@ -187,6 +187,6 @@ plot_patch <- p4_1 + p8_1 + p13 + p21 + p24 +
   plot_annotation(title = "SFB Rank Abundances")
 plot_patch
 
-ggsave("Output/RankAbundances.png", plot_patch, width = 10, height = 15, dpi = 600)
-ggsave("Output/RankAbundances.pdf", plot_patch, width = 10, height = 15, dpi = 600)
+ggsave("Output/RankAbundances.png", plot_patch, width = 10, height = 16, dpi = 600)
+ggsave("Output/RankAbundances.pdf", plot_patch, width = 10, height = 16, dpi = 600)
 

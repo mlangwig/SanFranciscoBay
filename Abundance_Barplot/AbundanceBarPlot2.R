@@ -57,6 +57,10 @@ coverm_long <- coverm_long %>% rename("Taxa" = "p")
 #put the data frames back together
 coverm_long_final <- rbind(coverm_long, coverm_long_proteo, coverm_long_thermo)
 
+#write this file for use in other things
+write_delim(coverm_long_final, file = "Output/coverm_long_final.tsv", 
+            col_names = TRUE, delim = "\t")
+
 ############################ Set order of sites for plotting #############################
 #set order of x axis 
 coverm_long_final$Site <- factor(coverm_long_final$Site, levels=c("4_1", "8_1", "13", "21", "24"))
