@@ -52,11 +52,11 @@ coverm_24$Taxa<-factor(coverm_24$Taxa, levels=coverm_24$Taxa)
 
 ############################ 4_1 #############################
 dev.off()
-p4_1 <- ggplot(coverm_4_1, aes(x = Taxa, y = value, fill = Taxa)) + 
-  geom_bar(stat = "identity") +
+p4_1 <- ggplot(coverm_4_1, aes(x = Taxa, y = value, group=1)) + 
+  geom_point() +
+  geom_line() +
   labs(x = "Taxa", y = "CoverM % Relative Abundance") +
   ggtitle("Site 4.1") +
-  scale_y_continuous(expand = c(0, 0)) + #turn this on to make it look aligned with ticks
   theme_bw() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5),
         legend.background = element_rect(fill = "transparent"),
@@ -66,22 +66,23 @@ p4_1 <- ggplot(coverm_4_1, aes(x = Taxa, y = value, fill = Taxa)) +
         #panel.grid.minor = element_blank(),
         plot.background = element_rect(fill = "transparent", color = NA)) +
         #panel.border = element_blank()) +
-  scale_fill_viridis_d() +
-  geom_hline(yintercept=1,linetype=2,color="darkgoldenrod1") +
+  #scale_fill_viridis_d() +
+  geom_hline(yintercept=1,linetype=2,color="black") +
   guides(fill="none") +
   #facet_grid(.~SiteFull, scales = "free")
   scale_x_discrete(limits=rev) +
+  scale_y_continuous(expand = c(0,0), limits = c(0,60)) +
   coord_flip()
 p4_1
 
 ############################ 8_1 #############################
 
 dev.off()
-p8_1 <- ggplot(coverm_8_1, aes(x = Taxa, y = value, fill = Taxa)) + 
-  geom_bar(stat = "identity") +
+p8_1 <- ggplot(coverm_8_1, aes(x = Taxa, y = value, fill = Taxa, group=1)) + 
+  geom_point() +
+  geom_line() +
   labs(x = "Taxa", y = "CoverM % Relative Abundance") +
   ggtitle("Site 8.1") +
-  scale_y_continuous(expand = c(0, 0)) + #turn this on to make it look aligned with ticks
   theme_bw() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5),
         legend.background = element_rect(fill = "transparent"),
@@ -92,21 +93,22 @@ p8_1 <- ggplot(coverm_8_1, aes(x = Taxa, y = value, fill = Taxa)) +
         plot.background = element_rect(fill = "transparent", color = NA)) +
   #panel.border = element_blank()) +
   scale_fill_viridis_d() +
-  geom_hline(yintercept=1,linetype=2,color="darkgoldenrod1") +
+  geom_hline(yintercept=1,linetype=2,color="black") +
   guides(fill="none") +
   #facet_grid(.~SiteFull, scales = "free")
   scale_x_discrete(limits=rev) +
+  scale_y_continuous(expand = c(0,0), limits = c(0,50)) +
   coord_flip()
 p8_1
 
 ############################ 13 #############################
 
 dev.off()
-p13 <- ggplot(coverm_13, aes(x = Taxa, y = value, fill = Taxa)) + 
-  geom_bar(stat = "identity") +
+p13 <- ggplot(coverm_13, aes(x = Taxa, y = value, fill = Taxa, group=1)) + 
+  geom_point() +
+  geom_line() +
   labs(x = "Taxa", y = "CoverM % Relative Abundance") +
   ggtitle("Site 13") +
-  scale_y_continuous(expand = c(0, 0)) + #turn this on to make it look aligned with ticks
   theme_bw() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5),
         legend.background = element_rect(fill = "transparent"),
@@ -117,21 +119,22 @@ p13 <- ggplot(coverm_13, aes(x = Taxa, y = value, fill = Taxa)) +
         plot.background = element_rect(fill = "transparent", color = NA)) +
   #panel.border = element_blank()) +
   scale_fill_viridis_d() +
-  geom_hline(yintercept=1,linetype=2,color="darkgoldenrod1") +
+  geom_hline(yintercept=1,linetype=2,color="black") +
   guides(fill="none") +
   #facet_grid(.~SiteFull, scales = "free")
   scale_x_discrete(limits=rev) +
+  scale_y_continuous(expand = c(0,0), limits = c(0,60)) +
   coord_flip()
 p13
 
 ############################ 21 #############################
 
 dev.off()
-p21 <- ggplot(coverm_21, aes(x = Taxa, y = value, fill = Taxa)) + 
-  geom_bar(stat = "identity") +
+p21 <- ggplot(coverm_21, aes(x = Taxa, y = value, fill = Taxa, group = 1)) + 
+  geom_point() +
+  geom_line() +
   labs(x = "Taxa", y = "CoverM % Relative Abundance") +
   ggtitle("Site 21") +
-  scale_y_continuous(expand = c(0, 0)) + #turn this on to make it look aligned with ticks
   theme_bw() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5),
         legend.background = element_rect(fill = "transparent"),
@@ -142,21 +145,22 @@ p21 <- ggplot(coverm_21, aes(x = Taxa, y = value, fill = Taxa)) +
         plot.background = element_rect(fill = "transparent", color = NA)) +
   #panel.border = element_blank()) +
   scale_fill_viridis_d() +
-  geom_hline(yintercept=1,linetype=2,color="darkgoldenrod1") +
+  geom_hline(yintercept=1,linetype=2,color="black") +
   guides(fill="none") +
   #facet_grid(.~SiteFull, scales = "free")
   scale_x_discrete(limits=rev) +
+  scale_y_continuous(expand = c(0,0), limits = c(0,50)) +
   coord_flip()
 p21
 
 ############################ 24 #############################
 
 dev.off()
-p24 <- ggplot(coverm_24, aes(x = Taxa, y = value, fill = Taxa)) + 
-  geom_bar(stat = "identity") +
+p24 <- ggplot(coverm_24, aes(x = Taxa, y = value, fill = Taxa, group = 1)) + 
+  geom_point() +
+  geom_line() +
   labs(x = "Taxa", y = "CoverM % Relative Abundance") +
   ggtitle("Site 24") +
-  scale_y_continuous(expand = c(0, 0)) + #turn this on to make it look aligned with ticks
   theme_bw() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5),
         legend.background = element_rect(fill = "transparent"),
@@ -167,10 +171,11 @@ p24 <- ggplot(coverm_24, aes(x = Taxa, y = value, fill = Taxa)) +
         plot.background = element_rect(fill = "transparent", color = NA)) +
   #panel.border = element_blank()) +
   scale_fill_viridis_d() +
-  geom_hline(yintercept=1,linetype=2,color="darkgoldenrod1") +
+  geom_hline(yintercept=1,linetype=2,color="black") +
   guides(fill="none") +
   #facet_grid(.~SiteFull, scales = "free")
   scale_x_discrete(limits=rev) +
+  scale_y_continuous(expand = c(0,0), limits = c(0,60)) +
   coord_flip()
 p24
 
