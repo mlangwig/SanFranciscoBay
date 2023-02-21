@@ -14,7 +14,7 @@ geochem <- read.delim("Input/GeochemData.tsv")
 
 #drop some data
 geochem <- select(geochem, c(SiteFull, Site, Month, Temp, Sal, 
-                             NO3, NH4, C_N, P, S))
+                             NO3, NH4, C_N))
 
 #melt to long format
 geochem_long <- melt(geochem, id = c("SiteFull", "Site", "Month"))
@@ -31,11 +31,11 @@ geochem_long$SiteFull <- factor(geochem_long$SiteFull, levels=c("4_1_July", "4_1
 #change Jul to July
 geochem_long$Month <- gsub("Jul", "July", geochem_long$Month)
 geochem_long$Month <- factor(geochem_long$Month, levels = c("July", "Oct", "Jan", "May"))
-####################################### Plotting ##########################################
+####################################### Plotting Supplemental ##########################################
 
 library(grid)
-text_2011 <- textGrob("2011", gp=gpar(fontsize=6, fontface="bold"))
-text_2012 <- textGrob("2012", gp=gpar(fontsize=6, fontface="bold"))
+text_2011 <- textGrob("2011", gp=gpar(fontsize=8, fontface="bold"))
+text_2012 <- textGrob("2012", gp=gpar(fontsize=8, fontface="bold"))
 
 dev.off()
 plot <- geochem_long %>%
@@ -43,25 +43,29 @@ plot <- geochem_long %>%
   geom_line(aes(color = variable, linetype = variable)) +
   #scale_fill_manual(values = col_vector) +
   labs(x = "Site", y = "Value") +
-  guides(fill=guide_legend(override.aes = list(size=3))) +
+  #guides(fill=guide_legend(override.aes = list(size=3))) +
   theme_bw() +
-  theme(legend.background = element_rect(color = "white"),
-        legend.box.background = element_rect(fill = "transparent"),
+  theme(#legend.background = element_rect(color = "white"),
+        #legend.box.background = element_rect(fill = "transparent"),
         panel.background = element_rect(fill = "transparent"),
         #panel.grid.major = element_blank(),
         #panel.grid.minor = element_blank(),
         plot.background = element_rect(fill = "transparent", color = NA)) +
         #panel.border = element_blank()) + #turn this off to get the outline back)
-  scale_y_continuous(expand = c(0, 0)) + #turn this on to make it look aligned with ticks
+  scale_y_continuous(expand = c(0, 0), breaks = c(0,5,10,15,20,25,30)) + #turn this on to make it look aligned with ticks
+  scale_color_discrete(name = "",labels = c("Temp (ºC)", "Salinity (PSU)", "NO3 (mM)",
+                                 "NH4 (mM)", "C/N")) +
+  scale_linetype_discrete(name = "",labels = c("Temp (ºC)", "Salinity (PSU)", "NO3 (mM)",
+                                             "NH4 (mM)", "C/N")) + #need both color and linetype to only get 1 legend/merge them
   ggtitle("SFB Geochemistry") + #Change for top X grabbed
-  facet_grid(.~Site, scales = "free") +
-  annotation_custom(text_2011, xmin=2.1,xmax=1,ymin=-33) +
-  annotation_custom(text_2012, xmin=6,xmax=1,ymin=-33) +
-  coord_cartesian(clip="off")
+  facet_wrap(.~Site, scales = "free") +
+  annotation_custom(text_2011, xmin=2.1,xmax=1,ymin=-35) +
+  annotation_custom(text_2012, xmin=6,xmax=1,ymin=-35) +
+  coord_cartesian(ylim = c(0,31), xlim = c(1.5,3.5), clip="off") #messed with xlim to get less space between plot and margin
 #scale_y_continuous(breaks = seq(0, 45, by=5))
-#coord_flip()
+  #coord_flip()
 plot
 
-ggsave("Output/Geochem.png", plot, width = 10, height = 5, dpi = 500,
-       bg = "transparent")
+# , width = 15, height = 7,
+ggsave("Output/Geochem_Supplemental.png", plot, width = 15, dpi = 500)
 
