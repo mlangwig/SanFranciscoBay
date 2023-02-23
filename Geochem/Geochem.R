@@ -36,18 +36,20 @@ geochem_long$SiteFull <- factor(geochem_long$SiteFull, levels=c("4_1_July", "4_1
 ####################################### Plotting Supplemental ##########################################
 
 library(grid)
-text_2011 <- textGrob("2011", gp=gpar(fontsize=8, fontface="bold"))
-text_2012 <- textGrob("2012", gp=gpar(fontsize=8, fontface="bold"))
+text_2011 <- textGrob("2011", gp=gpar(fontsize=15, fontface="bold"))
+text_2012 <- textGrob("2012", gp=gpar(fontsize=15, fontface="bold"))
 
 dev.off()
 plot <- geochem_long %>%
   ggplot(aes(x = Month, y = as.numeric(value), group = variable)) + #group to make this behave
-  geom_line(aes(color = variable, linetype = variable)) +
+  geom_line(aes(color = variable, linetype = variable), size = 2) +
   #scale_fill_manual(values = col_vector) +
-  labs(x = "Site", y = "Value") +
+  labs(x = "Month", y = "Value") +
   #guides(fill=guide_legend(override.aes = list(size=3))) +
   theme_bw() +
-  theme(#legend.background = element_rect(color = "white"),
+  theme(text = element_text(size = 20),
+        legend.key.size = unit(1, 'cm'),
+        #legend.background = element_rect(color = "white"),
         #legend.box.background = element_rect(fill = "transparent"),
         panel.background = element_rect(fill = "transparent"),
         #panel.grid.major = element_blank(),
@@ -61,17 +63,20 @@ plot <- geochem_long %>%
                                              "NH4 (mM)", "C/N")) + #need both color and linetype to only get 1 legend/merge them
   ggtitle("SFB Geochemistry") + #Change for top X grabbed
   facet_wrap(.~Site, scales = "free") +
-  annotation_custom(text_2011, xmin=2.1,xmax=1,ymin=-35) +
-  annotation_custom(text_2012, xmin=6,xmax=1,ymin=-35) +
+  annotation_custom(text_2011, xmin=2.1,xmax=1,ymin=-37) +
+  annotation_custom(text_2012, xmin=6,xmax=1,ymin=-37) +
   coord_cartesian(ylim = c(0,31), xlim = c(1.5,3.5), clip="off") #messed with xlim to get less space between plot and margin
 #scale_y_continuous(breaks = seq(0, 45, by=5))
   #coord_flip()
 plot
 
 # , width = 15, height = 7,
-ggsave("Output/Geochem_Supplemental.png", plot, width = 15, dpi = 500)
+ggsave("Output/Geochem_Supplemental.png", plot, width = 15, height = 7, dpi = 500)
 
-################## Making input for main figure geochem ##########################################
+
+
+
+############################## Input for main figure geochem, salinity only ##########################################
 
 geochem_sal <- geochem_long %>% filter(grepl(c("Sal"), variable))
 
@@ -88,8 +93,8 @@ geochem_sal$SiteFull <- factor(geochem_sal$SiteFull, levels=c("4_1_July", "4_1_O
 
 ############### plotting #############
 
-text_2011 <- textGrob("2011", gp=gpar(fontsize=15, fontface="bold"))
-text_2012 <- textGrob("2012", gp=gpar(fontsize=15, fontface="bold"))
+text_2011 <- textGrob("2011", gp=gpar(fontsize=22, fontface="bold"))
+text_2012 <- textGrob("2012", gp=gpar(fontsize=22, fontface="bold"))
 
 dev.off()
 p2 <- geochem_sal %>%
@@ -100,10 +105,10 @@ p2 <- geochem_sal %>%
   #guides(fill=guide_legend(override.aes = list(size=3))) +
   theme_bw() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .5),
-    text = element_text(size = 20),
+    text = element_text(size = 25),
     legend.key.size = unit(1, 'cm'),
-    #legend.background = element_rect(color = "white"),
-    #legend.box.background = element_rect(fill = "transparent"),
+    legend.background = element_rect(fill = "transparent"),
+    legend.box.background = element_rect(fill = "transparent"),
     panel.background = element_rect(fill = "transparent"),
     #panel.grid.major = element_blank(),
     #panel.grid.minor = element_blank(),
@@ -114,8 +119,8 @@ p2 <- geochem_sal %>%
                      name = "",
                      labels = c("4.1", "8.1", "13", "21", "24")) +
   ggtitle("") +
-  annotation_custom(text_2011, xmin=2.1,xmax=1,ymin=-43) +
-  annotation_custom(text_2012, xmin=6,xmax=1,ymin=-43) +
+  annotation_custom(text_2011, xmin=2.1,xmax=1,ymin=-45) +
+  annotation_custom(text_2012, xmin=6,xmax=1,ymin=-45) +
   coord_cartesian(ylim = c(0,31), xlim = c(1.5,3.5), clip="off") #messed with xlim to get less space between plot and margin
 #scale_y_continuous(breaks = seq(0, 45, by=5))
 #coord_flip()
@@ -123,7 +128,7 @@ p2
 
 
 #save
-ggsave("Output/Salinity.png", p2, dpi = 500)
+ggsave("Output/Salinity.png", p2, dpi = 500, bg = "transparent")
 
 
 
