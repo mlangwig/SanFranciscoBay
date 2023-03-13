@@ -1,10 +1,10 @@
-#setwd
-setwd("~/Google Drive/My Drive/SF_Bay/SanFranciscoBay/MetadataPlotting/")
+############### Plotting sfb misc metadata #####################
 
 #libraries
 library(dplyr)
 library(tidyverse)
 library(wesanderson)
+library(ggplot2)
 
 #read metadata input
 input<-read_tsv(file = "input/SFB_MAGs_metadata.txt")
@@ -65,6 +65,62 @@ ggsave("output/AvgGenomeSize_SFB_MAGs.pdf", p1, dpi = 500, width = 8, height = 8
 ggsave("output/AvgGenomeSize_SFB_MAGs.png", p1, dpi = 500, width = 8, height = 8)
 
 
+############### GC content #####################
+#read input
+gc <- read.delim2(file = "input/gc_out.txt", sep = "\t", header = TRUE)
+nxra_mags <- read.delim2(file = "input/nxrA_mags.txt", sep = "\t", header = FALSE)
+nxra_scafs <- read.delim2(file = "input/nxrA_scaffs_fna.txt", sep = "\t", header = FALSE)
 
+#copy column for splitting
+gc$Bin = gc$ID
+gc <- gc %>%
+  mutate(Bin = str_replace_all(Bin, ">", ""))
+#split so have a MAG name column
+gc <- gc %>% separate(Bin, c("Bin", NA), sep= "(?=_scaf)")
+#rename weird col name
+gc <- rename(gc,"PercGC" = "X..GCContent")
+
+#average GC per scaffold per bin
+gc_sum_perBin <- gc %>%
+  group_by(Bin) %>% 
+  summarise(value=mean(as.numeric(PercGC))) %>%
+  ungroup()
+
+#plot for all scaffolds to visualize
+nxra_bin_vec <- unique(nxra_mags$V1)
+gc_nxrA <- gc %>% filter(Bin %in% nxra_bin_vec)
+
+#add mapping for highlight of specific genes
+gc_nxrA$gene_color <- rep('grey', nrow(gc_nxrA))
+nxra_scafs <- as.list(nxra_scafs)
+gc_nxrA <- gc_nxrA %>%
+  mutate(ID = str_replace_all(ID, ">", ""))
+
+gc_nxrA_test <- gc_nxrA %>%
+  mutate(gene_color = ifelse(ID %in% nxra_scafs, "red", gene_color))
+
+## ggplot
+dev.off()
+plot <- gc_nxrA %>%
+  ggplot(aes(x = ID, y = as.numeric(PercGC), group = 1)) + 
+  geom_line(color = "grey", size = .3) +
+  geom_point(size =.5, color = gc_nxrA$gene_color) +
+  labs(x = "Scaffold", y = "% GC") +
+  guides(fill=guide_legend(override.aes = list(size=3))) +
+  theme_bw() +
+  theme(axis.text.x = element_blank(),
+        legend.background = element_rect(color = "white"),
+        legend.box.background = element_rect(fill = "transparent"),
+        #panel.background = element_rect(fill = "transparent"),
+        #panel.grid.major = element_blank(),
+        #panel.grid.minor = element_blank(),
+        plot.background = element_rect(fill = "transparent", color = NA)) +
+  #panel.border = element_blank()) + #turn this off to get the outline back)
+  scale_y_continuous(expand = c(0, 0)) + #turn this on to make it look aligned with ticks
+  ggtitle("% GC nxrA MAGs") + #Change for top X grabbed
+  facet_wrap(.~Bin, scales = "free") 
+#scale_y_continuous(breaks = seq(0, 45, by=5))
+#coord_flip()
+plot
 
 
