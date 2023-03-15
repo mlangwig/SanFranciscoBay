@@ -70,6 +70,7 @@ ggsave("output/AvgGenomeSize_SFB_MAGs.png", p1, dpi = 500, width = 8, height = 8
 gc <- read.delim2(file = "input/gc_out.txt", sep = "\t", header = TRUE)
 nxra_mags <- read.delim2(file = "input/nxrA_mags.txt", sep = "\t", header = FALSE)
 nxra_scafs <- read.delim2(file = "input/nxrA_scaffs_fna.txt", sep = "\t", header = FALSE)
+nxra_new <- read.delim2(file = "input/nxrA_mags_unknown.txt", sep = "\t", header = FALSE)
 
 #copy column for splitting
 gc$Bin = gc$ID
@@ -92,19 +93,22 @@ gc_nxrA <- gc %>% filter(Bin %in% nxra_bin_vec)
 
 #add mapping for highlight of specific genes
 gc_nxrA$gene_color <- rep('grey', nrow(gc_nxrA))
-nxra_scafs <- as.list(nxra_scafs)
+nxra_scafs <- unique(nxra_scafs$V1)
 gc_nxrA <- gc_nxrA %>%
   mutate(ID = str_replace_all(ID, ">", ""))
-
-gc_nxrA_test <- gc_nxrA %>%
+gc_nxrA <- gc_nxrA %>%
   mutate(gene_color = ifelse(ID %in% nxra_scafs, "red", gene_color))
+
+#subset for just scaffold that nxrA is on
+nxra_new <- unique(nxra_new$V1)
+gc_nxrA_new <- gc_nxrA %>% filter(Bin %in% nxra_new)
 
 ## ggplot
 dev.off()
-plot <- gc_nxrA %>%
+plot <- gc_nxrA_new %>%
   ggplot(aes(x = ID, y = as.numeric(PercGC), group = 1)) + 
   geom_line(color = "grey", size = .3) +
-  geom_point(size =.5, color = gc_nxrA$gene_color) +
+  geom_point(size =.5, alpha = .5, color = gc_nxrA_new$gene_color) +
   labs(x = "Scaffold", y = "% GC") +
   guides(fill=guide_legend(override.aes = list(size=3))) +
   theme_bw() +
@@ -123,4 +127,5 @@ plot <- gc_nxrA %>%
 #coord_flip()
 plot
 
+ggsave("output/gc_nxrA_new_phyla.png", plot, dpi = 500, width = 8)
 
