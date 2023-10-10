@@ -2,10 +2,9 @@
 side-docs/*
 data/*
 microbiomeSeq/*
-MapFigure/data/*
-MapFigure/data.zip
 RDA/*
 Iron/*
+MapFigure/*
 
 # Compiled source #
 ###################
