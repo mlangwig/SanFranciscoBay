@@ -129,3 +129,69 @@ plot
 
 ggsave("output/gc_nxrA_new_phyla.png", plot, dpi = 500, width = 8)
 
+############### Functional Redundancy of Metabolism #####################
+library(devtools)
+library(readr)
+library(dplyr)
+library(tidyverse)
+library(vegan)
+install_github("adsteen/funfunfun")
+
+#read abundance input
+abundance <- read_tsv("../Abundance_Barplot/Input/SFBMAGS-vs-Reads-CoverM.tsv")
+#make first col rownames
+abundance <- abundance %>%
+  column_to_rownames(var = 'Genome')
+#flip abundance for input needs of funfunfun
+abundance <- t(abundance)
+#drop unmapped
+abundance <- abundance[ , -1]
+
+#normalize the abundance following the example of funfunfun - dividing the values by the smallest value greater than 0
+abundance_norm <- as.data.frame(round(abundance/min(abundance[abundance>0])))
+#create sample effort based on example
+sample_effort <- min(rowSums(abundance_norm))
+#rarefy the abundance matrix based on example
+abundance_norm_rare <- vegan::rrarefy(abundance_norm,sample_effort) # not clear about how this is calculated?
+#sweep the data, divide the values by row wise sums
+abundance_norm_rare_sweep <- sweep(abundance_norm_rare, 1, rowSums(abundance_norm_rare), '/')
+
+#read trait input
+traits <- read_tsv("input/METABOLIC_subset_fr.txt", col_names = TRUE)
+traits <- traits[-1, ]
+traits <- data.frame(traits, row.names = 1)
+traits <- as.matrix(traits)
+traits <- matrix(as.numeric(traits), nrow = nrow(traits), ncol = ncol(traits), dimnames = dimnames(traits))
+#calculate the functional redundancy metric
+fr_sfb <- funfunfun::royalty_fr(abundance_norm_rare_sweep, traits, q = 0.5)
+#change metadata columns
+fr_sfb <- tidyr::separate(fr_sfb,sample,into = c("site","meta"), sep = '_filter')
+fr_sfb <- fr_sfb %>%
+  separate(site, into = c("month", "site"), sep = '_sed')
+#remove blank
+  
+
+#plot
+dev.off()
+ggplot2::ggplot(fr_sfb,aes(x=trait,y=fr,color=site)) +
+  geom_boxplot() +
+  ylim(0,0.7) + #,color=sample
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))
+
+### example
+abundance.matrix <- read.csv("https://raw.githubusercontent.com/adsteen/funfunfun/main/data/MAG_abundance_table.csv", row.names = 1 )
+abundance.matrix.norm <- round(abundance.matrix/min(abundance.matrix[abundance.matrix>0])) 
+sample.effort <- min(rowSums(abundance.matrix.norm))
+abundance.matrix.norm.rare <- vegan::rrarefy(abundance.matrix.norm,sample.effort)
+abundance.matrix.norm.rare.sweep <- sweep(abundance.matrix.norm.rare,1,rowSums(abundance.matrix.norm.rare),'/') #this is dividing the values by the row sum
+#row_sum <- sum(df["Row2", ])
+
+
+trait.matrix <- read.csv("https://raw.githubusercontent.com/adsteen/funfunfun/main/data/MAG_enzyme_gene_copies.csv", row.names = 1 )
+fr <- funfunfun::royalty_fr(abundance.matrix, trait.matrix, q = 0.5)
+fr <- tidyr::separate(fr,sample,into = c("site","size_fraction","depth"), sep = '_')
+dev.off()
+ggplot2::ggplot(fr,aes(x=trait,y=fr,color=depth))+geom_boxplot()+ylim(0,0.7)  
+
+
+
