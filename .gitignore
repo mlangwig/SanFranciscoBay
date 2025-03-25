@@ -93,6 +93,8 @@ Backup[ ]of[ ]*.numbers/
 *.jld
 *.Rproj*
 *.Ruserdata
+*.RData*
+*.RDataTmp*
 
 # open office
 *.odt
