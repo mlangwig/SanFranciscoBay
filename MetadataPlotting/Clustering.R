@@ -7,6 +7,11 @@ library(ggplot2)
 library(gridExtra)
 library(dendextend)
 library(dplyr)
+library(tidyr)
+library(stringr)
+library(tibble)
+
+#detach("package:textshape", unload = TRUE)
 
 ##################### input #####################
 genus <- read.table("../Abundance_Barplot/Input/SFBMAGS-vs-Reads-CoverM.tsv", header=TRUE, sep="\t", row.names = 1)
@@ -43,8 +48,8 @@ dendG<-as.dendrogram(hclust(dist.mat))
 clustG<-hclust(dist.mat, method = "ward.D")
 dev.off()
 #plot(clust.res, hang=-1, main="Bray Curtis SFB MAG Abundance")
-plot(hclust(dist.mat), hang=-1, main="Bray Curtis SFB MAG Abundance" )
-rect.hclust((clustG), k=3)
+plot(hclust(dist.mat), hang=-1, main="Bray Curtis SFB MAG Abundance")
+rect.hclust((clustG), k=5)
 
 ##################### Maximum #####################
 
@@ -68,8 +73,9 @@ rect.hclust((clustG), k=3)
 
 ##################### testing MAG abundance clusters #####################
 
+set.seed(1234)  # Set a specific seed value
 #testing with dist.mat, BC method
-kbest.p<-3
+kbest.p<-5
 cboot.hclust<-clusterboot(dist.mat,clustermethod=hclustCBI,
                           method="ward.D", k=kbest.p, B=1000, 
                           distances=TRUE)
@@ -79,7 +85,7 @@ groups
 mean<-cboot.hclust$bootmean
 stab<-cboot.hclust$bootbrd
 rec<-cboot.hclust$bootrecover
-print(c( mean, stab, rec))
+print(c( mean, stab, rec)) # set of values for # of clusters - if 4, first 4 values are means, next 4 are stability, etc.
 
 # #testing with distanG, Maximum method
 # kbest.p<-2
@@ -99,11 +105,11 @@ print(c( mean, stab, rec))
 #par(mfrow = c(2,1), mar = c(5,2,1,0))
 #dev.off()
 dendG <- dendG %>%
-  color_branches(k = 3) #%>%
+  color_branches(k = 5) #%>%
   #set("branches_lwd", c(2,1,2)) #%>%
   #set("branches_lty", c(1,2,1))
 
-dendG <- color_labels(dendG, k = 3)
+dendG <- color_labels(dendG, k = 5)
 # The same as:
 # labels_colors(dend)  <- get_leaves_branches_col(dend)
 dev.off()
@@ -159,12 +165,12 @@ s_type[is_x] <- "Site E"
 s_type<-factor(s_type)
 
 n_types <- length(unique(s_type))
-cols_4 <- colorspace::rainbow_hcl(n_types, n=5, c = 120, l  = 60)
+cols_4 <- colorspace::rainbow_hcl(n_types, n=6, c = 120, l  = 60)
 col_type <- cols_4[s_type]
 
 #cutree 
 
-k234<-cutree(dendG, k=2:4)
+k234<-cutree(dendG, k=2:5)
 #color labels by site
 labels_colors(dendG)<-col_type[order.dendrogram((dendG))]
 
@@ -223,15 +229,41 @@ colnb_type <- colsnb_4[cb_type]
 ### plots
 #par(mar = c(12,4,1,1))
 
+# # Specify the filename, width, and height of the PNG
+# png("output/dendrogram_sfb_abundance.png", width = 800, height = 400)
+# 
+# par(mar = c(7, 4, 4, 2) + 3)
+# plot(dendG, main="Bray Curtis SFB MAG Abundance")
+# colored_bars(cbind(k234[,3:1], colnb_type,col_type), dendG, rowLabels = c(paste0("k = ", 4:2), "Group" ,"Site"))
+
+
 # Specify the filename, width, and height of the PNG
-png("output/dendrogram_sfb_abundance.png", width = 800, height = 400)
-
-par(mar = c(7, 4, 4, 2) + 3)
-plot(dendG, main="Bray Curtis SFB MAG Abundance")
-colored_bars(cbind(k234[,3:1], colnb_type,col_type), dendG, rowLabels = c(paste0("k = ", 4:2), "Group" ,"Site"))
-
+png("output/dendrogram_sfb_MAG_Abundance_vertical.png", width = 800, height = 600)
+# Specify the filename, width, and height of the SVG
+svg("output/dendrogram_sfb_MAG_Abundance_vertical.svg", width = 10, height = 8)
+# Set up margins for horizontal dendrogram with colored bars
+#par(mar = c(10, 2, 4, 10))  # Increase bottom and right margins for flipped orientation
+par(mar = c(4, 4, 4, 20)) #par(mar = c(4, 20, 4, 4))
+# Plot the dendrogram with horizontal orientation
+plot(dendG, main = "Bray Curtis SFB MAG Abundance", horiz = TRUE)
+# Add colored bars to the dendrogram
+colored_bars(
+  cbind(k234[, 4:1], colnb_type, col_type), 
+  dendG, 
+  rowLabels = c(paste0("k = ", 5:2), "Group", "Site"), 
+  horiz = TRUE  # Ensures bars align correctly for horizontal dendrogram
+)
 # Close the device to save the file
 dev.off()
+
+# # Generate the dendrogram as before
+# dist.mat <- vegdist(genust, method = "bray")
+# clustG <- hclust(dist.mat, method = "ward.D")
+# dendG <- as.dendrogram(clustG)
+# # Plot the dendrogram with flipped orientation
+# plot(dendG, horiz = TRUE, main = "Flipped Bray Curtis SFB MAG Abundance", axes = FALSE)
+# # Customize axes for flipped orientation
+# axis(1, at = axTicks(1), labels = -axTicks(1))  # Flip the y-axis labels
 
 ############################## Pfam-based clustering ####################################
 
@@ -279,11 +311,10 @@ pfam_normalized <- img_data_sub_wide %>%
   mutate(across(-c(Sample, total_pfam), ~ . / total_pfam)) %>%  # Divide each value by the row sum
   ungroup() %>%  # Remove row-wise grouping
   select(-total_pfam)  # Optionally remove the total_pfam column
-write_tsv(pfam_normalized, file = "output/pfam_normalized.tsv")
+#write_tsv(pfam_normalized, file = "output/pfam_normalized.tsv")
 
 pfam_normalized <- pfam_normalized %>%
   column_to_rownames(var = "Sample")
-
 
 ############################## Bray Curtis clustering ####################################
 
@@ -322,6 +353,7 @@ rect.hclust((clustG), k = 4)
 
 ##################### Testing MAG pfam clusters #####################
 
+set.seed(5678)  # Seed for the second clustering
 #testing with dist.mat, BC method
 kbest.p<-3
 cboot.hclust<-clusterboot(dist.mat2,clustermethod=hclustCBI,
@@ -478,14 +510,41 @@ colnb_type <- colsnb_4[cb_type]
 ### plots
 #par(mar = c(12,4,1,1))
 
-# Specify the filename, width, and height of the PNG
-png("output/dendrogram_sfb_pfam.png", width = 800, height = 400)
+# # Specify the filename, width, and height of the PNG
+# png("output/dendrogram_sfb_pfam.png", width = 800, height = 400)
+# 
+# par(mar = c(7, 4, 4, 2) + 3)
+# plot(dendG2, main="Bray Curtis SFB MAG Pfams")
+# colored_bars(cbind(k234[,3:1], colnb_type,col_type), dendG2, rowLabels = c(paste0("k = ", 4:2), "Group" ,"Site"))
+# 
+# # Close the device to save the file
+# dev.off()
 
-par(mar = c(7, 4, 4, 2) + 3)
-plot(dendG2, main="Bray Curtis SFB MAG Pfams")
-colored_bars(cbind(k234[,3:1], colnb_type,col_type), dendG2, rowLabels = c(paste0("k = ", 4:2), "Group" ,"Site"))
-
-# Close the device to save the file
 dev.off()
+# Specify the filename, width, and height of the PNG
+png("output/dendrogram_sfb_MAG_PFAM_vertical.png", width = 800, height = 600)
+# Specify the filename, width, and height of the SVG
+svg("output/dendrogram_sfb_MAG_PFAM_vertical.svg", width = 10, height = 8)
+
+# Set plot margins to accommodate the rotated dendrogram
+par(mar = c(4, 10, 4, 4)) # = B,L,T,R
+#par(mar = c(10, 4, 4, 10))  # Increase bottom and right margins for flipped orientation
+# Reverse the dendrogram's order (flip the horizontal dendrogram)
+#plot(dendG2, main="Bray Curtis SFB MAG Pfams", horiz = TRUE, axes = FALSE)
+plot_horiz.dendrogram(dendG2, main = "Bray Curtis SFB MAG Pfams", horiz = TRUE, side = TRUE)
+# Add colored bars on the left (to match the new orientation)
+colored_bars(
+  cbind(k234[, 3:1], colnb_type, col_type), 
+  dendG2, 
+  rowLabels = c(paste0("k = ", 4:2), "Group", "Site"),
+  horiz = TRUE, 
+  y_shift = .18)
+# Close the device to save the plot
+dev.off()
+
+########################################## END ########################################################
+
+
+
 
 

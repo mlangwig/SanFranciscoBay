@@ -193,5 +193,16 @@ fr <- tidyr::separate(fr,sample,into = c("site","size_fraction","depth"), sep = 
 dev.off()
 ggplot2::ggplot(fr,aes(x=trait,y=fr,color=depth))+geom_boxplot()+ylim(0,0.7)  
 
+############### Functional Redundancy of Metabolism based on IMG data rather than METABOLIC #####################
+
+#read trait input
+genes <- read_tsv("input/fr_genes_final.txt")
+
+img_data_filt <- img_data %>%
+  filter(KO_Term %in% genes$KO)
+
+
+
+
 
 
