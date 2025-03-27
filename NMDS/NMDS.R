@@ -4,15 +4,27 @@ library(ggrepel)
 
 ######################### Input data relative abundance #####################################
 
-data<-read.delim2(file = "../Abundance_Barplot/Input/SFBMAGS-vs-Reads-CoverM.tsv")
+#data<-read.delim2(file = "../../Abundance_Barplot/Input/SFBMAGS-vs-Reads-CoverM.tsv")
+data<-read.delim2(file = "../../../Coverm/dereplicate/output_coverm.tsv")
 str(data)
-tax<-read.delim2(file = "../Abundance_Barplot/Input/gtdbtk.r207.bacarc.summary.tsv")
+tax<-read.delim2(file = "../../Abundance_Barplot/Input/gtdbtk.r207.bacarc.summary.tsv")
 
-#remove extraneous strings from col names
-colnames(data) <- gsub("_filter.METAGENOME.fastq.gz.Relative.Abundance....", "", colnames(data))
+#keep only relative abundance cols
+data_filt <- data %>% 
+  dplyr::select(contains("Relative.Abundance"))
+
+#add back genome col
+data_filt <- data_filt %>%
+  dplyr::mutate(Genome = data[[1]]) %>%
+  dplyr::select(Genome, everything())
+
+data <- data_filt
 
 #remove umapped row
 data <- data[-1, ]
+
+#remove extraneous strings from col names
+colnames(data) <- gsub("_filter.METAGENOME.fastq.gz.Relative.Abundance....", "", colnames(data))
 
 #add taxonomy
 data <- tax %>%
@@ -20,8 +32,13 @@ data <- tax %>%
   right_join(data, by = c("user_genome" = "Genome"))
 
 #clean up taxonomy
-data <- data %>% separate(classification, c("classification", NA), sep= ";c")
-data <- data %>% separate(classification, c(NA, "classification"), sep= ";")
+#phylum level
+#data <- data %>% separate(classification, c("classification", NA), sep= ";c")
+#data <- data %>% separate(classification, c(NA, "classification"), sep= ";")
+
+#genus level
+data <- data %>% separate(classification, c("classification", NA), sep= ";s")
+data <- data %>% separate(classification, c(NA, "classification"), sep= ".*;")
 
 #sum relative abundance by phylum
 data <- data %>%
@@ -40,6 +57,26 @@ data <- data %>%
   mutate(across(starts_with("p"), as.numeric)) 
 str(data)
 
+data <- data %>%
+  mutate(across(starts_with("g"), as.numeric)) 
+str(data)
+
+data <- data %>%
+  mutate(across(everything(), ~ as.numeric(as.character(.))))
+str(data)
+
+#order the data same as env data
+mapping <- read.delim2("Input/mapping_samples.txt")
+data <- data %>%
+  rownames_to_column(var = "Site_Long")
+#map the ordering variable
+data <- mapping %>%
+  right_join(data, by = "Site_Long")
+data <- data %>%
+  arrange(Order) %>%
+  select(-c("Site_Short", "Order")) %>%
+  column_to_rownames(var = "Site_Long")
+
 ######################### Geochemical data #####################################
 
 # Tutorial from #http://r.qcbs.ca/workshop10/book-en/redundancy-analysis.html#running-an-rda-in-r
@@ -49,6 +86,10 @@ geo<-read_xlsx(path = "Input/Geochemical_Dataxlsx.xlsx")
 #remove dist col
 geo <- geo %>%
   select(-c('Dist'))
+
+#order the geo data by order column
+geo <- geo %>%
+  arrange(Order)
 
 #see if environmental variables are colinear
 #subset data to assess for colinearity
@@ -75,36 +116,37 @@ round(apply(env.z, 2, mean), 1)
 apply(env.z, 2, sd)
 #remove correlated env data
 env.z <- subset(env.z, select = -c(Al, Cl, Ntot, Ctot, porosity, Fe, Mn, Pb, Na, Cu, Temp))
-
+#remove Mg just to see
+#env.z <- subset(env.z, select = -c(Mg))
 
 ######################### Tutorial 1 - Example #####################################
 
-# Tutorial from #http://r.qcbs.ca/workshop10/book-en/redundancy-analysis.html#running-an-rda-in-r
-
-spe <- read.csv("~/Downloads/doubsspe.csv", row.names = 1)
-env <- read.csv("~/Downloads/doubsenv.csv", row.names = 1)
-
-# Run the NMDS
-spe.nmds <- metaMDS(spe[, -8], distance = "bray", k = 2)
-
-# Extract the results
-spe.nmds
-
-# Assess the goodness of fit and draw a Shepard plot
-spe.nmds$stress
-stressplot(spe.nmds, main = "Shepard plot")
-
-# Construct the biplot
-
-plot(spe.nmds, 
-     type = "none", 
-     main = paste("NMDS/Bray - Stress=",round(spe.nmds$stress, 3)), 
-     xlab = c("NMDS1"), ylab = c("NMDS2"))
-points(scores(spe.nmds, display = "sites", choices = c(1, 2)),
-       pch = 21, col = "black", bg = "steelblue", cex = 1.2)
-text(scores(spe.nmds, display = "species", choices = c(1)), 
-     scores(spe.nmds, display = "species", choices = c(2)), 
-     labels = rownames(scores(spe.nmds, display = "species")), col = "red", cex = 0.8)
+# # Tutorial from #http://r.qcbs.ca/workshop10/book-en/redundancy-analysis.html#running-an-rda-in-r
+# 
+# spe <- read.csv("~/Downloads/doubsspe.csv", row.names = 1)
+# env <- read.csv("~/Downloads/doubsenv.csv", row.names = 1)
+# 
+# # Run the NMDS
+# spe.nmds <- metaMDS(spe[, -8], distance = "bray", k = 2)
+# 
+# # Extract the results
+# spe.nmds
+# 
+# # Assess the goodness of fit and draw a Shepard plot
+# spe.nmds$stress
+# stressplot(spe.nmds, main = "Shepard plot")
+# 
+# # Construct the biplot
+# 
+# plot(spe.nmds, 
+#      type = "none", 
+#      main = paste("NMDS/Bray - Stress=",round(spe.nmds$stress, 3)), 
+#      xlab = c("NMDS1"), ylab = c("NMDS2"))
+# points(scores(spe.nmds, display = "sites", choices = c(1, 2)),
+#        pch = 21, col = "black", bg = "steelblue", cex = 1.2)
+# text(scores(spe.nmds, display = "species", choices = c(1)), 
+#      scores(spe.nmds, display = "species", choices = c(2)), 
+#      labels = rownames(scores(spe.nmds, display = "species")), col = "red", cex = 0.8)
 
 ######################### Tutorial 1 - My Data #####################################
 
@@ -143,7 +185,7 @@ text(scores(spe.nmds, display = "sites", choices = c(1))[, 1],
 #nmds code
 set.seed(123)
 # nmds = metaMDS(spe.rclr.mat, distance = "euclidean", trymax = 100)
-# nmds = metaMDS(data, distance = "bray", k = 2)
+#nmds = metaMDS(data, distance = "bray", k = 2)
 spe.nmds
 plot(spe.nmds)
 
@@ -207,6 +249,11 @@ gg
 ggsave("Output/nmds_env_sfb.svg", gg, dpi = 500)
 ggsave("Output/nmds_env_sfb.png", gg, dpi = 500)
 
+#ggsave("Output/nmds_env_sfb_genus.svg", gg, dpi = 500)
+#ggsave("Output/nmds_env_sfb_genus.png", gg, dpi = 500, height = 7, width = 9)
+
+#ggsave("Output/nmds_env_sfb_species.svg", gg, dpi = 500)
+ggsave("Output/nmds_env_sfb_species.png", gg, dpi = 500)
 
 
 
