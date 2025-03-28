@@ -4,7 +4,7 @@ library(ggrepel)
 
 ######################### Input data relative abundance #####################################
 
-#data<-read.delim2(file = "../../Abundance_Barplot/Input/SFBMAGS-vs-Reads-CoverM.tsv")
+data<-read.delim2(file = "../../Abundance_Barplot/Input/SFBMAGS-vs-Reads-CoverM.tsv")
 data<-read.delim2(file = "../../../Coverm/dereplicate/output_coverm.tsv")
 str(data)
 tax<-read.delim2(file = "../../Abundance_Barplot/Input/gtdbtk.r207.bacarc.summary.tsv")
@@ -26,26 +26,26 @@ data <- data[-1, ]
 #remove extraneous strings from col names
 colnames(data) <- gsub("_filter.METAGENOME.fastq.gz.Relative.Abundance....", "", colnames(data))
 
-#add taxonomy
-data <- tax %>%
-  dplyr::select("user_genome", "classification") %>%
-  right_join(data, by = c("user_genome" = "Genome"))
+# #add taxonomy
+# data <- tax %>%
+#   dplyr::select("user_genome", "classification") %>%
+#   right_join(data, by = c("user_genome" = "Genome"))
 
 #clean up taxonomy
 #phylum level
 #data <- data %>% separate(classification, c("classification", NA), sep= ";c")
 #data <- data %>% separate(classification, c(NA, "classification"), sep= ";")
 
-#genus level
-data <- data %>% separate(classification, c("classification", NA), sep= ";s")
-data <- data %>% separate(classification, c(NA, "classification"), sep= ".*;")
+# #genus level
+# data <- data %>% separate(classification, c("classification", NA), sep= ";s")
+# data <- data %>% separate(classification, c(NA, "classification"), sep= ".*;")
 
-#sum relative abundance by phylum
-data <- data %>%
-  mutate(across(starts_with("SF"), as.numeric)) %>%
-  group_by(classification) %>%
-  summarise(across(starts_with("SF"), sum))
-str(data)
+# #sum relative abundance by phylum
+# data <- data %>%
+#   mutate(across(starts_with("SF"), as.numeric)) %>%
+#   group_by(classification) %>%
+#   summarise(across(starts_with("SF"), sum))
+# str(data)
 
 #transpose
 data <- as.data.frame(t(data))
@@ -53,13 +53,13 @@ data <- as.data.frame(t(data))
 data <- data %>%
   row_to_names(row_number = 1)
 #fix numeric
-data <- data %>%
-  mutate(across(starts_with("p"), as.numeric)) 
-str(data)
-
-data <- data %>%
-  mutate(across(starts_with("g"), as.numeric)) 
-str(data)
+# data <- data %>%
+#   mutate(across(starts_with("p"), as.numeric)) 
+# str(data)
+# 
+# data <- data %>%
+#   mutate(across(starts_with("g"), as.numeric)) 
+# str(data)
 
 data <- data %>%
   mutate(across(everything(), ~ as.numeric(as.character(.))))
@@ -95,6 +95,7 @@ geo <- geo %>%
 #subset data to assess for colinearity
 env<-geo[7:24]
 
+env_cor<-abs(cor(env))
 # We can visually look for correlations between variables:
 heatmap(abs(cor(env)), 
         # Compute pearson correlation (note they are absolute values)
@@ -115,7 +116,7 @@ round(apply(env.z, 2, mean), 1)
 # and scaled to have a standard deviation of 1
 apply(env.z, 2, sd)
 #remove correlated env data
-env.z <- subset(env.z, select = -c(Al, Cl, Ntot, Ctot, porosity, Fe, Mn, Pb, Na, Cu, Temp))
+env.z <- subset(env.z, select = -c(Al, Cl, Ctot, porosity, Sal, Mg, Mn, Pb, Na, Cu, Temp))
 #remove Mg just to see
 #env.z <- subset(env.z, select = -c(Mg))
 
@@ -179,7 +180,7 @@ text(scores(spe.nmds, display = "sites", choices = c(1))[, 1],
 
 ######################### Tutorial 2 - My Data #####################################
 
-#Tutuorial from https://jkzorz.github.io/2019/06/06/NMDS.html
+#Tutorial from https://jkzorz.github.io/2019/06/06/NMDS.html
 
 #spe.rclr.mat <- as.matrix(spe.rclr)
 #nmds code
@@ -211,6 +212,7 @@ head(data.scores)
 set.seed(150)
 en = envfit(spe.nmds, env.z, permutations = 999, na.rm = TRUE)
 en
+#S, P, and Sal are significant without 95% ANI dereplication of MAGs. C/N almost (0.056)
 
 plot(spe.nmds)
 plot(en)
