@@ -95,7 +95,14 @@ geo <- geo %>%
 #subset data to assess for colinearity
 env<-geo[7:24]
 
+#compute correlations
 env_cor<-abs(cor(env))
+
+env_cor<-cor(env)
+
+cor(env$Sal, env$Fe)
+cor.test(env$Sal, env$Fe)
+
 # We can visually look for correlations between variables:
 heatmap(abs(cor(env)), 
         # Compute pearson correlation (note they are absolute values)
@@ -116,7 +123,7 @@ round(apply(env.z, 2, mean), 1)
 # and scaled to have a standard deviation of 1
 apply(env.z, 2, sd)
 #remove correlated env data
-env.z <- subset(env.z, select = -c(Al, Cl, Ctot, porosity, Sal, Mg, Mn, Pb, Na, Cu, Temp))
+env.z <- subset(env.z, select = -c(Al, Cl, Ctot, porosity, Mn, Na, Cu)) #Fe, 
 #remove Mg just to see
 #env.z <- subset(env.z, select = -c(Mg))
 
@@ -256,6 +263,8 @@ ggsave("Output/nmds_env_sfb.png", gg, dpi = 500)
 
 #ggsave("Output/nmds_env_sfb_species.svg", gg, dpi = 500)
 ggsave("Output/nmds_env_sfb_species.png", gg, dpi = 500)
+
+ggsave("Output/nmds_env_sfb_derep_species.png", gg, dpi = 500)
 
 
 
