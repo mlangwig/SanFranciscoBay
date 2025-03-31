@@ -96,12 +96,15 @@ geo <- geo %>%
 env<-geo[7:24]
 
 #compute correlations
-env_cor<-abs(cor(env))
-
+#env_cor<-abs(cor(env))
 env_cor<-cor(env)
 
-cor(env$Sal, env$Fe)
-cor.test(env$Sal, env$Fe)
+write.table(cbind(" " = rownames(env_cor), env_cor), 
+            "Output/env_cor.tsv", quote = FALSE, sep = "\t", row.names = FALSE)
+
+env_cor_filt <- as.data.frame(env_cor)
+#see values >0.7 <-0.7, ignore 1
+env_cor_filt2 <- env_cor_filt %>% mutate(across(everything(), ~ ifelse(abs(.) > 0.7 & . != 1.0, ., NA)))
 
 # We can visually look for correlations between variables:
 heatmap(abs(cor(env)), 
@@ -220,6 +223,30 @@ set.seed(150)
 en = envfit(spe.nmds, env.z, permutations = 999, na.rm = TRUE)
 en
 #S, P, and Sal are significant without 95% ANI dereplication of MAGs. C/N almost (0.056)
+
+# Extract the vectors component from envfit results
+en_vectors <- as.data.frame(en$vectors$arrows)  # Load variable directions
+en_vectors$r2 <- en$vectors$r  # Add R2 values
+en_vectors$p_value <- en$vectors$pvals  # Add p-values
+
+# Function to assign significance codes
+significance_codes <- function(p) {
+  if (p <= 0.001) return("***")
+  else if (p <= 0.01) return("**")
+  else if (p <= 0.05) return("*")
+  else if (p <= 0.1) return(".")
+  else return("")
+}
+
+# Apply significance codes
+en_vectors$significance <- sapply(en_vectors$p_value, significance_codes)
+
+# Add row names as a column
+en_vectors <- cbind(" " = rownames(en_vectors), en_vectors)
+
+# Write to a table with proper formatting
+write.table(en_vectors, "Output/envfit_results.tsv", quote = FALSE, sep = "\t", 
+            row.names = FALSE, col.names = TRUE)
 
 plot(spe.nmds)
 plot(en)
