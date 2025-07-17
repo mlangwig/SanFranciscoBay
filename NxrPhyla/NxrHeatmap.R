@@ -12,6 +12,36 @@ head(df)
 df_num <- df %>% select(nxrA:mct)
 rownames(df_num) = df$MAG
 
+######################### Obtain all annotations in MAGs from IMG data ####################################
+
+# using the IMG tables of bins only annotations to get 1 big table
+
+# Specify the directory where the files are located
+directory <- "../../IMG/IMG_Tables_BinsOnly/"
+
+# Get a list of all the files ending with tsv.BinsOnly
+file_list <- list.files(path = directory, pattern = "tsv.BinsOnly$", full.names = TRUE)
+
+# Read all the files and combine them into one data frame
+img_data <- lapply(file_list, read.delim) %>%
+  bind_rows()
+
+# View the first few rows of the combined table
+head(img_data)
+tail(img_data)
+
+# subset for just the cols you want
+img_data_sub <- img_data %>%
+  select(c("PFAM_ID", "Bin"))
+
+#modify for parsing
+img_data_sub <- img_data_sub %>%
+  mutate_all(na_if,"") %>% #add NA for absence of pfam
+  separate(Bin, into = c("Sample", NA), sep = "_SF") %>% #get rid of bin name to just keep sample name
+  drop_na() #remove rows with NAs
+
+##################################################################
+
 #replace all gene presence values greater than 1 with 2
 df_scale<-replace(df_num, df_num>1,2)
 

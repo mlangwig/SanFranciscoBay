@@ -71,6 +71,32 @@ coverm_long_final$SiteFull <- factor(coverm_long_final$SiteFull, levels=c("4_1_J
                                                               "21_July", "21_Oct", "21_Jan", "21_May",
                                                               "24_July", "24_Oct", "24_Jan", "24_May")) 
 
+############################ See the lowest .1% of community #############################
+
+#group and sum
+coverm_rare <- coverm_long_final %>%
+  group_by(Taxa) %>%
+  summarise(value=sum(as.numeric(value))) %>% #summing the group
+  ungroup()
+
+#get MAGs with less than .1% abundance
+coverm_0.1 <- coverm_long_final %>%
+  filter(value < 0.1)
+
+#get MAGs mapped to their own site where they were ID'd
+filtered_df <- coverm_long_final %>%
+  mutate(MAG_Site = str_extract(user_genome, "^[0-9]+(?:_[0-9]+)?")) %>%
+  filter(MAG_Site == as.character(Site))
+filtered_df$value <- as.numeric(filtered_df$value)
+
+#get MAGs with average <.1% abundance and mapped to their own site where they were ID'd
+coverm_0.1 <- filtered_df %>%
+  group_by(user_genome) %>%
+  filter(mean(value) < 0.1)
+
+#Get the names of rare biosphere MAGs
+rare_MAGs <- unique(coverm_0.1$user_genome)
+
 ############################ Sum abundance by site and taxa, filter for top 10 #############################
 
 coverm_long_10p <- coverm_long_final %>%

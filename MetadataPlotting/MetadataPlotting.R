@@ -155,6 +155,8 @@ sample_effort <- min(rowSums(abundance_norm))
 abundance_norm_rare <- vegan::rrarefy(abundance_norm,sample_effort) # not clear about how this is calculated?
 #sweep the data, divide the values by row wise sums
 abundance_norm_rare_sweep <- sweep(abundance_norm_rare, 1, rowSums(abundance_norm_rare), '/')
+#order the MAG columns alphabetically
+abundance_norm_rare_sweep <- abundance_norm_rare_sweep[, order(colnames(abundance_norm_rare_sweep))]
 
 #read trait input
 traits <- read_tsv("input/METABOLIC_subset_fr.txt", col_names = TRUE)
@@ -162,6 +164,8 @@ traits <- traits[-1, ]
 traits <- data.frame(traits, row.names = 1)
 traits <- as.matrix(traits)
 traits <- matrix(as.numeric(traits), nrow = nrow(traits), ncol = ncol(traits), dimnames = dimnames(traits))
+#order the MAG rows alphabetically to match the abundance matrix
+traits <- traits[order(rownames(traits)), ]
 #calculate the functional redundancy metric
 fr_sfb <- funfunfun::royalty_fr(abundance_norm_rare_sweep, traits, q = 0.5)
 #change metadata columns
@@ -178,7 +182,7 @@ ggplot2::ggplot(fr_sfb,aes(x=trait,y=fr,color=site)) +
   ylim(0,0.7) + #,color=sample
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))
 
-### example
+### functional redundancy example using funfunfun
 abundance.matrix <- read.csv("https://raw.githubusercontent.com/adsteen/funfunfun/main/data/MAG_abundance_table.csv", row.names = 1 )
 abundance.matrix.norm <- round(abundance.matrix/min(abundance.matrix[abundance.matrix>0])) 
 sample.effort <- min(rowSums(abundance.matrix.norm))
@@ -188,6 +192,7 @@ abundance.matrix.norm.rare.sweep <- sweep(abundance.matrix.norm.rare,1,rowSums(a
 
 
 trait.matrix <- read.csv("https://raw.githubusercontent.com/adsteen/funfunfun/main/data/MAG_enzyme_gene_copies.csv", row.names = 1 )
+#Notice that abundance matrix cols and trait rows are in same MAG order
 fr <- funfunfun::royalty_fr(abundance.matrix, trait.matrix, q = 0.5)
 fr <- tidyr::separate(fr,sample,into = c("site","size_fraction","depth"), sep = '_')
 dev.off()
@@ -196,10 +201,139 @@ ggplot2::ggplot(fr,aes(x=trait,y=fr,color=depth))+geom_boxplot()+ylim(0,0.7)
 ############### Functional Redundancy of Metabolism based on IMG data rather than METABOLIC #####################
 
 #read trait input
-genes <- read_tsv("input/fr_genes_final.txt")
+traits_img <- readxl::read_excel("input/fr_genes_IMG_final.xlsx", sheet = "long_way")
+#read in rare SFB MAGs
+rare_MAGs <- read.delim(file = "../Abundance_Barplot/Output/MAGs_RareBiosphere.txt", header = FALSE)
 
-img_data_filt <- img_data %>%
-  filter(KO_Term %in% genes$KO)
+#collapse so that presence >0 means path present
+traits_img_sum <- traits_img %>%
+  select(-`gene description`, -KO) %>%        # Drop non-numeric columns
+  group_by(pathway) %>%                       # Group by pathway
+  summarise(across(everything(),              # For each numeric column
+                   ~ as.integer(any(. > 0)))) # 1 if any value > 0, else 0
+#transpose
+traits_img_sum <- t(traits_img_sum)
+# Make first row the header
+colnames(traits_img_sum) <- as.character(traits_img_sum[1, ])
+# Get rid of first row
+traits_img_sum <- traits_img_sum[-1, ]
+
+#Make df a matrix and values num
+traits_img_sum <- as.matrix(traits_img_sum)
+traits_img_sum <- matrix(as.numeric(traits_img_sum), nrow = nrow(traits_img_sum), ncol = ncol(traits_img_sum), dimnames = dimnames(traits_img_sum))
+#calculate the functional redundancy metric
+fr_sfb <- funfunfun::royalty_fr(abundance_norm_rare_sweep, traits_img_sum, q = 0.5)
+
+#remove any weight of abundance
+#fr_sfb <- funfunfun::royalty_fr(abundance_norm_rare_sweep, traits_img_sum, q = 0.0)
+#add extra weight to abundance
+#fr_sfb <- funfunfun::royalty_fr(abundance_norm_rare_sweep, traits_img_sum, q = 1.0)
+
+#change metadata columns
+fr_sfb <- tidyr::separate(fr_sfb,sample,into = c("site","meta"), sep = '_filter')
+fr_sfb <- fr_sfb %>%
+  separate(site, into = c("month", "site"), sep = '_sed')
+
+#plot
+dev.off()
+ggplot2::ggplot(fr_sfb,aes(x=trait,y=fr,color=site)) +
+  geom_boxplot() +
+  ylim(0,0.7) + #,color=sample
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))
+
+#view averages and sds
+fr_sfb_stats <- fr_sfb %>%
+  group_by(trait) %>%
+  summarise(
+    mean_fr = mean(fr) ,
+    sd_fr = sd(fr)
+  )
+
+#view proportions of traits
+# Number of rows
+n_rows <- nrow(traits_img_sum)
+
+# Proportion of 1s per column (trait)
+trait_proportions <- colSums(traits_img_sum == 1) / n_rows * 100
+
+# View the result
+print(trait_proportions)
+
+#view proportions of genes
+#collapse so that presence >0 means path present
+traits_img_genes <- traits_img %>%
+  select(-pathway, -KO) %>%        # Drop non-numeric columns
+  group_by(`gene description`) %>%                       # Group by pathway
+  summarise(across(everything(),              # For each numeric column
+                   ~ as.integer(any(. > 0)))) # 1 if any value > 0, else 0
+
+#transpose
+traits_img_genes <- t(traits_img_genes)
+# Make first row the header
+colnames(traits_img_genes) <- as.character(traits_img_genes[1, ])
+# Get rid of first row
+traits_img_genes <- traits_img_genes[-1, ]
+
+#Make df a matrix and values num
+traits_img_genes <- as.matrix(traits_img_genes)
+traits_img_genes <- matrix(as.numeric(traits_img_genes), nrow = nrow(traits_img_genes), ncol = ncol(traits_img_genes), dimnames = dimnames(traits_img_genes))
+
+# Number of rows
+n_rows <- nrow(traits_img_genes)
+# Proportion of 1s per column (trait)
+gene_proportions <- colSums(traits_img_genes == 1) / n_rows * 100
+
+# See proportion of pathways encoded by rare taxa
+rare_ids <- rare_MAGs$V1
+traits_img_rare <- traits_img_sum[rownames(traits_img_sum) %in% rare_ids, ]
+rare_gene_perc <- colSums(traits_img_rare > 0, na.rm = TRUE) / nrow(traits_img_rare) * 100
+rare_gene_perc
+
+percent_encoded <- colMeans(traits_img_rare, na.rm = TRUE) * 100
+#percent rare MAGs with nitrogen cycling genes
+percent_rows_with_presence <- sum(rowSums(traits_img_rare[, 1:8] > 0, na.rm = TRUE) > 0) / nrow(traits_img_rare) * 100
+#percent rare MAGs with nitrogen cycling genes
+
+#write rare MAGs traits table output
+write_delim(as.data.frame(traits_img_rare), file = "output/traits_img_RareBiosphere.txt", quote = "none")
+#### Unused
+
+# #read trait input
+# genes <- read_tsv("input/fr_genes_final.txt")
+# #subset IMG data for genes of interest
+# img_data_filt <- img_data %>%
+#   filter(KO_Term %in% genes$KO)
+# #map pathway name onto IMG data
+# img_data_filt <- genes %>%
+#   dplyr::select("KO", "Pathway2") %>%
+#   right_join(img_data_filt, by = c("KO" = "Source"))
+
+# # read in DRAM data
+# DRAM <- readxl::read_excel("../../DRAM/metabolism_summary.xlsx", sheet = "Energy")
+# # keep nitrogen and sulfur cycles
+# DRAM <- DRAM %>%
+#   filter(grepl("Nitrogen|Sulfur", header))
+# # drop some modules because repeated or not of interest
+# DRAM <- DRAM %>%
+#   filter(!grepl("nitrite \\+ ammonia => nitrogen", module))
+# DRAM <- DRAM %>%
+#   filter(!grepl("Assimilatory nitrate reduction, nitrate => ammonia", module))
+# 
+# traits_dram <- read_tsv("input/fr_genes_DRAM.txt", col_names = FALSE)
+# traits_dram <- as.data.frame(traits_dram)
+# 
+# # Combine row 1 and row 2, element-wise, separated by space
+# combined_row <- paste(traits_dram[1, ], traits_dram[2, ], sep = " ")
+# combined_row <- sub("\\[.*", "", combined_row)
+# traits_dram[1, ] <- combined_row     # Overwrite row 1 with combined result
+# # Make first row the header
+# colnames(traits_dram) <- as.character(traits_dram[1, ])
+# traits_dram <- traits_dram[-1, ]
+# # Make first col row names
+# traits_dram <- data.frame(traits_dram, row.names = 1)
+# # Get rid of extra rows
+# traits_dram <- traits_dram[-c(1:4), ]
+
 
 
 
