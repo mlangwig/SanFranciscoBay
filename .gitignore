@@ -9,6 +9,7 @@ Sulfur/*
 NMDS/Output/*
 MEBS_plotting/Maggie.html
 MEBS_plotting/Output/*
+.DS_Store*
 
 #data
 *.txt
