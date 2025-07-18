@@ -7,6 +7,7 @@ library(ggplot2)
 library(gridExtra)
 library(dplyr)
 library(tidyr)
+library(stringr)
 
 #df <- read.csv("Input/input_heatmap.csv")
 #head(df)
@@ -57,18 +58,74 @@ img_data <- img_data %>%
 img_data_sub <- img_data %>%
   filter(PFAM_ID %in% ids$KO | KO_Term %in% ids$KO)
 
+#Check counts
+length(unique(ids$KO))
+length(unique(img_data_sub$KO_Term))
+# Both 139
+
 # Filter for only nxr MAGs
 img_data_sub <- img_data_sub %>%
   filter(Bin %in% mags$V1)
+
+#Check counts
+length(unique(mags$V1))
+length(unique(img_data_sub$Bin))
+# Both 39
+
+# Add pathway metadata
+img_data_sub <- ids %>%
+  right_join(img_data_sub, by = c("KO" = "KO_Term"))
+
+# Drop PPP and Glycolysis
+img_data_sub <- img_data_sub %>%
+  filter(!Cat_Broad %in% c("PPP", "Glycolysis"))
 
 ##################################################################
 
 ######################### Obtain all annotations in Cultured Refs from KEGG data ####################################
 
-refs <- 
+# Specify the directory where the files are located
+directory2 <- "../../NarG_NxrA_phylogeny/Figure4/KEGG_output_culturedNOB/txt/"
+
+# Get a list of all the files
+file_list2 <- list.files(path = directory2, pattern = "^mod", full.names = TRUE)
+
+# Read all the files and combine them into one data frame
+refs <- lapply(file_list2, read.delim) %>%
+  bind_rows()
+
+# View the first few rows of the combined table
+head(refs)
+tail(refs)
+
+#remove ko: from KEGG column data
+refs <- refs %>%
+  mutate(KEGG_ko = gsub("ko:", "", KEGG_ko)) %>%
+  filter(!is.na(evalue))
+
+# Add NCBI ID to MAGs
+ref_mapping <- read.delim(file = "Input/RefGenomeIDs.txt", header = TRUE)
+refs <- refs %>%
+  mutate(NCBI_ID = query) %>%
+  extract(NCBI_ID, into = "NCBI_ID", regex = "^([^_]+_[^_]+)", remove = TRUE)
+
+refs <- ref_mapping %>%
+  right_join(refs, by = c("Descriptive" = "NCBI_ID"))
+
+# Filter refs for genes of interest
+
+# collapse all KOs into one regex pattern like "K00370|K07306|K17050|..."
+pattern <- paste0(ids$KO, collapse = "|")
+
+refs_sub <- refs %>%
+  filter(str_detect(KEGG_ko, pattern))
+
+#Check counts
+length(unique(refs_sub$KEGG_ko))
+length(unique(ids$KO))
+# References are missing 2 KOs: K00374 + K14470
 
 ##################################################################
-
 
 #replace all gene presence values greater than 1 with 2
 df_scale<-replace(df_num, df_num>1,2)
