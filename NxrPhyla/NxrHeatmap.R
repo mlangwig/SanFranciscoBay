@@ -6,11 +6,13 @@ library(pheatmap)
 library(ggplot2)
 library(gridExtra)
 library(dplyr)
-df <- read.csv("Input/input_heatmap.csv")
-head(df)
+library(tidyr)
 
-df_num <- df %>% select(nxrA:mct)
-rownames(df_num) = df$MAG
+#df <- read.csv("Input/input_heatmap.csv")
+#head(df)
+
+#df_num <- df %>% select(nxrA:mct)
+#rownames(df_num) = df$MAG
 
 ######################### Obtain all annotations in MAGs from IMG data ####################################
 
@@ -30,17 +32,43 @@ img_data <- lapply(file_list, read.delim) %>%
 head(img_data)
 tail(img_data)
 
-# subset for just the cols you want
-img_data_sub <- img_data %>%
-  select(c("PFAM_ID", "Bin"))
+# Read in KO IDs
+ids <- read.delim(file = "Input/markergenes.txt", header = TRUE)
+# Read in MAG list
+mags <- read.delim(file = "Input/MAG_list.txt", header = FALSE)
 
 #modify for parsing
+img_data <- img_data %>%
+  #mutate_all(na_if,"") %>% #add NA for absence of pfam
+  mutate(Sample = Bin) %>%
+  separate(Sample, into = c("Sample", NA), sep = "_SF") #%>% #get rid of bin name to just keep sample name
+  #drop_na() #remove rows with NAs
+
+# subset for just the cols you want
+#img_data_sub <- img_data %>%
+#  select(c("PFAM_ID", "Bin"))
+
+# Make gene names more standardized
+img_data <- img_data %>%
+  mutate(KO_Term = gsub("KO:", "", KO_Term)) %>%
+  mutate(PFAM_ID = gsub("pfam", "PF", PFAM_ID))
+
+# Filter IMG data for KOs
+img_data_sub <- img_data %>%
+  filter(PFAM_ID %in% ids$KO | KO_Term %in% ids$KO)
+
+# Filter for only nxr MAGs
 img_data_sub <- img_data_sub %>%
-  mutate_all(na_if,"") %>% #add NA for absence of pfam
-  separate(Bin, into = c("Sample", NA), sep = "_SF") %>% #get rid of bin name to just keep sample name
-  drop_na() #remove rows with NAs
+  filter(Bin %in% mags$V1)
 
 ##################################################################
+
+######################### Obtain all annotations in Cultured Refs from KEGG data ####################################
+
+refs <- 
+
+##################################################################
+
 
 #replace all gene presence values greater than 1 with 2
 df_scale<-replace(df_num, df_num>1,2)
