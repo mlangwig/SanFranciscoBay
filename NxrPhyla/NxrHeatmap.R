@@ -76,9 +76,12 @@ length(unique(img_data_sub$Bin))
 img_data_sub <- ids %>%
   right_join(img_data_sub, by = c("KO" = "KO_Term"))
 
-# Drop PPP and Glycolysis
+# Drop some pathways
 img_data_sub <- img_data_sub %>%
-  filter(!Cat_Broad %in% c("PPP", "Glycolysis"))
+  filter(!Cat_Broad %in% c("PPP", "Glycolysis", "WLP", "3HP", "CBB"))
+
+# Need to clarify that MAG hits to rbcL are type IV aka non functional
+# K00374, K00855, and K01602 missing from MAGs
 
 ##################################################################
 
@@ -124,6 +127,47 @@ refs_sub <- refs %>%
 length(unique(refs_sub$KEGG_ko))
 length(unique(ids$KO))
 # References are missing 2 KOs: K00374 + K14470
+
+######################### Create input matrix ####################################
+
+###### MAGs
+# get col of gene name
+img_data_sub <- img_data_sub %>%
+  separate(Name, into = c("Gene", "Gene_Desc"), sep = ";")
+
+#get just info of interest for matrix
+img_data_mags <- img_data_sub %>%
+  dplyr::select(c("Gene", "Bin", "Order", "Category", "Cat_Broad"))
+
+###### Refs
+# do the same for the refs
+met_data_refs <- refs_sub %>%
+  dplyr::select(c("NCBI_ID", "KEGG_ko"))
+# split the weird combo KO cols
+met_data_refs <- met_data_refs %>%
+  separate_rows(KEGG_ko, sep = ",")
+
+# map metadata to ref KOs so I know which ones to drop
+met_data_refs <- ids %>%
+  right_join(met_data_refs, by = c("KO" = "KEGG_ko"))
+# Drop some pathways
+met_data_refs <- met_data_refs %>%
+  filter(!Cat_Broad %in% c("PPP", "Glycolysis", "WLP", "3HP", "CBB"))
+# Drop KOs not of interest
+met_data_refs <- met_data_refs %>%
+  filter(!is.na(Cat_Broad))
+# get col of gene name
+met_data_refs <- met_data_refs %>%
+  separate(Name, into = c("Gene", "Gene_Desc"), sep = ";")
+# select only cols of interest
+met_data_refs <- met_data_refs %>%
+  dplyr::select(c("Gene", "NCBI_ID", "Order", "Category", "Cat_Broad"))
+# change col name of ref table so can merge MAG and ref info
+met_data_refs <- met_data_refs %>%
+  rename("Bin" = "NCBI_ID")
+
+# Combine ref and MAG data
+mags_refs_metabolism <- rbind(img_data_mags, met_data_refs)
 
 ##################################################################
 
