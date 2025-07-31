@@ -8,6 +8,9 @@ library(gridExtra)
 library(dplyr)
 library(tidyr)
 library(stringr)
+library(tibble)
+library(tidyverse)
+library(magick)
 
 #df <- read.csv("Input/input_heatmap.csv")
 #head(df)
@@ -54,6 +57,14 @@ img_data <- img_data %>%
   mutate(KO_Term = gsub("KO:", "", KO_Term)) %>%
   mutate(PFAM_ID = gsub("pfam", "PF", PFAM_ID))
 
+#get all IMG annotations for MAGs
+img_data_large_mags <- img_data %>%
+  filter(Bin %in% mags$V1)
+
+# See all annotations for only nxr MAGs
+#img_data_sub <- img_data %>%
+#  filter(Bin %in% mags$V1)
+
 # Filter IMG data for KOs
 img_data_sub <- img_data %>%
   filter(PFAM_ID %in% ids$KO | KO_Term %in% ids$KO)
@@ -61,7 +72,7 @@ img_data_sub <- img_data %>%
 #Check counts
 length(unique(ids$KO))
 length(unique(img_data_sub$KO_Term))
-# Both 139
+# Both 141
 
 # Filter for only nxr MAGs
 img_data_sub <- img_data_sub %>%
@@ -78,7 +89,7 @@ img_data_sub <- ids %>%
 
 # Drop some pathways
 img_data_sub <- img_data_sub %>%
-  filter(!Cat_Broad %in% c("PPP", "Glycolysis", "WLP", "3HP", "CBB"))
+  filter(!Cat_Broad %in% c("PPP", "Glycolysis", "WLP", "3HP"))
 
 # Need to clarify that MAG hits to rbcL are type IV aka non functional
 # K00374, K00855, and K01602 missing from MAGs
@@ -152,7 +163,7 @@ met_data_refs <- ids %>%
   right_join(met_data_refs, by = c("KO" = "KEGG_ko"))
 # Drop some pathways
 met_data_refs <- met_data_refs %>%
-  filter(!Cat_Broad %in% c("PPP", "Glycolysis", "WLP", "3HP", "CBB"))
+  filter(!Cat_Broad %in% c("PPP", "Glycolysis", "WLP", "3HP"))
 # Drop KOs not of interest
 met_data_refs <- met_data_refs %>%
   filter(!is.na(Cat_Broad))
@@ -169,22 +180,56 @@ met_data_refs <- met_data_refs %>%
 # Combine ref and MAG data
 mags_refs_metabolism <- rbind(img_data_mags, met_data_refs)
 
-##################################################################
+# Based on my phylogeny, rbcL in the SFB MAGs are all type IV aka not for C fixation. Clarifying that here:
+mags_refs_metabolism <- mags_refs_metabolism %>%
+  mutate(Gene = if_else(Gene == "rbcL" & grepl("Bin", Bin), "rbcL_typeIV", Gene))
+
+# Create df of gene order
+gene_order <- mags_refs_metabolism %>%
+  select(Gene, Order) %>%
+  distinct() %>%
+  arrange(Order)
+
+# Count occurrences per Gene-Bin
+mags_refs_met_matrix <- mags_refs_metabolism %>%
+  count(Bin, Gene) %>%
+  pivot_wider(names_from = Gene, values_from = n, values_fill = 0)
+
+# Set rownames to Bin
+mags_refs_met_matrix <- mags_refs_met_matrix %>% 
+  column_to_rownames("Bin")
+# Reorder columns by gene_order
+mags_refs_met_matrix <- mags_refs_met_matrix[, gene_order$Gene]
+
+# Reorder rows by tax
+mag_order <- read.delim(file = "Input/MAG_order.txt", header = TRUE)
+# Reorder columns by gene_order
+mag_order <- mag_order%>%
+  select(-c("Tax"))
+mags_refs_met_matrix <- mags_refs_met_matrix[mag_order$MAG,]
+
+######################### Create multiple input matrices by pathway ####################################
+
+category_info <- mags_refs_metabolism %>%
+  select(Gene, Category, Cat_Broad) %>%
+  distinct() %>%
+  left_join(gene_order, by = "Gene") %>%
+  arrange(Order)
 
 #replace all gene presence values greater than 1 with 2
-df_scale<-replace(df_num, df_num>1,2)
+mags_refs_met_matrix_scale<-replace(mags_refs_met_matrix, mags_refs_met_matrix>1,2)
 
-nitrogen <- as.matrix(t(df_scale[c(1:13)]))
-other <- as.matrix(t(df_scale[c(14:18)]))
-ETC <- as.matrix(t(df_scale[c(19:64)]))
-glyc <- as.matrix(t(df_scale[c(65:87)]))
-PPP <- as.matrix(t(df_scale[c(88:96)]))
-TCA <- as.matrix(t(df_scale[c(97:109)]))
-rTCA <- as.matrix(t(df_scale[c(110:119)]))
-WLP <- as.matrix(t(df_scale[c(120:127)]))
-rGlyp <- as.matrix(t(df_scale[c(128:134)]))
-CBB <- as.matrix(t(df_scale[c(135:138)]))
-THP <- as.matrix(t(df_scale[c(139)]))
+nitrogen <- as.matrix(t(mags_refs_met_matrix_scale[c(1:12)]))
+other <- as.matrix(t(mags_refs_met_matrix_scale[c(13:17)]))
+ETC <- as.matrix(t(mags_refs_met_matrix_scale[c(18:62)]))
+#glyc <- as.matrix(t(mags_refs_met_matrix_scale[c(65:87)]))
+#PPP <- as.matrix(t(mags_refs_met_matrix_scale[c(88:96)]))
+TCA <- as.matrix(t(mags_refs_met_matrix_scale[c(63:75)]))
+rTCA <- as.matrix(t(mags_refs_met_matrix_scale[c(76:84)]))
+#WLP <- as.matrix(t(mags_refs_met_matrix_scale[c(120:127)]))
+rGlyp <- as.matrix(t(mags_refs_met_matrix_scale[c(85:93)]))
+CBB <- as.matrix(t(mags_refs_met_matrix_scale[c(94:97)]))
+#THP <- as.matrix(t(mags_refs_met_matrix_scale[c(139)]))
 
 #Heatmap for the full table
 # pheatmap(df_scale,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 7, cellheight = 7,
@@ -192,61 +237,74 @@ THP <- as.matrix(t(df_scale[c(139)]))
 # fontsize = 7, color = colorRampPalette(c("white", "blue", "navy"))(50))
 
 #heatmap by group to get distinct colors
-nhm <- pheatmap::pheatmap(nitrogen,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 5, cellheight = 5, fontsize = 5,
+nhm <- pheatmap::pheatmap(nitrogen,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 8, cellheight = 8, fontsize = 8,
                           show_colnames = 0, legend = FALSE, gaps_col = c(1,3,10,11,13,14),
-                          color = colorRampPalette(c("white", "#029E73"))(50))
-ohm <- pheatmap::pheatmap(other,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 5, cellheight = 5, fontsize = 5,
+                          color = colorRampPalette(c("white", "#029E73"))(50), filename = "Output/nhm.png")
+ohm <- pheatmap::pheatmap(other,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 8, cellheight = 8, fontsize = 8,
                           show_colnames = 0, legend = FALSE, gaps_col = c(1,3,10,11,13,14),
-                          color = colorRampPalette(c("white", "#f46a9b"))(50))
-etchm <- pheatmap::pheatmap(ETC,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 5, cellheight = 5, fontsize = 5,
+                          color = colorRampPalette(c("white", "#f46a9b"))(50), filename = "Output/ohm.png")
+etchm <- pheatmap::pheatmap(ETC,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 8, cellheight = 8, fontsize = 8,
                             show_colnames = 0, legend = FALSE, gaps_col = c(1,3,10,11,13,14),
-                            color = colorRampPalette(c("white", "#7eb0d5"))(50))
+                            color = colorRampPalette(c("white", "#7eb0d5"))(50), filename = "Output/etchm.png")
 # ghm <- pheatmap::pheatmap(glyc,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 5, cellheight = 5, fontsize = 5,
 #                           show_rownames = 0, legend = FALSE, gaps_row = c(2,9,10,11,12),
 #                           color = colorRampPalette(c("white", "purple"))(50))
 # phm <- pheatmap::pheatmap(PPP,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 5, cellheight = 5, fontsize = 5,
 #                           show_rownames = 0, legend = FALSE, gaps_row = c(2,9,10,11,12),
 #                           color = colorRampPalette(c("white", "#FF4500"))(50))
-thm <- pheatmap::pheatmap(TCA,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 5, cellheight = 5, fontsize = 5,
+thm <- pheatmap::pheatmap(TCA,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 8, cellheight = 8, fontsize = 8,
                           show_colnames = 0, legend = FALSE, gaps_col = c(1,3,10,11,13,14),
-                          color = colorRampPalette(c("white", "#989898"))(50))
-rtchm <- pheatmap::pheatmap(rTCA,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 5, cellheight = 5, fontsize = 5,
+                          color = colorRampPalette(c("white", "#989898"))(50), filename = "Output/thm.png")
+rtchm <- pheatmap::pheatmap(rTCA,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 8, cellheight = 8, fontsize = 8,
                           show_colnames = 0, legend = FALSE, gaps_col = c(1,3,10,11,13,14),
-                          color = colorRampPalette(c("white", "#ffb55a"))(50))
-wlphm <- pheatmap::pheatmap(WLP,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 5, cellheight = 5, fontsize = 5,
+                          color = colorRampPalette(c("white", "#ffb55a"))(50), filename = "Output/rtchm.png")
+# wlphm <- pheatmap::pheatmap(WLP,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 5, cellheight = 5, fontsize = 5,
+#                           show_colnames = 0, legend = FALSE, gaps_col = c(1,3,10,11,13,14),
+#                           color = colorRampPalette(c("white", "#bd7ebe"))(50)) 
+rglhm <- pheatmap::pheatmap(rGlyp,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 8, cellheight = 8, fontsize = 8,
                           show_colnames = 0, legend = FALSE, gaps_col = c(1,3,10,11,13,14),
-                          color = colorRampPalette(c("white", "#bd7ebe"))(50)) 
-rglhm <- pheatmap::pheatmap(rGlyp,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 5, cellheight = 5, fontsize = 5,
-                          show_colnames = 0, legend = FALSE, gaps_col = c(1,3,10,11,13,14),
-                          color = colorRampPalette(c("white", "#b2e061"))(50))
-cbbhm <- pheatmap::pheatmap(CBB,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 5, cellheight = 5, fontsize = 5,
-                            show_colnames = 0, legend = FALSE, gaps_col = c(1,3,10,11,13,14),
-                            color = colorRampPalette(c("white", "#ffee65"))(50))
-thphm <- pheatmap::pheatmap(THP,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 5, cellheight = 5, fontsize = 5,
+                          color = colorRampPalette(c("white", "#b2e061"))(50), filename = "Output/rglhm.png")
+cbbhm <- pheatmap::pheatmap(CBB,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 8, cellheight = 8, fontsize = 8,
                             show_colnames = 1, legend = FALSE, gaps_col = c(1,3,10,11,13,14),
-                            color = colorRampPalette(c("white", "#7fcdbb"))(50))
-library(harrypotter)
-pal <- hp(n = 8, house = "Gryffindor")
-image(volcano, col = pal)
+                            color = colorRampPalette(c("white", "#ffee65"))(50), filename = "Output/cbbhm.png")
+# thphm <- pheatmap::pheatmap(THP,cluster_cols = F,cluster_rows = F,border_color = "black", cellwidth = 5, cellheight = 5, fontsize = 5,
+#                             show_colnames = 1, legend = FALSE, gaps_col = c(1,3,10,11,13,14),
+#                             color = colorRampPalette(c("white", "#7fcdbb"))(50))
 
-#arrange heatmaps
-lm <- cbind(c(1,2,3,6,7,8,9,10,11))
-dev.off()
-g <- grid.arrange(grobs = list(nhm[[4]],
-                          ohm[[4]],
-                          etchm[[4]],
-                          # ghm[[4]],
-                          # phm[[4]],
-                          thm[[4]],
-                          rtchm[[4]],
-                          wlphm[[4]],
-                          rglhm[[4]],
-                          cbbhm[[4]],
-                          thphm[[4]]),
-                          ncol = 1,
-             heights = c(1,1,4.2,1.7,1,1,1,1,1), # I try to arrange heights here so you can see the plot in plot zoom...but doesn't seem to translate well to ggsave
-             layout_matrix = lm)
+# test magick
+imgs <- image_read(c("Output/nhm.png", "Output/ohm.png", "Output/etchm.png", "Output/thm.png",
+                     "Output/rtchm.png", "Output/rglhm.png", "Output/cbbhm.png"))
+stitched <- image_append(imgs, stack = TRUE)
+image_write(stitched, "Output/combined_heatmap.png")
 
-ggsave(filename = "Output/heatmap.png", g, dpi = 500, height = 12) #here I needed to establish height to make it non overlapping
-ggsave(filename = "Output/heatmap.svg", g, dpi = 500, height = 12)
+# #arrange heatmaps
+# lm <- cbind(c(1,2,3,6,7,8,9,10,11))
+# dev.off()
+# g <- grid.arrange(grobs = list(nhm[[4]],
+#                           ohm[[4]],
+#                           etchm[[4]],
+#                           # ghm[[4]],
+#                           # phm[[4]],
+#                           thm[[4]],
+#                           rtchm[[4]],
+#                           #wlphm[[4]],
+#                           rglhm[[4]],
+#                           cbbhm[[4]]),
+#                           #thphm[[4]]),
+#                           ncol = 1,
+#              heights = c(1,1,4.2,1.7,1,1,1,1,1), # I try to arrange heights here so you can see the plot in plot zoom...but doesn't seem to translate well to ggsave
+#              layout_matrix = lm)
+# 
+# #ggsave(filename = "Output/heatmap.png", g, dpi = 500, height = 12) #here I needed to establish height to make it non overlapping
+# #ggsave(filename = "Output/heatmap.svg", g, dpi = 500, height = 12)
+# 
+# ggsave(filename = "Output/test_heatmap.png", g, dpi = 500, height = 12) #here I needed to establish height to make it non overlapping
+# 
+# 
+# 
+# 
+
+
+
+
 

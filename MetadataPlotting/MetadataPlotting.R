@@ -293,6 +293,7 @@ percent_encoded <- colMeans(traits_img_rare, na.rm = TRUE) * 100
 #percent rare MAGs with nitrogen cycling genes
 percent_rows_with_presence <- sum(rowSums(traits_img_rare[, 1:8] > 0, na.rm = TRUE) > 0) / nrow(traits_img_rare) * 100
 #percent rare MAGs with nitrogen cycling genes
+percent_rows_with_presence <- sum(rowSums(traits_img_rare[, 8:14] > 0, na.rm = TRUE) > 0) / nrow(traits_img_rare) * 100
 
 #write rare MAGs traits table output
 write_delim(as.data.frame(traits_img_rare), file = "output/traits_img_RareBiosphere.txt", quote = "none")

@@ -95,8 +95,8 @@ coverm_0.1 <- filtered_df %>%
   filter(mean(value) < 0.1)
 
 #Get the names of rare biosphere MAGs
-rare_MAGs <- unique(coverm_0.1$user_genome)
-
+rare_MAGs <- as.data.frame(unique(coverm_0.1$user_genome))
+write_delim(rare_MAGs, file = "Output/MAGs_RareBiosphere.txt", col_names = FALSE)
 ############################ Sum abundance by site and taxa, filter for top 10 #############################
 
 coverm_long_10p <- coverm_long_final %>%
