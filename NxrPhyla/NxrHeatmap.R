@@ -72,7 +72,7 @@ img_data_sub <- img_data %>%
 #Check counts
 length(unique(ids$KO))
 length(unique(img_data_sub$KO_Term))
-# Both 141
+# Both 140
 
 # Filter for only nxr MAGs
 img_data_sub <- img_data_sub %>%
@@ -91,7 +91,6 @@ img_data_sub <- ids %>%
 img_data_sub <- img_data_sub %>%
   filter(!Cat_Broad %in% c("PPP", "Glycolysis", "WLP", "3HP"))
 
-# Need to clarify that MAG hits to rbcL are type IV aka non functional
 # K00374, K00855, and K01602 missing from MAGs
 
 ##################################################################
@@ -227,8 +226,8 @@ ETC <- as.matrix(t(mags_refs_met_matrix_scale[c(18:62)]))
 TCA <- as.matrix(t(mags_refs_met_matrix_scale[c(63:75)]))
 rTCA <- as.matrix(t(mags_refs_met_matrix_scale[c(76:84)]))
 #WLP <- as.matrix(t(mags_refs_met_matrix_scale[c(120:127)]))
-rGlyp <- as.matrix(t(mags_refs_met_matrix_scale[c(85:93)]))
-CBB <- as.matrix(t(mags_refs_met_matrix_scale[c(94:97)]))
+rGlyp <- as.matrix(t(mags_refs_met_matrix_scale[c(85:95)]))
+CBB <- as.matrix(t(mags_refs_met_matrix_scale[c(96:99)]))
 #THP <- as.matrix(t(mags_refs_met_matrix_scale[c(139)]))
 
 #Heatmap for the full table

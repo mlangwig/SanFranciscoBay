@@ -233,13 +233,39 @@ fr_sfb <- funfunfun::royalty_fr(abundance_norm_rare_sweep, traits_img_sum, q = 0
 fr_sfb <- tidyr::separate(fr_sfb,sample,into = c("site","meta"), sep = '_filter')
 fr_sfb <- fr_sfb %>%
   separate(site, into = c("month", "site"), sep = '_sed')
+fr_sfb <- fr_sfb %>%
+  mutate(site = str_replace_all(site, "_USGS_", "Site "),
+         site = str_replace_all(site, "_", "."))
+
+# set order of site
+fr_sfb$site <- factor(fr_sfb$site, 
+                      levels = c("Site 4.1", "Site 8.1", 
+                                 "Site 13", "Site 21", "Site 24"))
 
 #plot
 dev.off()
-ggplot2::ggplot(fr_sfb,aes(x=trait,y=fr,color=site)) +
-  geom_boxplot() +
-  ylim(0,0.7) + #,color=sample
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))
+p <- ggplot2::ggplot(fr_sfb,aes(x=trait,y=fr,color=site)) +
+  geom_boxplot(size = 0.3, outlier.size = 1) +
+  ylim(0,0.7) + 
+  scale_y_continuous(limits = c(0, 0.7), expand = c(0,0)) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1),
+        panel.background = element_rect(fill = "white", color = "grey", linewidth = 0.2),  # white bg + black border
+        panel.grid.major = element_line(color = "grey80", linewidth = 0.3),                 # light gray major grid lines
+        panel.grid.minor = element_line(color = "grey90", linewidth = 0.2),                 # lighter minor grid lines
+        legend.key = element_rect(fill = NA, color = NA)) +
+  scale_color_manual(values = c(
+    "Site 13" = "#CE9A28",
+    "Site 21" = "#28827A",
+    "Site 24" = "#3F78C1",
+    "Site 4.1" = "#4F508C",
+    "Site 8.1" = "#B56478"
+  )) +
+  labs(y = "Functional Redunancy",
+       x = "") +
+  guides(color = guide_legend(title = NULL))
+p
+
+ggsave(p, file = "output/fr_boxplot.png", width = 7.5)
 
 #view averages and sds
 fr_sfb_stats <- fr_sfb %>%
