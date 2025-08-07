@@ -152,7 +152,7 @@ abundance_norm <- as.data.frame(round(abundance/min(abundance[abundance>0])))
 #create sample effort based on example
 sample_effort <- min(rowSums(abundance_norm))
 #rarefy the abundance matrix based on example
-abundance_norm_rare <- vegan::rrarefy(abundance_norm,sample_effort) # not clear about how this is calculated?
+abundance_norm_rare <- vegan::rrarefy(abundance_norm,sample_effort)
 #sweep the data, divide the values by row wise sums
 abundance_norm_rare_sweep <- sweep(abundance_norm_rare, 1, rowSums(abundance_norm_rare), '/')
 #order the MAG columns alphabetically
@@ -242,6 +242,8 @@ fr_sfb$site <- factor(fr_sfb$site,
                       levels = c("Site 4.1", "Site 8.1", 
                                  "Site 13", "Site 21", "Site 24"))
 
+write_delim(fr_sfb, file = "output/fr_sfb.tsv", delim = "\t")
+
 #plot
 dev.off()
 p <- ggplot2::ggplot(fr_sfb,aes(x=trait,y=fr,color=site)) +
@@ -280,10 +282,13 @@ fr_sfb_stats <- fr_sfb %>%
 n_rows <- nrow(traits_img_sum)
 
 # Proportion of 1s per column (trait)
-trait_proportions <- colSums(traits_img_sum == 1) / n_rows * 100
+trait_proportions <- as.data.frame(colSums(traits_img_sum == 1) / n_rows * 100)
+trait_proportions <- trait_proportions %>%
+  rename("Proportion" = "colSums(traits_img_sum == 1)/n_rows * 100") %>%
+  rownames_to_column(var = "Trait")
 
-# View the result
-print(trait_proportions)
+write_delim(trait_proportions, file = "output/trait_proportions.tsv",
+            delim = "\t")
 
 #view proportions of genes
 #collapse so that presence >0 means path present
