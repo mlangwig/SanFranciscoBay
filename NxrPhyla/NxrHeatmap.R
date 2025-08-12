@@ -299,11 +299,170 @@ image_write(stitched, "Output/combined_heatmap.png")
 # 
 # ggsave(filename = "Output/test_heatmap.png", g, dpi = 500, height = 12) #here I needed to establish height to make it non overlapping
 # 
-# 
-# 
-# 
 
+######################### Use IMG data to make counts ####################################
 
+#gtdb input
+files <- list.files(path = "../../GTDBtk/GTDBtk_v2.4.1_r226/", pattern = "\\.tsv$", full.names = TRUE)
+gtdbtk <- do.call(rbind, lapply(files, read.delim, sep = "\t", header = TRUE))
+kos <- read.delim(file = "Input/gene_list_img_fig4.txt")
 
+#map gtdbtk data to img data
+img_data <- gtdbtk %>%
+  dplyr::select(c("user_genome", "classification")) %>%
+  right_join(img_data, by = c("user_genome" = "Bin"))
+img_data <- img_data %>% 
+  separate(classification, c("d", "p", "c", "o", "f", "g", "s"), sep= ";")
 
+#Add Site data
+img_data_counts <- img_data %>%
+  select(c("user_genome", "p", "KO_Term", "Product")) %>%
+  filter(KO_Term != "" & !is.na(KO_Term))
+img_data_counts <- img_data_counts %>%
+  mutate(Site = user_genome) %>%
+  separate(Site, c("Site", NA), sep= "_SF")
+
+#Group by and sum
+img_data_counts <- img_data_counts %>%
+  group_by(user_genome, p, Site, KO_Term) %>%
+  summarise(KO_count = n(), .groups = "drop")
+
+#get rid of extra KO:
+img_data_counts <- img_data_counts %>%
+  mutate(KO_Term = str_replace(KO_Term, "KO:", ""))
+
+#Filter for KOs of interest
+img_data_counts_sub <- img_data_counts %>%
+  filter(KO_Term %in% kos$KO)
+
+#Change Thermoproteota names so you can see what's happening
+mapping <- img_data %>%
+  distinct(user_genome, c)
+
+img_data_counts_sub <- img_data_counts_sub %>%
+  left_join(mapping, by = "user_genome") %>%
+  mutate(p = if_else(p == "p__Thermoproteota", c, p)) %>%
+  select(-c)  # remove the extra join column if you don't need it
+
+## Comammox ##
+# Define the required KO terms
+cmx_KOs <- c("K10535", "K10944", "K10945", "K10946", "K00370", "K00371")
+
+cmx <- img_data_counts_sub %>%
+  group_by(user_genome) %>%
+  filter(all(cmx_KOs %in% KO_Term)) %>%
+  ungroup()
+
+## AOA/AOB ##
+# Define the required KO terms
+amo <- img_data_counts_sub %>%
+  group_by(user_genome) %>%
+  filter(
+    all(c("K10944", "K10945", "K10946") %in% KO_Term),
+    !any(KO_Term %in% c("K00370", "K00371"))
+  ) %>%
+  ungroup()
+
+## NITRATE REDUCTION ##
+no3 <- img_data_counts_sub %>%
+  group_by(user_genome) %>%
+  filter(
+    (all(c("K00370", "K00371") %in% KO_Term)) | #narGH
+      (all(c("K02567", "K02568") %in% KO_Term)) #napAB
+  ) %>%
+  ungroup()
+
+list_no3 <- no3 %>%
+  group_by(Site) %>%
+  summarise(unique_p = paste(unique(p), collapse = ", ")) #%>%
+#print(n = Inf)
+
+## NITRITE REDUCTION ##
+no2 <- img_data_counts_sub %>%
+  group_by(user_genome) %>%
+  filter(
+    (all(c("K00362", "K00363") %in% KO_Term)) | #nirBD
+      (all(c("K03385", "K15876") %in% KO_Term)) | #nrfAH
+      any(KO_Term %in% c("K00368", "K15864")) #nirK or nirS
+  ) %>%
+  ungroup()
+
+list_no2 <- no2 %>%
+  group_by(Site) %>%
+  summarise(unique_p = paste(unique(p), collapse = ", ")) #%>%
+  #print(n = Inf)
+  
+## NO REDUCTION ##
+no <- img_data_counts_sub %>%
+  group_by(user_genome) %>%
+  filter(
+    (all(c("K04561", "K02305") %in% KO_Term)) #norBC
+  ) %>%
+  ungroup()
+
+list_no <- no %>%
+  group_by(Site) %>%
+  summarise(unique_p = paste(unique(p), collapse = ", "))
+
+## N2O REDUCTION ##
+n2o <- img_data_counts_sub %>%
+  group_by(user_genome) %>%
+  filter(KO_Term == "K00376") %>% #nosZ
+  ungroup()
+
+list_n2o <- n2o %>%
+  group_by(Site) %>%
+  summarise(unique_p = paste(unique(p), collapse = ", "))
+
+## rDSR ##
+rdsr <- img_data_counts_sub %>%
+  group_by(user_genome) %>%
+  filter(KO_Term == "K00376") %>% #rdsr
+  ungroup()
+
+list_rdsr <- rdsr %>%
+  group_by(Site) %>%
+  summarise(unique_p = paste(unique(p), collapse = ", "))
+
+## SOX ##
+soxXA <- img_data_counts_sub %>%
+  group_by(user_genome) %>%
+  filter(
+    (all(c("K17222", "K17223") %in% KO_Term)) #soxXA
+  ) %>%
+  ungroup()
+
+list_soxXA <- soxXA %>%
+  group_by(Site) %>%
+  summarise(unique_p = paste(unique(p), collapse = ", "))
+
+soxYZ <- img_data_counts_sub %>%
+  group_by(user_genome) %>%
+  filter(
+    (all(c("K17226", "K17227") %in% KO_Term)) #soxXA
+  ) %>%
+  ungroup()
+
+list_soxYZ <- soxYZ %>%
+  group_by(Site) %>%
+  summarise(unique_p = paste(unique(p), collapse = ", "))
+
+soxB <- img_data_counts_sub %>%
+  group_by(user_genome) %>%
+  filter(KO_Term == "K17224") %>% #soxB
+  ungroup()
+
+list_soxB <- soxB %>%
+  group_by(Site) %>%
+  summarise(unique_p = paste(unique(p), collapse = ", "))
+
+  
+  
+
+# #Sum by taxa
+# img_data_counts_sub <- img_data_counts_sub %>%
+#   group_by(p, Site, KO_Term) %>%
+#   summarise(total_KO_count = sum(KO_count), .groups = "drop")
+
+#Add gene name and descriptive name
 

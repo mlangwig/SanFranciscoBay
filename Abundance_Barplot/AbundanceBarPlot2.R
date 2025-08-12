@@ -16,7 +16,7 @@ coverm<-read.delim2(file = "Input/SFBMAGS-vs-Reads-CoverM.tsv")
 #gtdb input
 files <- list.files(path = "../../GTDBtk/GTDBtk_v2.4.1_r226/", pattern = "\\.tsv$", full.names = TRUE)
 gtdbtk <- do.call(rbind, lapply(files, read.delim, sep = "\t", header = TRUE))
-
+write_delim(gtdbtk, file = "Output/GTDBtk_SFB_v2.4.1_r226.tsv", delim = "\t")
 ############################ Clean up the Coverm Input #############################
 colnames(coverm) = gsub("_filter.METAGENOME.fastq.gz.Relative.Abundance....", "", colnames(coverm))
 #transform from wide to long
@@ -117,6 +117,10 @@ coverm_long_10p <- coverm_long_final %>%
   arrange(desc(value)) %>%
   mutate(rank=row_number()) %>% #make a new variable called rank where rank values
   filter(rank <= 10) #CHANGE THIS NUMBER TO GET TOP X OF COMMUNITY
+
+tst <- coverm_long_10p %>%
+  group_by(Taxa) %>%
+  summarise(value=sum(as.numeric(value)))
 
 ############################ Plot the top 10 most abundant per site #############################
 

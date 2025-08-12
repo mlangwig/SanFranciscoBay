@@ -203,7 +203,7 @@ ggplot2::ggplot(fr,aes(x=trait,y=fr,color=depth))+geom_boxplot()+ylim(0,0.7)
 #read trait input
 traits_img <- readxl::read_excel("input/fr_genes_IMG_final.xlsx", sheet = "long_way")
 #read in rare SFB MAGs
-rare_MAGs <- read.delim(file = "../Abundance_Barplot/Output/MAGs_RareBiosphere.txt", header = FALSE)
+rare_MAGs <- read.delim(file = "../Abundance_Barplot/Output/MAGs_RareBiosphere_08.07.25.txt", header = FALSE)
 
 #collapse so that presence >0 means path present
 traits_img_sum <- traits_img %>%
@@ -323,11 +323,11 @@ rare_gene_perc
 percent_encoded <- colMeans(traits_img_rare, na.rm = TRUE) * 100
 #percent rare MAGs with nitrogen cycling genes
 percent_rows_with_presence <- sum(rowSums(traits_img_rare[, 1:8] > 0, na.rm = TRUE) > 0) / nrow(traits_img_rare) * 100
-#percent rare MAGs with nitrogen cycling genes
+#percent rare MAGs with sulfur cycling genes
 percent_rows_with_presence <- sum(rowSums(traits_img_rare[, 8:14] > 0, na.rm = TRUE) > 0) / nrow(traits_img_rare) * 100
 
 #write rare MAGs traits table output
-write_delim(as.data.frame(traits_img_rare), file = "output/traits_img_RareBiosphere.txt", quote = "none")
+write_delim(as.data.frame(traits_img_rare), file = "output/traits_img_RareBiosphere_08.07.25.txt", quote = "none")
 #### Unused
 
 # #read trait input
