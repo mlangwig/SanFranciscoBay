@@ -65,18 +65,18 @@ img_data_large_mags <- img_data %>%
 #img_data_sub <- img_data %>%
 #  filter(Bin %in% mags$V1)
 
-# Filter IMG data for KOs
-img_data_sub <- img_data %>%
-  filter(PFAM_ID %in% ids$KO | KO_Term %in% ids$KO)
-
 #Check counts
 length(unique(ids$KO))
 length(unique(img_data_sub$KO_Term))
 # Both 140
 
 # Filter for only nxr MAGs
-img_data_sub <- img_data_sub %>%
+img_data_sub <- img_data %>%
   filter(Bin %in% mags$V1)
+
+# Filter IMG data for KOs
+img_data_sub <- img_data_sub %>%
+  filter(PFAM_ID %in% ids$KO | KO_Term %in% ids$KO)
 
 #Check counts
 length(unique(mags$V1))
@@ -136,7 +136,7 @@ refs_sub <- refs %>%
 #Check counts
 length(unique(refs_sub$KEGG_ko))
 length(unique(ids$KO))
-# References are missing 2 KOs: K00374 + K14470
+# References are missing some KOs: i.e., K00374 + K14470
 
 ######################### Create input matrix ####################################
 
@@ -207,6 +207,14 @@ mag_order <- mag_order%>%
   select(-c("Tax"))
 mags_refs_met_matrix <- mags_refs_met_matrix[mag_order$MAG,]
 
+write.table(mags_refs_met_matrix, file = "Output/SupplementaryTable9.tsv", row.names = TRUE, 
+            sep = "\t", col.names = NA)
+
+gene_list <- img_data_sub %>%
+  dplyr::select(c("Gene", "KO")) %>%
+  unique()
+write_delim(gene_list, file = "Output/gene_list_Figure4.tsv", delim = "\t")
+
 ######################### Create multiple input matrices by pathway ####################################
 
 category_info <- mags_refs_metabolism %>%
@@ -224,10 +232,10 @@ ETC <- as.matrix(t(mags_refs_met_matrix_scale[c(18:62)]))
 #glyc <- as.matrix(t(mags_refs_met_matrix_scale[c(65:87)]))
 #PPP <- as.matrix(t(mags_refs_met_matrix_scale[c(88:96)]))
 TCA <- as.matrix(t(mags_refs_met_matrix_scale[c(63:75)]))
-rTCA <- as.matrix(t(mags_refs_met_matrix_scale[c(76:84)]))
+rTCA <- as.matrix(t(mags_refs_met_matrix_scale[c(76:82)]))
 #WLP <- as.matrix(t(mags_refs_met_matrix_scale[c(120:127)]))
-rGlyp <- as.matrix(t(mags_refs_met_matrix_scale[c(85:95)]))
-CBB <- as.matrix(t(mags_refs_met_matrix_scale[c(96:99)]))
+rGlyp <- as.matrix(t(mags_refs_met_matrix_scale[c(83:99)]))
+CBB <- as.matrix(t(mags_refs_met_matrix_scale[c(100:103)]))
 #THP <- as.matrix(t(mags_refs_met_matrix_scale[c(139)]))
 
 #Heatmap for the full table
@@ -274,7 +282,7 @@ cbbhm <- pheatmap::pheatmap(CBB,cluster_cols = F,cluster_rows = F,border_color =
 imgs <- image_read(c("Output/nhm.png", "Output/ohm.png", "Output/etchm.png", "Output/thm.png",
                      "Output/rtchm.png", "Output/rglhm.png", "Output/cbbhm.png"))
 stitched <- image_append(imgs, stack = TRUE)
-image_write(stitched, "Output/combined_heatmap.png")
+image_write(stitched, "Output/combined_heatmap_08.13.25.png")
 
 # #arrange heatmaps
 # lm <- cbind(c(1,2,3,6,7,8,9,10,11))
@@ -456,6 +464,25 @@ list_soxB <- soxB %>%
   group_by(Site) %>%
   summarise(unique_p = paste(unique(p), collapse = ", "))
 
+## PHSA ##
+phsA <- img_data_counts_sub %>%
+  group_by(user_genome) %>%
+  filter(KO_Term == "K08352") %>% #soxB
+  ungroup()
+
+list_phsA <- phsA %>%
+  group_by(Site) %>%
+  summarise(unique_p = paste(unique(p), collapse = ", "))
+
+## SQR ##
+sqr <- img_data_counts_sub %>%
+  group_by(user_genome) %>%
+  filter(KO_Term == "K17218") %>% #sqr
+  ungroup()
+
+list_sqr <- sqr %>%
+  group_by(Site) %>%
+  summarise(unique_p = paste(unique(p), collapse = ", "))
   
   
 
